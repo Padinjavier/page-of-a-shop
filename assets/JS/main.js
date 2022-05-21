@@ -2,11 +2,15 @@ const lightTheme = {
   "--main-color": " #f3f6fd",
   "--white-darck": " #000000",
   '--sombra-header': '#00070767',
+  '--varrita-scrol': '#d1802d',
+  '--varra-scrol':'#9E9E9E',
 };
 const darkTheme = {
   "--main-color": " #111827",
   "--white-darck": " #f8f8f8",
   '--sombra-header': '#03f3f367',
+  '--varrita-scrol': '#00fafa',
+  '--varra-scrol':'#706e6e',
 };
 //boton de modo dia noche 16 hasta abajo 
 const boton = document.querySelector(".bubbly-button");
@@ -58,23 +62,33 @@ exit_bsq.addEventListener('click', () => {
 //efecto del header
 var position = 0;
 $(window).scroll(function (e) {
-  var $element = $('header');
+  let $element = $('header');
   var scrollTop = $(this).scrollTop();
+  let $aside= $('.aside')
+  let $btn_aside= $('.toggle-button')
   if (scrollTop <= 0) {
     $element.removeClass('hide').removeClass('scrolling');
   } else if (scrollTop < position) {
     $element.removeClass('hide');
+
+    $aside.removeClass('active')
+    $btn_aside.removeClass('active')
+
   } else if (scrollTop > position) {
     $element.addClass('scrolling');
+
+    $aside.removeClass('active')
+    $btn_aside.removeClass('active')
+
     if (scrollTop + $(window).height() >= $(document).height() - $element.height()) {
       $element.removeClass('hide');
+      $btn_aside.removeClass('active')
     } else if (Math.abs($element.position().top) < $element.height()) {
       $element.addClass('hide');
     }
   }
   position = scrollTop;
 })
-
 
 
 //accion boton menu
@@ -87,4 +101,5 @@ const toggleElement = (element, nameClass) => {
 
 btn_aside.addEventListener('click', () => {
   toggleElement(aside, 'active')
+  toggleElement(btn_aside, 'active')
 })
