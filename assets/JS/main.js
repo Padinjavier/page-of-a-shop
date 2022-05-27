@@ -65,24 +65,24 @@ $(window).scroll(function (e) {
   let $element = $('header');
   var scrollTop = $(this).scrollTop();
   let $aside= $('.aside')
-  let $btn_aside= $('.toggle-button')
   if (scrollTop <= 0) {
     $element.removeClass('hide').removeClass('scrolling');
+    btn_aside.classList.remove('active')
   } else if (scrollTop < position) {
     $element.removeClass('hide');
 
     $aside.removeClass('active')
-    $btn_aside.removeClass('active')
+    btn_aside.classList.remove('active')
 
   } else if (scrollTop > position) {
     $element.addClass('scrolling');
 
     $aside.removeClass('active')
-    $btn_aside.removeClass('active')
+    btn_aside.classList.remove('active')
 
     if (scrollTop + $(window).height() >= $(document).height() - $element.height()) {
       $element.removeClass('hide');
-      $btn_aside.removeClass('active')
+      btn_aside.classList.remove('active')
     } else if (Math.abs($element.position().top) < $element.height()) {
       $element.addClass('hide');
     }
@@ -90,10 +90,10 @@ $(window).scroll(function (e) {
   position = scrollTop;
 })
 
-
 //accion boton menu
 let aside=document.querySelector('.aside')
 let btn_aside=document.querySelector('.toggle-button')
+let body=document.querySelector('body')
 
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
@@ -102,4 +102,10 @@ const toggleElement = (element, nameClass) => {
 btn_aside.addEventListener('click', () => {
   toggleElement(aside, 'active')
   toggleElement(btn_aside, 'active')
+  toggleElement(body, 'active')
 })
+
+// if(aside.classList=='aside active'){
+// }else{
+//   btn_aside.classList.remove('active')
+// }

@@ -14,7 +14,8 @@
       referrerpolicy="no-referrer"
     />
 </head>
-<body>
+<body class="">
+    
     <header >
        <div class="Boton-menu">
         <input id="abrir-cerrar" type="checkbox" value="" />
@@ -25,19 +26,23 @@
            ICONO
        </div>
        <form action="" method="get" class="cont-busqueda">
-        <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="bar-busqueda">
+          <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
         <i class="fa-solid fa-microphone" id="microfono"></i>
       </form>
 
         <i class="fa-solid fa-magnifying-glass" id="btn-mb"></i>
 
-       <div class="busq-mb">
+       <form action="" method="get"  class="busq-mb">
         <i class="fa-solid fa-arrow-left" id="exit-bsq"></i>
-        <input type="search" name="busqueda" >
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="bar-busqueda">
+          <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
         <i class="fa-solid fa-microphone"></i>
-       </div>
+       </form>
       <div name="boton tema" class="bubbly-button">
         <i class="fa-solid fa-sun  " id="sol"></i>
         <i class="fa-solid fa-moon  " id="luna"></i>
@@ -54,7 +59,8 @@
       <a href="">REDES</a>
     </aside>
     <main>
-      POR AGREGAR ELEMENTOS
+      <h1>-----Titulo-----</h1>
+      
     </main>
 </body>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
