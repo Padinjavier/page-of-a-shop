@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/CSS/main.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/CSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
+
 <body class="">
-    
-    <header >
-      <div name="perfil" class="perfil">
-        <img src="./assets/IMAGES/perfil.webp" alt="">
-      </div>
+
+  <header>
+    <div class="barraprimaria">
       <img src="./assets/IMAGES/logo.png" alt="" class="logo">
-       <div name="icono" class="tt">
-           INICIO
-       </div>
-       <form action="" method="get" class="cont-busqueda">
+      <form action="" method="get" class="cont-busqueda">
         <div class="bar-busqueda">
           <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <i class="fa-solid fa-microphone" id="microfono"></i>
+      </form>
+      <i class="fa-solid fa-magnifying-glass" id="btn-mb"></i>
+
+      <form action="" method="get" class="busq-mb">
+        <i class="fa-solid fa-arrow-left" id="exit-bsq"></i>
+        <div class="contenedor-busqueda">
+          <div class="bar-busqueda">
+            <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
       </form>
 
-        <i class="fa-solid fa-magnifying-glass" id="btn-mb"></i>
-
-       <form action="" method="get"  class="busq-mb">
-        <i class="fa-solid fa-arrow-left" id="exit-bsq"></i>
-        <div class="bar-busqueda">
-          <input type="search" name="busqueda" id="busqueda" placeholder=" BUSCAR">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <i class="fa-solid fa-microphone"></i>
-       </form>
       <div name="boton tema" class="bubbly-button">
         <i class="fa-solid fa-sun  " id="sol"></i>
         <i class="fa-solid fa-moon  " id="luna"></i>
@@ -50,21 +45,249 @@
         <input id="abrir-cerrar" type="checkbox" value="" />
         <label for="abrir-cerrar" class="toggle-button">
         </label>
-       </div>
-    </header>
-    <aside class="aside" >
-      <a href="">INCIO</a>
-      <a href="">PRODUCTOS</a>
-      <a href="">OFERTAS</a>
-      <a href="">NOVEDADES</a>
-      <a href="">REDES</a>
+      </div>
+    </div>
+    <aside class="aside">
+      <div class="despliege">
+        uno
+        <div class="menu">
+          <ul>
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="despliege">
+        dos
+        <div class="menu">
+          <ul>
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="despliege">
+        tres
+        <div class="menu">
+          <ul>
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="despliege">
+        cuatro
+        <div class="menu">
+          <ul>
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="despliege">
+        cinco
+        <div class="menu">
+          <ul>
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+          </ul>
+        </div>
+      </div>
     </aside>
-    <main>
-      <h1>-----Titulo-----</h1>
-      <p>Padin Flores Javier Antonio</p>
-      <p>Luyo Correa Jeanettis Mariel </p>
-      <p>  Durand Gonzales Wilber David</p>
-    </main>
+  </header>
+  <main>
+    <h1>-----Titulo-----</h1>
+    <p>Champe Palomino Ana Gabriela</p>
+    <p>Cateriano Guillen Geraldine Guisela</p>
+    <p>Padin Flores Javier Antonio</p>
+    <p>Luyo Correa Jeanettis Mariel </p>
+    <p> Durand Gonzales Wilber David</p>
+    <div
+      style="border: 1px solid red; width: 100%; display: flex; align-items: center; justify-content: space-between;">
+      <p>12345</p>
+      <div style="border: 1px solid rgb(0, 255, 0); width: 80%; display: flex; justify-content: space-between;">
+        <div
+          style="border: 1px solid rgb(0, 26, 255); width: auto; display: flex; justify-content: space-between; column-gap: 20px;">
+          <p>aaa</p>
+          <p>bbb</p>
+          <p>ccc</p>
+        </div>
+        <p>ddd</p>
+      </div>
+    </div>
+    <p style="width: 100%; height: 500px;">
+      El dolor en sí mismo es importante para la élite principal de adipisicadores. 
+      Es posible que estemos alentando otras opciones y sin dolor, pero con la resiliencia 
+      para elegir cualquiera de esas cosas, ¡resultará ser uno de estos placeres! Halagos, 
+      por así decirlo.
+    </p>
+  </main>
+  <section>
+    <div data-aos="fade-up" data-aos-offset="300">
+      <img data-aos="fade-right" data-aos-delay="500" src="./assets/IMAGES/IMAGENES DE MOMENTO/017fcf69cd030435c0ae9fd1734a4d77.jpg" alt="">
+      <p data-aos="fade-left" data-aos-delay="800">
+        fade-up fade-up fade-up fade-up fade-up fade-up
+      </p>
+    </div>
+    
+    <div data-aos="fade-up-right" data-aos-offset="300">
+      <p data-aos="fade-right">
+        fade-up-right fade-up-right fade-up-right fade-up-right
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/098b174225b96f91b7b523310716ca94.jpg" alt="">
+    </div>
+
+    <div data-aos="fade-up-left" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/2a939d9afa2b4057b81a4601faa3a946.jpg" alt="">
+      <p data-aos="fade-left">
+        fade-up-left fade-up-left fade-up-left fade-up-left fade-up-left fade-up-left
+      </p>
+    </div>
+
+    <div  data-aos="fade-down-right" data-aos-offset="300">
+      <p data-aos="fade-right">
+        fade-down-right fade-down-right fade-down-right fade-down-right fade-down-right 
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/2c5e4746cd2b21a58e375ddaa5096c05.jpg" alt="">
+    </div>
+
+    <div data-aos="fade-down-left" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/32dbdcb23013de1c7a0d1becb085254a.jpg" alt="">
+      <p data-aos="fade-right">
+        fade-down-left fade-down-left fade-down-left fade-down-left fade-down-left 
+      </p>
+    </div>
+
+    <div data-aos="flip-up" data-aos-offset="300">
+      <p data-aos="fade-right">
+        flip-up flip-up flip-up flip-up flip-up flip-up flip-up flip-up
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/3e26ce294619177f3e0014d4b093629a.jpg" alt="">
+    </div>
+
+    <div data-aos="flip-down" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/458691fa2280b2aaf17487f03210d992.jpg" alt="">
+      <p data-aos="fade-right">
+        flip-down flip-down flip-down flip-down flip-down flip-down flip-down
+      </p>
+    </div>
+
+    <div data-aos="flip-left" data-aos-offset="300">
+      <p data-aos="fade-right">
+        flip-left flip-left flip-left flip-left flip-left flip-left flip-left flip-left flip-left flip-left
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/551f4f88a6c2e3b405b589e4ca7c7025.jpg" alt="">
+    </div>
+
+    <div data-aos="flip-right" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/6798935b5487c8cdb7110e8441876c99.jpg" alt="">
+      <p data-aos="fade-right">
+        flip-right flip-right flip-right flip-right flip-right flip-right flip-right flip-right flip-right
+      </p>
+    </div>
+
+    <div data-aos="slide-up" data-aos-offset="300">
+      <p data-aos="fade-right">
+        slide-up slide-up slide-up slide-up slide-up slide-up slide-up slide-up slide-up
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/87244524bbbb70e1426826355f5e263c.jpg" alt="">
+    </div>
+
+    <div data-aos="slide-down" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/8c506cf36a22878b87f7b5194d2bf761.jpg" alt="">
+      <p data-aos="fade-right">
+        slide-down slide-down slide-down slide-down slide-down slide-down slide-down 
+      </p>
+    </div>
+
+    <div data-aos="slide-left" data-aos-offset="300">
+      <p data-aos="fade-right">
+        slide-left slide-left slide-left slide-left slide-left slide-left
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/95bef2c8636eb198849c98b7c227aa8d.jpg" alt="">
+    </div>
+
+    <div data-aos="slide-right" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/be6b9ed6b12c94fc26e4fd9dd4545eac.jpg" alt="">
+      <p data-aos="fade-right">
+        slide-right slide-right slide-right slide-right slide-right slide-right
+      </p>
+    </div>
+
+    <div data-aos="zoom-in" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-in zoom-in zoom-in zoom-in zoom-in zoom-in
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/d8f4ff3c4a37117ffeed370ec14da139.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/dbbed93b1c0a42b3736f2c211ea84e12.jpg" alt="">
+      <p data-aos="fade-right">
+        zoom-in-up zoom-in-up zoom-in-up zoom-in-up zoom-in-up zoom-in-up
+      </p>
+    </div>
+
+    <div data-aos="zoom-in-down" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-in-down zoom-in-down zoom-in-down zoom-in-down zoom-in-down zoom-in-down
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/ed196a72c9a68c52827273cdebd75642.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-in-left" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-in-left zoom-in-left zoom-in-left zoom-in-left zoom-in-left zoom-in-left
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/d8f4ff3c4a37117ffeed370ec14da139.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-in-right" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/dbbed93b1c0a42b3736f2c211ea84e12.jpg" alt="">
+      <p data-aos="fade-right">
+        zoom-in-right zoom-in-right zoom-in-right zoom-in-right zoom-in-rightzoom-in-right
+      </p>
+    </div>
+
+    <div data-aos="zoom-out" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-out zoom-out zoom-out zoom-out zoom-out zoom-out
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/ed196a72c9a68c52827273cdebd75642.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-out-up" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-out-up zoom-out-up zoom-out-up zoom-out-up zoom-out-up zoom-out-up
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/d8f4ff3c4a37117ffeed370ec14da139.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-out-down" data-aos-offset="300">
+      <img data-aos="fade-right" src="./assets/IMAGES/IMAGENES DE MOMENTO/dbbed93b1c0a42b3736f2c211ea84e12.jpg" alt="">
+      <p data-aos="fade-right">
+        zoom-out-down zoom-out-down zoom-out-down zoom-out-down zoom-out-down zoom-out-down
+      </p>
+    </div>
+
+    <div data-aos="zoom-out-left" data-aos-offset="300">
+      <p data-aos="fade-right">
+        zoom-out-left zoom-out-left zoom-out-left zoom-out-left zoom-out-left zoom-out-left
+      </p>
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/ed196a72c9a68c52827273cdebd75642.jpg" alt="">
+    </div>
+
+    <div data-aos="zoom-out-right" data-aos-offset="300">
+      <img data-aos="fade-left" src="./assets/IMAGES/IMAGENES DE MOMENTO/ed196a72c9a68c52827273cdebd75642.jpg" alt="">
+      <p data-aos="fade-right">
+        zoom-out-right zoom-out-right zoom-out-right zoom-out-right zoom-out-right zoom-out-right
+      </p>
+    </div>
+  </section>
+
+  <!-- <button style="position: fixed; bottom: 10px; right: 10px; background-color: brown; color: white;" onclick="full()">full scream</button>
+  <button style="position: fixed; bottom: 10px; right: 100px; background-color: rgb(65, 42, 165); color: white;" onclick="exitfull()">exit full scream</button> -->
+
 </body>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="./assets/JS/main.js"></script>

@@ -105,9 +105,20 @@ btn_aside.addEventListener('click', () => {
   toggleElement(body, 'active')
 })
 
-
+AOS.init();
 
 // if(aside.classList=='aside active'){
 // }else{
 //   btn_aside.classList.remove('active')
+// }
+
+
+
+// var elem = document.querySelector("body");
+
+// function full(){
+//     elem.requestFullscreen();
+// }
+// function exitfull(){
+//     elem.exitFullscreen();
 // }
