@@ -48,16 +48,7 @@ boton.addEventListener("click", () => {
     moon.classList.add('active')
   }
 });
-const btn_mb = document.querySelector('#btn-mb')
-const busq_mb = document.querySelector('.busq-mb')
-const exit_bsq = document.querySelector('#exit-bsq')
 
-btn_mb.addEventListener('click', () => {
-  busq_mb.classList.add('active')
-})
-exit_bsq.addEventListener('click', () => {
-  busq_mb.classList.remove('active')
-})
 
 //efecto del header
 var position = 0;
@@ -107,18 +98,81 @@ btn_aside.addEventListener('click', () => {
 
 AOS.init();
 
-// if(aside.classList=='aside active'){
-// }else{
-//   btn_aside.classList.remove('active')
-// }
+const servicios=document.getElementById('servicios')
+const menuservicios=document.querySelector('#servicios .menu')
+
+servicios.addEventListener('click',()=>{
+  toggleElement(menuservicios, 'active')
+})
 
 
 
-// var elem = document.querySelector("body");
+const $sliders1 = document.querySelectorAll('.img')
+const $prev1 = document.querySelector('.prev1')
+const $next1 = document.querySelector('.next1')
 
-// function full(){
-//     elem.requestFullscreen();
-// }
-// function exitfull(){
-//     elem.exitFullscreen();
-// }
+const nextSlider1 = (sliders1) => {
+	const totalSliders1 = sliders1.length - 1
+	let indice
+	sliders1.forEach((slider1, i) => {
+		if (slider1.classList.contains('active')) {
+			slider1.classList.remove('active')
+			indice = i + 1
+			if (indice > totalSliders1) indice = 0
+		}
+	})
+	sliders1[indice].classList.add('active')
+}
+
+const prevSlider1 = (sliders1) => {
+	const totalSliders1 = sliders1.length - 1
+	let indice
+	// bloqueo 
+	sliders1.forEach((slider1, i) => {
+		// if (slider1.classList.contains('active')& i>0) {//bloqueado
+      if (slider1.classList.contains('active')) {
+			slider1.classList.remove('active')
+			indice = i - 1
+			if (indice < 0) indice = totalSliders1
+		}
+	})
+	sliders1[indice].classList.add('active')
+}
+
+// izquierda
+$prev1.addEventListener('click', () => {
+	clearInterval(runSlider)
+
+	nextSlider1($sliders1)
+
+	runSlider = setInterval(() => {
+		nextSlider1($sliders1)
+	}, 5000)
+})
+// derecha
+$next1.addEventListener('click', () => {
+	nextSlider1($sliders1)
+})
+
+//tiempo del slider automatico
+let runSlider = setInterval(() => {
+	nextSlider1($sliders1)
+}, 5000)
+
+document.onload = runSlider
+
+
+const $sliders2 = document.querySelectorAll('.img2')
+const $prev2 = document.querySelector('.prev2')
+const $next2 = document.querySelector('.next2')
+
+$prev2.addEventListener('click', () => {
+		nextSlider1($sliders2)
+})
+// derecha
+$next2.addEventListener('click', () => {
+	nextSlider1($sliders2)
+})
+
+
+
