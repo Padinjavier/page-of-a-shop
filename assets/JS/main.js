@@ -107,9 +107,11 @@ servicios.addEventListener('click',()=>{
 
 
 
+
+
 const $sliders1 = document.querySelectorAll('.img')
-const $prev1 = document.querySelector('.prev1')
-const $next1 = document.querySelector('.next1')
+// const $prev1 = document.querySelector('.prev1')
+// const $next1 = document.querySelector('.next1')
 
 const nextSlider1 = (sliders1) => {
 	const totalSliders1 = sliders1.length - 1
@@ -140,19 +142,19 @@ const prevSlider1 = (sliders1) => {
 }
 
 // izquierda
-$prev1.addEventListener('click', () => {
-	clearInterval(runSlider)
+// $prev1.addEventListener('click', () => {
+// 	clearInterval(runSlider)
 
-	nextSlider1($sliders1)
+// 	nextSlider1($sliders1)
 
-	runSlider = setInterval(() => {
-		nextSlider1($sliders1)
-	}, 5000)
-})
-// derecha
-$next1.addEventListener('click', () => {
-	nextSlider1($sliders1)
-})
+// 	runSlider = setInterval(() => {
+// 		nextSlider1($sliders1)
+// 	}, 5000)
+// })
+// // derecha
+// $next1.addEventListener('click', () => {
+// 	nextSlider1($sliders1)
+// })
 
 //tiempo del slider automatico
 let runSlider = setInterval(() => {
@@ -162,17 +164,28 @@ let runSlider = setInterval(() => {
 document.onload = runSlider
 
 
+
+
 const $sliders2 = document.querySelectorAll('.img2')
 const $prev2 = document.querySelector('.prev2')
 const $next2 = document.querySelector('.next2')
 
+
+// izquierda
 $prev2.addEventListener('click', () => {
-		nextSlider1($sliders2)
+  clearInterval(runSlider2)
+  	nextSlider1($sliders2)
+  	runSlider2 = setInterval(() => {
+  		nextSlider1($sliders2)
+  	}, 7000)
 })
+
 // derecha
 $next2.addEventListener('click', () => {
 	nextSlider1($sliders2)
 })
 
-
+let runSlider2 = setInterval(() => {
+	nextSlider1($sliders2)
+}, 7000)
 

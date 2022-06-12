@@ -334,7 +334,7 @@ body.active section {
 }
 .slider{
     width: 100%;
-    height: auto;
+    height: 350px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -375,6 +375,7 @@ body.active section {
     width: 100%;
     text-align: center;
     padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.85);
 }
 .sobrenosotros h3{
     padding: 1.5rem 0rem;
@@ -384,6 +385,7 @@ body.active section {
     color:#FFD24C ;
 }
 .sobrenosotros p{
+    color: white;
     font-size: 1rem;
 }
 
@@ -435,17 +437,25 @@ body.active section {
     padding: 2rem;
 }
 .sub div{
-    /* width: calc(100% / 2.5); */
     width: calc(50% - 0.469rem);
-    height: 11.688rem;
+    height: auto;
     border: 0.063rem solid rgb(46, 46, 46);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
-.sub div img{
-    width: inherit;
+.sub div figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sub div figure img{
+    /* width: 100%; */
+    height: 80%;
 }
 .sub div p:nth-child(3){
     width: 100%;
