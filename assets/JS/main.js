@@ -1,3 +1,4 @@
+//----------------------------para el tema eoscuro o claro --------------------------------
 const lightTheme = {
   "--main-color": " #f3f6fd",
   "--white-darck": " #000000",
@@ -12,7 +13,7 @@ const darkTheme = {
   '--varrita-scrol': '#00fafa',
   '--varra-scrol':'#706e6e',
 };
-//boton de modo dia noche 16 hasta abajo 
+//--------------------boton de modo dia noche abajo ---------------------------
 const boton = document.querySelector(".bubbly-button");
 //detecta si el sistema tiene el modo dark o nigh
 let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -50,7 +51,7 @@ boton.addEventListener("click", () => {
 });
 
 
-//efecto del header
+//-------------------------efecto del header que se esconde al scrolear---------------
 var position = 0;
 $(window).scroll(function (e) {
   let $element = $('header');
@@ -81,7 +82,7 @@ $(window).scroll(function (e) {
   position = scrollTop;
 })
 
-//accion boton menu
+//----------------------------accion boton menu---------------------------------------
 let aside=document.querySelector('.aside')
 let btn_aside=document.querySelector('.toggle-button')
 let body=document.querySelector('body')
@@ -96,8 +97,10 @@ btn_aside.addEventListener('click', () => {
   toggleElement(body, 'active')
 })
 
+//----------para la libreria de efectos entrada y salida de los div img etc----------
 AOS.init();
 
+//------------sub menu dentro del menu general nuestros servicios--------------------
 const servicios=document.getElementById('servicios')
 const menuservicios=document.querySelector('#servicios .menu')
 
@@ -105,14 +108,8 @@ servicios.addEventListener('click',()=>{
   toggleElement(menuservicios, 'active')
 })
 
-
-
-
-
+//--------------------------primer slider automatico--------------------------------
 const $sliders1 = document.querySelectorAll('.img')
-// const $prev1 = document.querySelector('.prev1')
-// const $next1 = document.querySelector('.next1')
-
 const nextSlider1 = (sliders1) => {
 	const totalSliders1 = sliders1.length - 1
 	let indice
@@ -131,7 +128,7 @@ const prevSlider1 = (sliders1) => {
 	let indice
 	// bloqueo 
 	sliders1.forEach((slider1, i) => {
-		// if (slider1.classList.contains('active')& i>0) {//bloqueado
+		// if (slider1.classList.contains('active')& i>0) {//bloqueado remplaza por el de abajo
       if (slider1.classList.contains('active')) {
 			slider1.classList.remove('active')
 			indice = i - 1
@@ -140,7 +137,6 @@ const prevSlider1 = (sliders1) => {
 	})
 	sliders1[indice].classList.add('active')
 }
-
 // izquierda
 // $prev1.addEventListener('click', () => {
 // 	clearInterval(runSlider)
@@ -160,32 +156,6 @@ const prevSlider1 = (sliders1) => {
 let runSlider = setInterval(() => {
 	nextSlider1($sliders1)
 }, 5000)
-
 document.onload = runSlider
 
-
-
-
-const $sliders2 = document.querySelectorAll('.img2')
-const $prev2 = document.querySelector('.prev2')
-const $next2 = document.querySelector('.next2')
-
-
-// izquierda
-$prev2.addEventListener('click', () => {
-  clearInterval(runSlider2)
-  	nextSlider1($sliders2)
-  	runSlider2 = setInterval(() => {
-  		nextSlider1($sliders2)
-  	}, 7000)
-})
-
-// derecha
-$next2.addEventListener('click', () => {
-	nextSlider1($sliders2)
-})
-
-let runSlider2 = setInterval(() => {
-	nextSlider1($sliders2)
-}, 7000)
-
+//--------------------para el segundo slider que usa librerias---------------
