@@ -23,18 +23,6 @@
     }
 } */
 :root {
-    --blanco: #f3f6fd;
-    --celeste1: #8CC0DE;
-    --celeste2: #92B4EC;
-    --magenta: #bd5ba4;
-    --verde1: #CCF3EE;
-    --verde2: #97C4B8;
-    --palorosa: #F4BFBF;
-    --melon: #FFD9C0;
-    --crema: #FAF0D7;
-    --celestecielo: #8CC0DE;
-    --mostaza: #FFE69A;
-    --amarillo: #FFD24C;
     --font-family: 'Quicksand', sans-serif;
 }
 body {
@@ -287,22 +275,11 @@ main {
 body.active main {
     padding-right: 0.625rem;
 }
-h1{
+.frace h1{
     font-size: 1rem;
 }
 .frace p{
     font-size: .8rem;
-}
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 3.125rem;
-    overflow: hidden;
-}
-
-body.active section {
-    padding-right: 0.625rem;
 }
 
 
@@ -635,6 +612,37 @@ body.active footer {
     .slider3 .contenedor div p{
         font-size: 1rem;
     }
+    .lancha-sobrenosotros {
+        display: flex;
+        flex-direction: row;
+    }
+    .lancha{
+        background-position-y: 100px;
+    }
+    .lancha img {
+        width: 100%;
+        height: 100%;
+    }
+    .seguridad .sub{
+        flex-wrap: nowrap;
+    }
+}
+
+
+
+
+
+
+.ppt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3.125rem;
+    overflow: hidden;
+}
+
+body.active .ppt {
+    padding-right: 0.625rem;
 }
 .ppt div {
     width: 80%;
