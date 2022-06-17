@@ -1,0 +1,191 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../IMAGES/5.webp);
+    background-repeat: no-repeat;
+    background-position: 40%;
+    background-size: cover;
+    backdrop-filter: grayscale(1) blur(0.188rem);
+    color: #2069A7;
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.signup{
+    width: 75%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0.625rem 3.25rem 0 rgb(0 0 0);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+.desktop-img{
+    width: 100%;
+    height: 100%;
+    background-image: url(../IMAGES/5.webp);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    display: none;
+}
+.signup .mobill {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    padding-bottom: 1.25rem;
+    overflow: hidden;
+}
+.mobile-img{
+    width: 100%;
+}
+.mobile-img img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+span {
+    display: flex;
+    align-items: center;
+    gap: 1.563rem;
+    font-size: 0.75rem;
+}
+.fa-arrow-left{
+    width: 1.563rem;
+    height: 1.563rem;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.125rem;
+    border: 0.063rem solid black;
+    cursor: pointer;
+}
+
+form{
+    
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* row-gap: 2rem; */
+    font-size: 0.75rem;
+}
+p{
+    width: 100%;
+    font-size: 1.5em;
+    position: relative;
+}
+
+
+label {
+    position: absolute;
+    top: 0.438rem;
+    left: 2.625rem;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s;
+}
+input:focus~label,
+input:valid~label {
+    top: -0.5rem;
+    left: 2.313rem;
+    font-size: 0.813rem;
+}
+label.active {
+    top: -0.5rem;
+    left: 2.313rem;
+    font-size: 0.813rem;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    height: 2em;
+    margin-left: 1em;
+    border: transparent;
+    background: transparent;
+    outline:none;
+    border-bottom: 0.125rem solid #2069A7;
+}
+input[type="submit"]{
+    width: 9.375rem;
+    height: 2.5rem;
+    background: #2069A7;
+    cursor: pointer;
+    border: none;
+    border-radius: 1.25rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+}
+.fa-eye {
+    font-size: 1rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    display: none;
+}
+.fa-eye-slash{
+    font-size: 1rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    display: none;
+}
+.fa-eye.active{
+    display: flex;
+}
+.fa-eye-slash.active{
+    display: flex;
+}
+
+#lg-err {
+    position: absolute;
+    width: 12.5rem;
+    height: 3.75rem;
+    background: red;
+    top: 10.938rem;
+    right: 0rem;
+    border: 0.063rem solid white;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 500px) {
+    .signup{
+        flex-direction: row;
+    }
+    .mobile-img{
+        display: none;
+    }
+    .desktop-img{
+        display: flex;
+    }
+    .signup .mobill{
+        padding: 1rem 1.25rem 1.875rem 1.25rem ;
+    }
+    span{
+        margin-bottom: 1.25rem;
+    }
+}

@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(160deg, #20eff7 0%,#4f44f3 50%, #a01d79 100%);
+    color: white;
+}

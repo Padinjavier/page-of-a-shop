@@ -1,187 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Agencia MJ</title>
   <link rel="stylesheet" href="./assets/CSS/main.css">
+  <link rel="icon" href="./img/logo.webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
-
 <body class="">
-  <header>
-    <div class="barraprimaria">
-      <p>logo</p>
-      <a href="./pagos.php" target="_blank">pagos</a>
-      <div name="boton tema" class="bubbly-button">
-        <i class="fa-solid fa-sun  " id="sol"></i>
-        <i class="fa-solid fa-moon  " id="luna"></i>
-      </div>
-      <div class="cajaaside">
-        <aside class="aside">
-          <div class="despliege"><a href="">Inicio</a>
-          </div>
-          <div class="despliege"><a href="">Sobre Nosotros</a>
-          </div>
-          <div class="despliege" id="servicios"><a >Nustros Servicios ▼</a>
-            <div class="menu">
-              <ul>
-                <li><a href="./deportes.html">Deportes de aventure</a></li>
-                <li><a href="./deportes.html">Paseo turistico</a></li>
-              </ul>
+  <header class="header">
+    <a href="#" class="logo"><img src="./img/logomj.webp" width="110rem" height="50rem" alt=""></a>
+    <!-- navigation menu start -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#"> Inicio</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Sobre Nosotros</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Testimonios</a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#" class="menu__link submenu-btn"  data-toggle="sub-menu">Nuestros servicios <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                <ul class="sub-menu">
+                    <li class="menu-item ">
+                        <a href="#"  class="menu__link menu__link--inside">Deportes de Aventura</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="#" class="menu__link menu__link--inside">Paseos turísticos</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item  ">
+                <a href="#" >Contactos</a>
+            </li>
+        </ul>
+    </nav><!-- navigation menu end -->    
+    
+    <div class="icons">
+        <div class="fas fa-search " id="search-btn"></div>
+        
+        <div class="fa-solid fa-credit-card " id="cart-btn"></div>
+
+        <div class="login " id="login-btn">
+            <i class="fa-regular fa-user"></i>
+        </div>
+
+        <div class="boton-menu" id="menu-btn">
+            <input id="abrir-cerrar" type="checkbox" value=""/>
+            <label for="abrir-cerrar" class="toggle-button">
+            </label>
+        </div> 
+
+    </div><!-- .icons--> 
+
+    <form action="" class="search-form" >
+        <input type="text" id="search-box" placeholder="Búscalo aquí">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="shopping-cart">
+        <h2>Precio de los deportes</h2>
+        <div class="box">
+            <img class="img-cart" src="./img/canotaje.webp" alt="canotaje">
+            <div class="content">
+                <h3>Canotaje</h3>
+                <span class="price">s/35.00  por persona</span>
             </div>
-          </div>
-          <div class="contactos"><a href="">Contactos</a></div>
-        </aside>
-      </div>
-      
-      <div class="user_menu">
-        <i class="fa-solid fa-user"></i>
-        <a class="contactos_pc" href="">Contactos</a>
-        <div class="Boton-menu">
-          <input id="abrir-cerrar" type="checkbox" value="" />
-          <label for="abrir-cerrar" class="toggle-button">
-          </label>
+        </div><!--.box-->
+
+        <div class="box">
+            <img class="img-cart" src="./img/canopyboy.webp" alt="canopy">
+            <div class="content">
+                <h3>Canopy una línea</h3>
+                <span class="price">s/40.00 por persona</span>
+            </div>
+        </div><!--.box-->
+
+        <div class="box">
+            <img class="img-cart" src="./img/canopyDos.webp" alt="canopyDos">
+            <div class="content">
+                <h3>Canopy dos líneas</h3>
+                <span class="price">s/50.00 por persona</span>
+            </div>
+        </div><!--.box-->
+
+        <div class="box">
+            <img class="img-cart" src="./img/cuatrimoto.webp" alt="cuatrimoto">
+            <div class="content">
+                <h3>Cuatrimoto Doble</h3>
+                <span class="price">s/40.00 por persona</span>
+            </div>
+        </div><!--.box-->
+        <div class="box">
+            <img class="img-cart" src="./img/rappel.webp">
+            <div class="content">
+                <h3>Rappel</h3>
+                <span class="price">s/35.00 por persona</span>
+            </div>
+        </div><!--.box-->
+
+        <a href="#" class="btn-more">Ver más</a>
+    </div>
+
+    <form action="" class="login-form">
+        <h3>User</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="./php/login.php">Click here</a></p>
+        <p>don't have an account <a href="./php/signup.php">Create now</a></p>
+        <input type="submit" value="login now" class="btn background" >
+    </form> 
+
+   
+</header>
+
+  <main>
+    <div class="slider">
+      <h1 class="title">Disfruta de una gran aventura y diversión extrema<p>Todo lo que necesitas ¡planifícalo aquí!</p></h1>
+      <a class="iconPortada" href="#sobrenosotros"><i class="fa-solid fa-angle-down"></i></a>
+      <img src="./assets/IMAGES/movilidad-pakary.webp" alt="" class="img active">
+      <img src="./assets/IMAGES/rappel.webp" alt="" class="img ">
+      <img src="./assets/IMAGES/1.webp"  alt="" class="img ">
+    </div> 
+    <div class="sobreNosotros" id="sobrenosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis pariatur vero voluptatum, voluptas eaque, illo tempore ea nobis at fugit ratione architecto deleniti sequi iure odio facere praesentium ducimus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo asperiores exercitationem consequuntur corrupti dolorum quas, atque iste quaerat architecto esse, quae tenetur voluptates tempora cupiditate error aliquid voluptatum eaque?</p>
+    </div>
+
+    <div class="seguridad">
+      <h2>Contamos con la mejor seguridad</h2>
+      <div class="sub">
+        <div>
+          <p>Casco</p>
+          <figure>
+            <img src="./assets/IMAGES/casco.webp">
+          </figure>
+          <p>Todos los deportes</p>
+        </div>
+        <div>
+          <p>Remo</p>
+          <figure>
+            <img src="./assets/IMAGES/remo.webp"">
+          </figure>
+          <p>Canotaje</p>
+        </div>
+        <div>
+          <p>Guía</p>
+          <figure>
+            <img src="./assets/IMAGES/guia.webp"">
+          </figure>
+          <p>Canotaje- cuatrimoto- tour</p>
+        </div>
+        <div>
+          <p>Certificaciones</p>
+          <figure>
+            <img src="./assets/IMAGES/certificado.webp" alt="">
+          </figure>
+          <p>Aprobado por MINCETUR</p>
         </div>
       </div>
     </div>
-  </header>
-  <main>
-    <div class="frace">
-      <h1>Más de 5 años brindando nuestros servicios</h1>
-      <p>Siendo tus aliados para un paseo único</p>
-    </div>
-    <div class="slider">
-      <img src="./assets/IMAGES/1.jpg" alt="" class="img active">
-      <img src="./assets/IMAGES/2.jpg" alt="" class="img ">
-      <img src="./assets/IMAGES/3.jpg" alt="" class="img ">
-    </div>
-    <div class="lancha-sobrenosotros">
-      <div class="lancha">
-        <img src="./assets/IMAGES/image 37.svg" alt="">
-      </div>
-      <div class="sobrenosotros">
-        <h3><span>SOBRE</span> NOSOTROS</h3>
-        <p>
-          Lorem ipsum dolor sit amet. Nam quasi voluptatem qui molestiae culpa hic deleniti doloribus
-          et quod ipsa in sunt internos est delectus. Lorem ipsum dolor sit amet. Nam quasi voluptatem
-          qui molestiae culpa hic deleniti doloribus et quod ipsa in sunt internos est delectus.
-        </p>
-      </div>
-    </div>
+
     <div class="aside2">
       <!-- partial:index.partial.html -->
       <div class="app">
         <div class="cardList">
           <button class="cardList__btn btn btn--left">
-            <i class="fa-solid fa-circle-left"></i>
+            <i class="fa-solid fa-angle-left"></i>
           </button>
 
           <div class="cards__wrapper">
             <div class="card current--card">
               <div class="card__image">
-                <img src="./assets/IMAGES/4.jpg" alt="" />
+                <img src="./assets/IMAGES/4.webp" alt="" />
               </div>
             </div>
 
 
             <div class="card next--card">
               <div class="card__image">
-                <img src="./assets/IMAGES/5.jpg" alt="" />
+                <img src="./assets/IMAGES/5.webp" alt="" />
               </div>
             </div>
 
             <div class="card previous--card">
               <div class="card__image">
-                <img src="./assets/IMAGES/6.jpg" alt="" />
+                <img src="./assets/IMAGES/6.webp" alt="" />
               </div>
             </div>
           </div>
 
           <button class="cardList__btn btn btn--right">
 
-            <i class="fa-solid fa-circle-right"></i>
+            <i class="fa-solid fa-angle-right"></i>
           </button>
         </div>
 
         <div class="app__bg">
           <div class="app__bg__image current--image">
-            <img src="./assets/IMAGES/4.jpg" alt="" />
+            <img src="./assets/IMAGES/4.webp" alt="" />
           </div>
           <div class="app__bg__image next--image">
-            <img src="./assets/IMAGES/5.jpg" alt="" />
+            <img src="./assets/IMAGES/5.webp" alt=""/>
           </div>
           <div class="app__bg__image previous--image">
-            <img src="./assets/IMAGES/6.jpg" alt="" />
+            <img src="./assets/IMAGES/6.webp" alt=""/>
           </div>
         </div>
       </div>
     </div>
-    <div class="seguridad">
-      <h3>CONTAMOS CON LA MEJOR SEGURIDAD</h3>
-      <div class="sub">
-        <div>
-          <p>CASCO</p>
-          <figure>
-            <img src="./assets/IMAGES/casco.png" alt="">
-          </figure>
-          <p>Cuatrimoto-canotaje-canopy-rappel</p>
-        </div>
-        <div>
-          <p>REMO</p>
-          <figure>
-            <img src="./assets/IMAGES/remo.png" alt="">
-          </figure>
-          <p>Canotaje</p>
-        </div>
-        <div>
-          <p>GUÍA</p>
-          <figure>
-            <img src="./assets/IMAGES/guia.png" alt="">
-          </figure>
-          <p>Canotaje- cuatrimoto- tour</p>
-        </div>
-        <div>
-          <p>CERTIFICACIONES</p>
-          <figure>
-            <img src="./assets/IMAGES/certificado.png" alt="">
-          </figure>
-          <p>Aprobado por MINCETUR</p>
-        </div>
-      </div>
-    </div>
+
     <div class="slider3">
-      <h3>TESTIMONIOS DE NUESTROS CLIENTES</h3>
+      <h2>Testimonios de nuestros clientes</h2>
       <div class="contenedor">
-        <i class="fa-solid fa-circle-left"></i>
         <div>
-          <p>fam GERRERO</p>
-          <img src="./assets/IMAGES/7.jpg" alt="" class="img3 ">
+          <p>Fam. Guerreros</p>
+          <img src="./assets/IMAGES/7.webp" alt="" class="img3 ">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas
             , possimus hic aut blanditiis
           </p>
         </div>
-        <i class="fa-solid fa-circle-right"></i>
       </div>
     </div>
     <div class="redes">
       <div>
-        <p>Sigenos en:</p>
-        <i class="fa-brands fa-facebook"></i>|
-        <i class="fa-brands fa-instagram"></i>|
-        <i class="fa-brands fa-facebook-messenger"></i>|
+        <p>Síguenos en:</p>
+        <i class="fa-brands fa-facebook">  </i>|
+        <i class="fa-brands fa-instagram">  </i>|
+        <i class="fa-brands fa-facebook-messenger">  </i>|
         <i class="fa-brands fa-youtube"></i>
       </div>
     </div>
     <div class="ubicacion">
       <div class="titulo">
-        <p>Ubicanos en Lunaguaranarana</p>
+        <p>Ubicanos en Lunahuaná</p>
         <i class="fa-solid fa-location-dot"></i>
       </div>
       <div class="mapa">
@@ -192,24 +253,31 @@
       </div>
     </div>
     <div class="frace" title="reutilisamos el css de el otro div frace">
-      <p>Anímate y sé parte de esta gran aventura en el gran valle de </p>
-      <h3>Lunaguaranarana</h3>
+      <h3>Anímate y ubícanos en todas nuestras redes sociales <br><span>¡Lunahuaná te espera!</span> </h3>   
     </div>
     <div class="nosotros">
-      <h3>ACERCA DE NOSOTROS</h3>
+      <div class="first">
+      <h3>Acerca de Nosotros</h3>
+      <div class="first-footer">
         <p>Dirección</p>
         <p>Mapa del sitio</p>
         <p>Contáctanos</p>
-        <h3>LO QUE OFRECEMOS</h3>
+      </div>
+      </div>
+      <div class="second">
+        <h3>Lo que ofrecemos</h3>
         <p>Deportes</p>
         <P>Paseo Turistico</P>
-        <h3>HORARIO DE ATENCIÓN</h3>
+      </div>
+      <div class="third">
+        <h3>Horario de atención</h3>
         <p>Lun a Dom: 8:00 am - 5:00 pm</p>
-        <h3>MEDIOS DE PAGO</h3>
+        <h3>Medios de pago</h3>
         <div>
-          <img src="./assets/IMAGES/visa.png" alt="">|
-          <img src="./assets/IMAGES/yape.png" alt="">
+          <img src="./assets/IMAGES/visa.webp" alt="">|
+          <img src="./assets/IMAGES/yape.webp" alt="">
         </div>
+      </div>
     </div>
   </main>
   <footer>

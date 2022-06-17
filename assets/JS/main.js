@@ -1,81 +1,81 @@
-// //----------------------------para el tema eoscuro o claro --------------------------------
-const lightTheme = {
-  '--font-family':' "Quicksand", sans-serif',
-  '--card-width': '12.5rem',
-  '--card-height': '18.75rem',
- ' --card-transition-duration':'800ms',
- ' --card-transition-easing': 'ease',
-  '--white':'#ffffff',
-};
-const darkTheme = {
-  '--font-family': '"Quicksand", sans-serif',
-  '--card-width': '12.5rem',
-  '--card-height': '18.75rem',
-  '--card-transition-duration': '800ms',
-  '--card-transition-easing':'ease',
-  '--white':'#ffffff',
-};
-//--------------------boton de modo dia noche abajo ---------------------------
-const boton = document.querySelector(".bubbly-button");
-//detecta si el sistema tiene el modo dark o nigh
-let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const addTheme = (theme) => {
-  const styles = document.documentElement.style;
-  const customStyles = Object.keys(theme);
-  for (const style of customStyles) {
-    styles.setProperty(style, theme[style]);
-  }
-};
+// // //----------------------------para el tema eoscuro o claro --------------------------------
+// const lightTheme = {
+//   '--font-family':' "Quicksand", sans-serif',
+//   '--card-width': '12.5rem',
+//   '--card-height': '18.75rem',
+//  ' --card-transition-duration':'800ms',
+//  ' --card-transition-easing': 'ease',
+//   '--white':'#ffffff',
+// };
+// const darkTheme = {
+//   '--font-family': '"Quicksand", sans-serif',
+//   '--card-width': '12.5rem',
+//   '--card-height': '18.75rem',
+//   '--card-transition-duration': '800ms',
+//   '--card-transition-easing':'ease',
+//   '--white':'#ffffff',
+// };
+// //--------------------boton de modo dia noche abajo ---------------------------
+// const boton = document.querySelector(".bubbly-button");
+// //detecta si el sistema tiene el modo dark o nigh
+// let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// const addTheme = (theme) => {
+//   const styles = document.documentElement.style;
+//   const customStyles = Object.keys(theme);
+//   for (const style of customStyles) {
+//     styles.setProperty(style, theme[style]);
+//   }
+// };
 
 const sun = document.querySelector("#sol");
 const moon = document.querySelector("#luna");
 
-if (darkMode == true) {
-  sun.classList.add('active')
-  moon.classList.remove('active')
-} else {
-  sun.classList.remove('active')
-  moon.classList.add('active')
-}
-boton.addEventListener("click", () => {
-  darkMode = !darkMode;
-  // darkMode ? addTheme(darkTheme) : ;
-  if (darkMode) {
-    addTheme(darkTheme)
-    sun.classList.add('active')
-    moon.classList.remove('active')
-  } else {
-    addTheme(lightTheme)
-    sun.classList.remove('active')
-    moon.classList.add('active')
-  }
-});
+// if (darkMode == true) {
+//   sun.classList.add('active')
+//   moon.classList.remove('active')
+// } else {
+//   sun.classList.remove('active')
+//   moon.classList.add('active')
+// }
+// boton.addEventListener("click", () => {
+//   darkMode = !darkMode;
+//   // darkMode ? addTheme(darkTheme) : ;
+//   if (darkMode) {
+//     addTheme(darkTheme)
+//     sun.classList.add('active')
+//     moon.classList.remove('active')
+//   } else {
+//     addTheme(lightTheme)
+//     sun.classList.remove('active')
+//     moon.classList.add('active')
+//   }
+// });
 
 
 //-------------------------efecto del header que se esconde al scrolear---------------
 var position = 0;
 $(window).scroll(function (e) {
-  let $element = $('header');
+  let $element = $('.header');
   var scrollTop = $(this).scrollTop();
-  let $aside= $('.aside')
+  // let $aside= $('.aside')
   if (scrollTop <= 0) {
     $element.removeClass('hide').removeClass('scrolling');
-    btn_aside.classList.remove('active')
+    // btn_aside.classList.remove('active')
   } else if (scrollTop < position) {
     $element.removeClass('hide');
 
-    $aside.removeClass('active')
-    btn_aside.classList.remove('active')
+    // $aside.removeClass('active')
+    // btn_aside.classList.remove('active')
 
   } else if (scrollTop > position) {
     $element.addClass('scrolling');
 
-    $aside.removeClass('active')
-    btn_aside.classList.remove('active')
+    // $aside.removeClass('active')
+    // btn_aside.classList.remove('active')
 
     if (scrollTop + $(window).height() >= $(document).height() - $element.height()) {
       $element.removeClass('hide');
-      btn_aside.classList.remove('active')
+      // btn_aside.classList.remove('active')
     } else if (Math.abs($element.position().top) < $element.height()) {
       $element.addClass('hide');
     }
@@ -84,30 +84,77 @@ $(window).scroll(function (e) {
 })
 
 //----------------------------accion boton menu---------------------------------------
-let aside=document.querySelector('.aside')
-let btn_aside=document.querySelector('.toggle-button')
-let body=document.querySelector('body')
+// formulario- para buscar(lupa)
+let searchForm =document.querySelector(".search-form");
+document.querySelector("#search-btn").onclick =()=>{
+  searchForm.classList.toggle("active");
 
+shoppingCart.classList.remove("active");
+loginForm.classList.remove("active");
+navbar.classList.remove("active");
+}
+// carta de precio
+let shoppingCart=document.querySelector(".shopping-cart");
+document.querySelector("#cart-btn").onclick =()=>{
+shoppingCart.classList.toggle("active");
+  // se desactiva
+searchForm.classList.remove("active");
+loginForm.classList.remove("active");
+navbar.classList.remove("active");
+}
+// usuario-cuenta
+let loginForm=document.querySelector(".login-form");
+document.querySelector("#login-btn").onclick =()=>{
+  loginForm.classList.toggle("active");
+  // se desactiva
+searchForm.classList.remove("active");
+shoppingCart.classList.remove("active");
+navbar.classList.remove("active");
+
+}
+
+let navbar = document.querySelector(".navbar");
+let btnMenu = document.querySelector(".toggle-button");
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
 }
-
-btn_aside.addEventListener('click', () => {
-  toggleElement(aside, 'active')
-  toggleElement(btn_aside, 'active')
-  toggleElement(body, 'active')
+btnMenu.addEventListener('click', () => {
+  toggleElement(navbar, 'active')
+  toggleElement(btnMenu, 'active')
+  // se desactivsa
+  searchForm.classList.remove("active");
+  shoppingCart.classList.remove("active");
+  loginForm.classList.remove("active");
 })
+// 
+window.onscroll = () =>{
+  searchForm.classList.remove("active");
+  shoppingCart.classList.remove("active");
+  loginForm.classList.remove("active");
+  navbar.classList.remove("active");
+}
 
-//----------para la libreria de efectos entrada y salida de los div img etc----------
-AOS.init();
+const subMenuBtn = document.querySelectorAll(".submenu-btn");
+let children=document.querySelector(".menu-item-has-children");
+for(let i= 0; i< subMenuBtn.length;i++){
+  subMenuBtn[i].addEventListener("click", function(){
+    toggleElement(children, 'active')
+    if(window.innerWidth <700){
+      const subMenu = this.nextElementSibling;
+      const height =subMenu.scrollHeight;
+      if(subMenu.classList.contains("desplegar")){
+        subMenu.classList.remove("desplegar");
+        subMenu.removeAttribute("style");
 
-//------------sub menu dentro del menu general nuestros servicios--------------------
-const servicios=document.getElementById('servicios')
-const menuservicios=document.querySelector('#servicios .menu')
+      }else{
+        subMenu.classList.add("desplegar");
+        subMenu.style.height =height + "px";
+      }
+    }
+  });
+}
 
-servicios.addEventListener('click',()=>{
-  toggleElement(menuservicios, 'active')
-})
+
 
 //--------------------------primer slider automatico--------------------------------
 const $sliders1 = document.querySelectorAll('.img')
