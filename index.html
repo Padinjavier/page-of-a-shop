@@ -20,19 +20,19 @@
     <nav class="navbar">
         <ul class="menu">
             <li class="menu-item">
-                <a href="#"> Inicio</a>
+                <a href="#" > Inicio</a>
             </li>
             <li class="menu-item">
                 <a href="#">Sobre Nosotros</a>
             </li>
             <li class="menu-item">
-                <a href="#">Testimonios</a>
+                <a href="#" >Testimonios</a>
             </li>
             <li class="menu-item menu-item-has-children">
-                <a href="#" class="menu__link submenu-btn"  data-toggle="sub-menu">Nuestros servicios <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                <a href="#" class="menu__link submenu-btn sonidoalclick"  data-toggle="sub-menu" >Nuestros servicios <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
                 <ul class="sub-menu">
                     <li class="menu-item ">
-                        <a href="#"  class="menu__link menu__link--inside">Deportes de Aventura</a>
+                        <a href="#"  class="menu__link menu__link--inside" >Deportes de Aventura</a>
                     </li>
                     <li class="menu-item ">
                         <a href="#" class="menu__link menu__link--inside">Paseos turísticos</a>
@@ -40,21 +40,25 @@
                 </ul>
             </li>
             <li class="menu-item  ">
-                <a href="#" >Contactos</a>
+                <a href="#">Contactos</a>
             </li>
         </ul>
     </nav><!-- navigation menu end -->    
     
     <div class="icons">
-        <div class="fas fa-search " id="search-btn"></div>
+      <div class="lunasol sonidoalclick" >
+        <i class="fa-solid fa-moon active" id="luna"></i>
+        <i class="fa-solid fa-sun" id="sol"></i>
+      </div>
+        <div class="fas fa-search sonidoalclick" id="search-btn"></div>
         
-        <div class="fa-solid fa-credit-card " id="cart-btn"></div>
+        <div class="fa-solid fa-credit-card sonidoalclick" id="cart-btn"></div>
 
-        <div class="login " id="login-btn">
+        <div class="login sonidoalclick" id="login-btn">
             <i class="fa-regular fa-user"></i>
         </div>
 
-        <div class="boton-menu" id="menu-btn">
+        <div class="boton-menu sonidoalclick" id="menu-btn">
             <input id="abrir-cerrar" type="checkbox" value=""/>
             <label for="abrir-cerrar" class="toggle-button">
             </label>
@@ -114,7 +118,11 @@
     <form action="" class="login-form">
         <h3>User</h3>
         <input type="email" placeholder="your email" class="box">
-        <input type="password" placeholder="your password" class="box">
+        
+          <input type="password" placeholder="your password" class="box" id="password">
+          <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
+          <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
+        
         <p>forget your password <a href="./php/login.php">Click here</a></p>
         <p>don't have an account <a href="./php/signup.php">Create now</a></p>
         <input type="submit" value="login now" class="btn background" >
@@ -126,7 +134,7 @@
   <main>
     <div class="slider">
       <h1 class="title">Disfruta de una gran aventura y diversión extrema<p>Todo lo que necesitas ¡planifícalo aquí!</p></h1>
-      <a class="iconPortada" href="#sobrenosotros"><i class="fa-solid fa-angle-down"></i></a>
+      <a class="iconPortada sonidoalclick" href="#sobrenosotros"><i class="fa-solid fa-angle-down" ></i></a>
       <img src="./assets/IMAGES/movilidad-pakary.webp" alt="" class="img active">
       <img src="./assets/IMAGES/rappel.webp" alt="" class="img ">
       <img src="./assets/IMAGES/1.webp"  alt="" class="img ">
@@ -174,33 +182,28 @@
       <!-- partial:index.partial.html -->
       <div class="app">
         <div class="cardList">
-          <button class="cardList__btn btn btn--left">
+          <button class="cardList__btn btn btn--left sonidoalclick" >
             <i class="fa-solid fa-angle-left"></i>
           </button>
 
           <div class="cards__wrapper">
             <div class="card current--card">
               <div class="card__image">
-                <img src="./assets/IMAGES/4.webp" alt="" />
+                <img src="./assets/IMAGES/4.webp" alt=""/>
               </div>
             </div>
-
-
             <div class="card next--card">
               <div class="card__image">
                 <img src="./assets/IMAGES/5.webp" alt="" />
               </div>
             </div>
-
             <div class="card previous--card">
               <div class="card__image">
                 <img src="./assets/IMAGES/6.webp" alt="" />
               </div>
             </div>
           </div>
-
-          <button class="cardList__btn btn btn--right">
-
+          <button class="cardList__btn btn btn--right sonidoalclick">
             <i class="fa-solid fa-angle-right"></i>
           </button>
         </div>
@@ -231,7 +234,7 @@
         </div>
       </div>
     </div>
-    <div class="redes">
+    <div class="redes sonidoalhover">
       <div>
         <p>Síguenos en:</p>
         <i class="fa-brands fa-facebook">  </i>|
@@ -287,6 +290,7 @@
 </body>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="./assets/JS/main.js"></script>
+<script src="./assets/JS/mododarckligth.js"></script>
 
 <!-- partial -->
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>

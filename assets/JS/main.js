@@ -1,56 +1,3 @@
-// // //----------------------------para el tema eoscuro o claro --------------------------------
-// const lightTheme = {
-//   '--font-family':' "Quicksand", sans-serif',
-//   '--card-width': '12.5rem',
-//   '--card-height': '18.75rem',
-//  ' --card-transition-duration':'800ms',
-//  ' --card-transition-easing': 'ease',
-//   '--white':'#ffffff',
-// };
-// const darkTheme = {
-//   '--font-family': '"Quicksand", sans-serif',
-//   '--card-width': '12.5rem',
-//   '--card-height': '18.75rem',
-//   '--card-transition-duration': '800ms',
-//   '--card-transition-easing':'ease',
-//   '--white':'#ffffff',
-// };
-// //--------------------boton de modo dia noche abajo ---------------------------
-// const boton = document.querySelector(".bubbly-button");
-// //detecta si el sistema tiene el modo dark o nigh
-// let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-// const addTheme = (theme) => {
-//   const styles = document.documentElement.style;
-//   const customStyles = Object.keys(theme);
-//   for (const style of customStyles) {
-//     styles.setProperty(style, theme[style]);
-//   }
-// };
-
-const sun = document.querySelector("#sol");
-const moon = document.querySelector("#luna");
-
-// if (darkMode == true) {
-//   sun.classList.add('active')
-//   moon.classList.remove('active')
-// } else {
-//   sun.classList.remove('active')
-//   moon.classList.add('active')
-// }
-// boton.addEventListener("click", () => {
-//   darkMode = !darkMode;
-//   // darkMode ? addTheme(darkTheme) : ;
-//   if (darkMode) {
-//     addTheme(darkTheme)
-//     sun.classList.add('active')
-//     moon.classList.remove('active')
-//   } else {
-//     addTheme(lightTheme)
-//     sun.classList.remove('active')
-//     moon.classList.add('active')
-//   }
-// });
-
 
 //-------------------------efecto del header que se esconde al scrolear---------------
 var position = 0;
@@ -115,6 +62,7 @@ navbar.classList.remove("active");
 
 let navbar = document.querySelector(".navbar");
 let btnMenu = document.querySelector(".toggle-button");
+// let body = document.querySelector('body')
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
 }
@@ -132,6 +80,7 @@ window.onscroll = () =>{
   shoppingCart.classList.remove("active");
   loginForm.classList.remove("active");
   navbar.classList.remove("active");
+  btnMenu.classList.remove("active");
 }
 
 const subMenuBtn = document.querySelectorAll(".submenu-btn");
@@ -207,3 +156,38 @@ let runSlider = setInterval(() => {
 document.onload = runSlider
 
 //--------------------para el segundo slider que usa librerias---------------
+
+// ---------para el sonido de los botnoes del slider------
+let botonclick = document.querySelectorAll(".sonidoalclick")
+botonclick.forEach((botonclick =>{
+  botonclick.addEventListener("click", () => {
+    let etiquetaAudio = document.createElement("audio")
+    etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    etiquetaAudio.play()
+  })
+}))
+
+let botonhover = document.querySelectorAll(".sonidoalhover")
+botonhover.forEach((botonhover =>{
+  botonhover.addEventListener("mouseover", () => {
+    let etiquetaAudio = document.createElement("audio")
+    etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    etiquetaAudio.play()
+  })
+}))
+
+// ----------------ver contraseña ocultar contraseña-------------------------------------------------------
+const ojo = document.querySelector(".fa-eye");
+const ojox = document.querySelector(".fa-eye-slash");
+
+
+function mostrarContrasena(){
+  toggleElement(ojo, "active");
+  toggleElement(ojox, "active");
+  var tipo = document.getElementById("password");
+  if(tipo.type == "password"){
+      tipo.type = "text";
+  }else{
+      tipo.type = "password";
+  }
+}

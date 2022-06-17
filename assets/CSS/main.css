@@ -30,7 +30,7 @@ html{
         --card-height: 18.75rem;
         --card-transition-duration: 800ms;
         --card-transition-easing: ease;
-        /* --white:#ffffff; */
+        /* --white:#ffffff; falta agregar mas colores*/
 
         /*  */
         --yellow: #FFD24C;
@@ -71,7 +71,7 @@ body {
     height: 100vh;
     font-size: 1.25rem;
     font-family: var(--font-family);
-    background: url(../IMAGES/JPG/017fcf69cd030435c0ae9fd1734a4d77.jpg) top fixed;
+    /* background: url(../IMAGES/6.webp) top fixed; */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -92,9 +92,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-body.active header {
+/* body.active header {
     padding-right: 1.875rem;
-}
+} */
 
 .header.scrolling {
     height: -5.75rem;
@@ -184,6 +184,18 @@ body.active header {
 .header .icons div:hover{
     background-color: var(--blue);
     color: var(--white);
+}
+.icons .fa-moon{
+    display: none;
+}
+.icons .fa-sun{
+    display: none;
+}
+.icons .fa-moon.active{
+    display: flex;
+}
+.icons .fa-sun.active{
+    display: flex;
 }
 /* icons-cerrar */
 
@@ -323,6 +335,25 @@ input#abrir-cerrar:checked+.toggle-button.active:after {
     color: var(--griss);
     font-size: 1.2rem;
 }
+
+/* ojos-------------contraseña-------------------------------------------------------------------- */
+.fa-eye {
+    width: 17px;
+    height: 14px;
+    display: flex;
+}
+.fa-eye-slash{
+    width: 17px;
+    height: 14px;
+    display: flex;
+}
+.fa-eye.active{
+    display: none;
+}
+.fa-eye-slash.active{
+    display: none;
+}
+/* ojos--------------------------------contraseña----------------------------------------------- */
 .header .shopping-cart .btn{
     display: block;
     text-align: center;
@@ -487,9 +518,9 @@ main {
     scroll-behavior: smooth;
 }
 
-body.active main {
+/* body.active main {
     padding-right: 0.625rem;
-}
+} */
 
 /* .frace {
     width: 100%;
@@ -1020,9 +1051,9 @@ footer {
     text-align: center;
 }
 
-body.active footer {
+/* body.active footer {
     padding-right: 1.875rem;
-}
+} */
 
 @media (min-width: 450px) {
     .sub div p:nth-child(3) {
@@ -1114,14 +1145,14 @@ body.active footer {
         font-size: 1.5rem;
     } */
 
-    body.active .cajaaside {
+    /* body.active .cajaaside {
         position: absolute;
         top: 0%;
         right: 0%;
         width: 0%;
         height: 0vh;
         background: rgba(0, 0, 0, 0);
-    }
+    } */
 
     .slider3 .contenedor div p {
         font-size: 1rem;
