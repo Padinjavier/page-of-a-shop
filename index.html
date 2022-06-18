@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,135 +14,147 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
+
 <body class="">
   <header class="header">
     <a href="#" class="logo"><img src="./img/logomj.webp" width="110rem" height="50rem" alt=""></a>
     <!-- navigation menu start -->
     <nav class="navbar">
-        <ul class="menu">
-            <li class="menu-item">
-                <a href="#" > Inicio</a>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#"> Inicio</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">Sobre Nosotros</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">Testimonios</a>
+        </li>
+        <li class="menu-item menu-item-has-children">
+          <a href="#" class="menu__link submenu-btn sonidoalclick" data-toggle="sub-menu">Nuestros servicios <i
+              class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item ">
+              <a href="#" class="menu__link menu__link--inside">Deportes de Aventura</a>
             </li>
-            <li class="menu-item">
-                <a href="#">Sobre Nosotros</a>
+            <li class="menu-item ">
+              <a href="#" class="menu__link menu__link--inside">Paseos turísticos</a>
             </li>
-            <li class="menu-item">
-                <a href="#" >Testimonios</a>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#" class="menu__link submenu-btn sonidoalclick"  data-toggle="sub-menu" >Nuestros servicios <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
-                <ul class="sub-menu">
-                    <li class="menu-item ">
-                        <a href="#"  class="menu__link menu__link--inside" >Deportes de Aventura</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href="#" class="menu__link menu__link--inside">Paseos turísticos</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-item  ">
-                <a href="#">Contactos</a>
-            </li>
-        </ul>
-    </nav><!-- navigation menu end -->    
-    
+          </ul>
+        </li>
+        <li class="menu-item  ">
+          <a href="#">Contactos</a>
+        </li>
+      </ul>
+    </nav><!-- navigation menu end -->
+
     <div class="icons">
-      <div class="lunasol sonidoalclick" >
+      <div class="lunasol sonidoalclick">
         <i class="fa-solid fa-moon active" id="luna"></i>
         <i class="fa-solid fa-sun" id="sol"></i>
       </div>
-        <div class="fas fa-search sonidoalclick" id="search-btn"></div>
-        
-        <div class="fa-solid fa-credit-card sonidoalclick" id="cart-btn"></div>
+      <div class="fas fa-search sonidoalclick" id="search-btn"></div>
 
-        <div class="login sonidoalclick" id="login-btn">
-            <i class="fa-regular fa-user"></i>
-        </div>
+      <div class="fa-solid fa-credit-card sonidoalclick" id="cart-btn"></div>
 
-        <div class="boton-menu sonidoalclick" id="menu-btn">
-            <input id="abrir-cerrar" type="checkbox" value=""/>
-            <label for="abrir-cerrar" class="toggle-button">
-            </label>
-        </div> 
+      <div class="login sonidoalclick" id="login-btn">
+        <i class="fa-regular fa-user"></i>
+      </div>
 
-    </div><!-- .icons--> 
+      <div class="boton-menu sonidoalclick" id="menu-btn">
+        <input id="abrir-cerrar" type="checkbox" value="" />
+        <label for="abrir-cerrar" class="toggle-button">
+        </label>
+      </div>
 
-    <form action="" class="search-form" >
-        <input type="text" id="search-box" placeholder="Búscalo aquí">
-        <label for="search-box" class="fas fa-search"></label>
+    </div><!-- .icons-->
+
+    <form action="" class="search-form">
+      <input type="text" id="search-box" placeholder="Búscalo aquí">
+      <label for="search-box" class="fas fa-search"></label>
     </form>
 
     <div class="shopping-cart">
-        <h2>Precio de los deportes</h2>
-        <div class="box">
-            <img class="img-cart" src="./img/canotaje.webp" alt="canotaje">
-            <div class="content">
-                <h3>Canotaje</h3>
-                <span class="price">s/35.00  por persona</span>
-            </div>
-        </div><!--.box-->
+      <h2>Precio de los deportes</h2>
+      <div class="box">
+        <img class="img-cart" src="./img/canotaje.webp" alt="canotaje">
+        <div class="content">
+          <h3>Canotaje</h3>
+          <span class="price">s/35.00 por persona</span>
+        </div>
+      </div>
+      <!--.box-->
 
-        <div class="box">
-            <img class="img-cart" src="./img/canopyboy.webp" alt="canopy">
-            <div class="content">
-                <h3>Canopy una línea</h3>
-                <span class="price">s/40.00 por persona</span>
-            </div>
-        </div><!--.box-->
+      <div class="box">
+        <img class="img-cart" src="./img/canopyboy.webp" alt="canopy">
+        <div class="content">
+          <h3>Canopy una línea</h3>
+          <span class="price">s/40.00 por persona</span>
+        </div>
+      </div>
+      <!--.box-->
 
-        <div class="box">
-            <img class="img-cart" src="./img/canopyDos.webp" alt="canopyDos">
-            <div class="content">
-                <h3>Canopy dos líneas</h3>
-                <span class="price">s/50.00 por persona</span>
-            </div>
-        </div><!--.box-->
+      <div class="box">
+        <img class="img-cart" src="./img/canopyDos.webp" alt="canopyDos">
+        <div class="content">
+          <h3>Canopy dos líneas</h3>
+          <span class="price">s/50.00 por persona</span>
+        </div>
+      </div>
+      <!--.box-->
 
-        <div class="box">
-            <img class="img-cart" src="./img/cuatrimoto.webp" alt="cuatrimoto">
-            <div class="content">
-                <h3>Cuatrimoto Doble</h3>
-                <span class="price">s/40.00 por persona</span>
-            </div>
-        </div><!--.box-->
-        <div class="box">
-            <img class="img-cart" src="./img/rappel.webp">
-            <div class="content">
-                <h3>Rappel</h3>
-                <span class="price">s/35.00 por persona</span>
-            </div>
-        </div><!--.box-->
+      <div class="box">
+        <img class="img-cart" src="./img/cuatrimoto.webp" alt="cuatrimoto">
+        <div class="content">
+          <h3>Cuatrimoto Doble</h3>
+          <span class="price">s/40.00 por persona</span>
+        </div>
+      </div>
+      <!--.box-->
+      <div class="box">
+        <img class="img-cart" src="./img/rappel.webp">
+        <div class="content">
+          <h3>Rappel</h3>
+          <span class="price">s/35.00 por persona</span>
+        </div>
+      </div>
+      <!--.box-->
 
-        <a href="#" class="btn-more">Ver más</a>
+      <a href="#" class="btn-more">Ver más</a>
     </div>
 
     <form action="" class="login-form">
-        <h3>User</h3>
-        <input type="email" placeholder="your email" class="box">
-        
-          <input type="password" placeholder="your password" class="box" id="password">
-          <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
-          <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
-        
-        <p>forget your password <a href="./php/login.php">Click here</a></p>
-        <p>don't have an account <a href="./php/signup.php">Create now</a></p>
-        <input type="submit" value="login now" class="btn background" >
-    </form> 
+      <h3>User</h3>
+      <input type="email" placeholder="your email" class="box">
 
-   
-</header>
+      <input type="password" placeholder="your password" class="box" id="password">
+      <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
+      <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
+
+      <p>forget your password <a href="./php/login.php">Click here</a></p>
+      <p>don't have an account <a href="./php/signup.php">Create now</a></p>
+      <input type="submit" value="login now" class="btn background">
+    </form>
+
+
+  </header>
 
   <main>
     <div class="slider">
-      <h1 class="title">Disfruta de una gran aventura y diversión extrema<p>Todo lo que necesitas ¡planifícalo aquí!</p></h1>
-      <a class="iconPortada sonidoalclick" href="#sobrenosotros"><i class="fa-solid fa-angle-down" ></i></a>
+      <h1 class="title">Disfruta de una gran aventura y diversión extrema<p>Todo lo que necesitas ¡planifícalo aquí!</p>
+      </h1>
+      <a class="iconPortada sonidoalclick" href="#sobrenosotros"><i class="fa-solid fa-angle-down"></i></a>
       <img src="./assets/IMAGES/movilidad-pakary.webp" alt="" class="img active">
       <img src="./assets/IMAGES/rappel.webp" alt="" class="img ">
-      <img src="./assets/IMAGES/1.webp"  alt="" class="img ">
-    </div> 
+      <img src="./assets/IMAGES/1.webp" alt="" class="img ">
+    </div>
     <div class="sobreNosotros" id="sobrenosotros">
       <h2>Sobre Nosotros</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis pariatur vero voluptatum, voluptas eaque, illo tempore ea nobis at fugit ratione architecto deleniti sequi iure odio facere praesentium ducimus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo asperiores exercitationem consequuntur corrupti dolorum quas, atque iste quaerat architecto esse, quae tenetur voluptates tempora cupiditate error aliquid voluptatum eaque?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis pariatur vero voluptatum, voluptas
+        eaque, illo tempore ea nobis at fugit ratione architecto deleniti sequi iure odio facere praesentium ducimus?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo asperiores exercitationem consequuntur
+        corrupti dolorum quas, atque iste quaerat architecto esse, quae tenetur voluptates tempora cupiditate error
+        aliquid voluptatum eaque?</p>
     </div>
 
     <div class="seguridad">
@@ -164,7 +177,7 @@
         <div>
           <p>Guía</p>
           <figure>
-            <img src="./assets/IMAGES/guia.webp"">
+            <img src=" ./assets/IMAGES/guia.webp"">
           </figure>
           <p>Canotaje- cuatrimoto- tour</p>
         </div>
@@ -182,14 +195,14 @@
       <!-- partial:index.partial.html -->
       <div class="app">
         <div class="cardList">
-          <button class="cardList__btn btn btn--left sonidoalclick" >
+          <button class="cardList__btn btn btn--left sonidoalclick">
             <i class="fa-solid fa-angle-left"></i>
           </button>
 
           <div class="cards__wrapper">
             <div class="card current--card">
               <div class="card__image">
-                <img src="./assets/IMAGES/4.webp" alt=""/>
+                <img src="./assets/IMAGES/4.webp" alt="" />
               </div>
             </div>
             <div class="card next--card">
@@ -213,10 +226,10 @@
             <img src="./assets/IMAGES/4.webp" alt="" />
           </div>
           <div class="app__bg__image next--image">
-            <img src="./assets/IMAGES/5.webp" alt=""/>
+            <img src="./assets/IMAGES/5.webp" alt="" />
           </div>
           <div class="app__bg__image previous--image">
-            <img src="./assets/IMAGES/6.webp" alt=""/>
+            <img src="./assets/IMAGES/6.webp" alt="" />
           </div>
         </div>
       </div>
@@ -237,9 +250,9 @@
     <div class="redes sonidoalhover">
       <div>
         <p>Síguenos en:</p>
-        <i class="fa-brands fa-facebook">  </i>|
-        <i class="fa-brands fa-instagram">  </i>|
-        <i class="fa-brands fa-facebook-messenger">  </i>|
+        <i class="fa-brands fa-facebook"> </i>|
+        <i class="fa-brands fa-instagram"> </i>|
+        <i class="fa-brands fa-facebook-messenger"> </i>|
         <i class="fa-brands fa-youtube"></i>
       </div>
     </div>
@@ -256,16 +269,16 @@
       </div>
     </div>
     <div class="frace" title="reutilisamos el css de el otro div frace">
-      <h3>Anímate y ubícanos en todas nuestras redes sociales <br><span>¡Lunahuaná te espera!</span> </h3>   
+      <h3>Anímate y ubícanos en todas nuestras redes sociales <br><span>¡Lunahuaná te espera!</span> </h3>
     </div>
     <div class="nosotros">
       <div class="first">
-      <h3>Acerca de Nosotros</h3>
-      <div class="first-footer">
-        <p>Dirección</p>
-        <p>Mapa del sitio</p>
-        <p>Contáctanos</p>
-      </div>
+        <h3>Acerca de Nosotros</h3>
+        <div class="first-footer">
+          <p>Dirección</p>
+          <p>Mapa del sitio</p>
+          <p>Contáctanos</p>
+        </div>
       </div>
       <div class="second">
         <h3>Lo que ofrecemos</h3>

@@ -157,7 +157,8 @@ document.onload = runSlider
 
 //--------------------para el segundo slider que usa librerias---------------
 
-// ---------para el sonido de los botnoes del slider------
+
+// ---------para el sonido de los botones del slider------
 let botonclick = document.querySelectorAll(".sonidoalclick")
 botonclick.forEach((botonclick =>{
   botonclick.addEventListener("click", () => {
@@ -175,6 +176,8 @@ botonhover.forEach((botonhover =>{
     etiquetaAudio.play()
   })
 }))
+
+
 
 // ----------------ver contraseña ocultar contraseña-------------------------------------------------------
 const ojo = document.querySelector(".fa-eye");
