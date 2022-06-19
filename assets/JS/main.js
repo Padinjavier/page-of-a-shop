@@ -163,7 +163,9 @@ let botonclick = document.querySelectorAll(".sonidoalclick")
 botonclick.forEach((botonclick =>{
   botonclick.addEventListener("click", () => {
     let etiquetaAudio = document.createElement("audio")
-    etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    // etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    etiquetaAudio.setAttribute("src", "./assets/sonidos/Grabación.m4a")
+
     etiquetaAudio.play()
   })
 }))
@@ -172,11 +174,12 @@ let botonhover = document.querySelectorAll(".sonidoalhover")
 botonhover.forEach((botonhover =>{
   botonhover.addEventListener("mouseover", () => {
     let etiquetaAudio = document.createElement("audio")
-    etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    // etiquetaAudio.setAttribute("src", "./assets/sonidos/aa.mp3")
+    etiquetaAudio.setAttribute("src", "./assets/sonidos/Grabación.m4a")
+
     etiquetaAudio.play()
   })
 }))
-
 
 
 // ----------------ver contraseña ocultar contraseña-------------------------------------------------------
@@ -193,4 +196,66 @@ function mostrarContrasena(){
   }else{
       tipo.type = "password";
   }
+}
+
+
+
+
+
+// -----------------------------------------------Para el login-------------------------------------------------------
+//Evento de Submit
+const formulario= document.querySelector('.login-form')
+const  password=document.querySelector('#password')
+const  email=document.querySelector('#email')
+
+password.addEventListener('input', leerTexto)
+
+email.addEventListener('input', leerTexto)
+
+// crea un array con los inputs #email #password etc
+const datos ={
+  password:'',
+  email:'',
+}
+
+// lee el contenido de los imput
+function leerTexto(e){
+  datos[e.target.id]=e.target.value
+  // console.log(datos)
+}
+
+
+
+// funcion para validar el formulario
+formulario.addEventListener('submit', function(evento){
+    evento.preventDefault()
+    
+    //validar el formulario
+    const{password, email}=datos
+
+    if(password===''|| email===''){
+        mostrarAlerta('todos los campos son obligatorios','true')
+        return;
+    }
+    //crear otra elerta de enviar correctamente
+    mostrarAlerta('Mensaje enviado correctamente')
+})
+
+
+// funcion para mostrar alerta
+function mostrarAlerta(mensaje, error = null){
+    const alerta = document.createElement('P')
+    alerta.textContent=mensaje
+
+  // si hay un error
+    if(error){
+        alerta.classList.add('error')
+    }else{ // si no hay error
+        alerta.classList.add('correcto')
+    }
+    formulario.appendChild(alerta)
+    //desaparezca en 5 segundos
+    setTimeout(()=>{
+        alerta.remove()
+    },2000)
 }
