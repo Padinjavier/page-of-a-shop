@@ -8,19 +8,19 @@ session_start();
 
 if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['email']) && !empty($_POST['contraseña']) && !empty($_POST['Confirmacontraseña'])) {
 
-    if (($_POST['contraseña']==$_POST['Confirmacontraseña'])) {
+    if (($_POST['contraseña'] == $_POST['Confirmacontraseña'])) {
 
         $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
         $records->bindParam(':email', $_POST['email']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
-        if (($_POST['email']==$results['email'])) {
-        $message ='<h3 id="lg-err">Este correo ya esta vinvulado a una cuenta</h3>';
-        }else{
-            $nombre=$_POST['nombre'];
-            $apellido=$_POST['apellido'];
-            $email=$_POST['email'];
+        if (($_POST['email'] == $results['email'])) {
+            $message = '<h3 id="lg-err">Este correo ya esta vinvulado a una cuenta</h3>';
+        } else {
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $email = $_POST['email'];
             $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
             // $contraseña = ($_POST['contraseña']);
             $sql = "INSERT INTO usuarios (nombre, apellido, email , contraseña) VALUES ('$nombre','$apellido','$email','$contraseña')";
@@ -31,21 +31,22 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
                 $results = $records->fetch(PDO::FETCH_ASSOC);
-                
+
                 $_SESSION['user_id'] = $results['id'];
                 header("Location:index.php");
-            }else{
+            } else {
                 $message = 'Lo sentimos, estamos teniendo problemas el crear su cuenta';
             }
         }
-    }else{
-        $message ='<h3 id="lg-err">Las contraseñas no son iguales</h3>';
+    } else {
+        $message = '<h3 id="lg-err">Las contraseñas no son iguales</h3>';
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,6 +55,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSS/signup.css">
 </head>
+
 <body>
     <main>
         <div class="signup" id="signup">
@@ -79,7 +81,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                     </p>
                     <p>
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="" name="email"  id="email"  required>
+                        <input type="email" placeholder="" name="email" id="email" required>
                         <label for="" id="emailOK" class="">Email</label>
                     </p>
                     <p>
@@ -87,7 +89,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                         <input type="password" placeholder="" name="contraseña" id="password" required>
                         <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
                         <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
-                        <label for="" >contraseña</label>
+                        <label for="">contraseña</label>
                     </p>
                     <p>
                         <i class="fa-solid fa-lock"></i>
@@ -96,15 +98,16 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
                         <label for="">Confirma contraseña</label>
                     </p>
-                    
+
                     <input type="submit" value="Registrar">
                 </form>
             </div>
         </div>
-        <?php if(!empty($message)): ?>
+        <?php if (!empty($message)) : ?>
             <p> <?= $message ?></p>
         <?php endif; ?>
     </main>
 </body>
 <script src="./assets/js/signup.js"></script>
+
 </html>

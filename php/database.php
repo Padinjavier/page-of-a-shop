@@ -1,12 +1,12 @@
  <?php
 
-session_start();
+    session_start();
 
-$server = 'localhost';
-$username = 'root';
-$password = 'javier20';
-$database = 'login';
+    $server = 'localhost';
+    $username = 'root';
+    $password = 'javier20';
+    $database = 'login';
 
-$conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
 
-?>
+    ?>
