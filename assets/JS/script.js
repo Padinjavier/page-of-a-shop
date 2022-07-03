@@ -1,143 +1,117 @@
-const { gsap, imagesLoaded } = window;
+//animacion al scrollear
+AOS.init();
+// dark mode
+const btnSwitch=document.querySelector("#switch");
+btnSwitch.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark");
+    btnSwitch.classList.toggle("active");
+})
+// carta de precio
+let shoppingCart=document.querySelector(".shopping-cart");
+document.querySelector("#cart-btn").onclick =()=>{
+shoppingCart.classList.toggle("active");
+body.classList.toggle("active");
+  // se desactiva
 
-const buttons = {
-	prev: document.querySelector(".btn--left"),
-	next: document.querySelector(".btn--right"),
-};
-const cardsContainerEl = document.querySelector(".cards__wrapper");
-const appBgContainerEl = document.querySelector(".app__bg");
+loginForm.classList.remove("active");
+navbar.classList.remove("active");
+}
+// usuario-cuenta
+let loginForm=document.querySelector(".login-form");
+document.querySelector("#login-btn").onclick =()=>{
+loginForm.classList.toggle("active");
+body.classList.toggle("active");
+  // se desactiva
 
-buttons.next.addEventListener("click", () => swapCards("right"));
+shoppingCart.classList.remove("active");
+navbar.classList.remove("active");
+}
+// ojo activa-desactiva
+const ojo = document.querySelector(".fa-eye");
+const ojox = document.querySelector(".fa-eye-slash");
+function mostrarContrasena(){
+  toggleElement(ojo, "active");
+  toggleElement(ojox, "active");
+  var tipo = document.getElementById("password");
+  if(tipo.type == "password"){
+      tipo.type = "text";
+  }else{
+      tipo.type = "password";
+  }
+}
+//menu
+let navbar = document.querySelector(".navbar");
+let btnMenu = document.querySelector(".toggle-button");
+//body statico al activar menu
+const body=document.querySelector("body");
+console.log(body);
+const toggleElement = (element, nameClass) => {
+	element.classList.toggle(nameClass)
+}
+btnMenu.addEventListener('click', () => {
+  toggleElement(navbar, 'active')
+  toggleElement(btnMenu, 'active')
+  toggleElement(body, "active");
+  // se desactiva
+  
+  shoppingCart.classList.remove("active");
+  loginForm.classList.remove("active");
+})
+// termina -menu
+window.onscroll = () =>{
 
-buttons.prev.addEventListener("click", () => swapCards("left"));
+  shoppingCart.classList.remove("active");
+  loginForm.classList.remove("active");
+  navbar.classList.remove("active");
+}
+//submenu
+const subMenuBtn = document.querySelectorAll(".submenu-btn");
+let children=document.querySelector(".menu-item-has-children");
+for(let i= 0; i< subMenuBtn.length;i++){
+  subMenuBtn[i].addEventListener("click", function(){
+    toggleElement(children, 'active')
+    if(window.innerWidth <700){
+      const subMenu = this.nextElementSibling;
+      const height =subMenu.scrollHeight;
+      if(subMenu.classList.contains("desplegar")){
+        subMenu.classList.remove("desplegar");
+        subMenu.removeAttribute("style");
 
-function swapCards(direction) {
-	const currentCardEl = cardsContainerEl.querySelector(".current--card");
-	const previousCardEl = cardsContainerEl.querySelector(".previous--card");
-	const nextCardEl = cardsContainerEl.querySelector(".next--card");
+      }else{
+        subMenu.classList.add("desplegar");
+        subMenu.style.height =height + "px";
+      }
+    }
+  });
+}
+//submenu termina
 
-	const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
-	const previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
-	const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
+// main- img slider
+const btnSlider = document.querySelectorAll(".nav-btn");
+const slider = document.querySelectorAll(".img-slider");
+const contents = document.querySelectorAll(".contentSlider");
+console.log(contents)
+let sliderNav =function(manual){
+  // uno por uno
+  btnSlider.forEach((btn)=>{
+    btn.classList.remove("active");
+  });
+  slider.forEach((slide)=>{
+    slide.classList.remove("active");
+  });
+  contents.forEach((content)=>{
+    content.classList.remove("active");
+  });
 
-	swapCardsClass();
-
-	removeCardEvents(currentCardEl);
-
-	function swapCardsClass() {
-		currentCardEl.classList.remove("current--card");
-		previousCardEl.classList.remove("previous--card");
-		nextCardEl.classList.remove("next--card");
-
-		currentBgImageEl.classList.remove("current--image");
-		previousBgImageEl.classList.remove("previous--image");
-		nextBgImageEl.classList.remove("next--image");
-
-		currentCardEl.style.zIndex = "50";
-		currentBgImageEl.style.zIndex = "-2";
-
-		if (direction === "right") {
-			previousCardEl.style.zIndex = "20";
-			nextCardEl.style.zIndex = "30";
-
-			nextBgImageEl.style.zIndex = "-1";
-
-			currentCardEl.classList.add("previous--card");
-			previousCardEl.classList.add("next--card");
-			nextCardEl.classList.add("current--card");
-
-			currentBgImageEl.classList.add("previous--image");
-			previousBgImageEl.classList.add("next--image");
-			nextBgImageEl.classList.add("current--image");
-		} else if (direction === "left") {
-			previousCardEl.style.zIndex = "30";
-			nextCardEl.style.zIndex = "20";
-
-			previousBgImageEl.style.zIndex = "-1";
-
-			currentCardEl.classList.add("next--card");
-			previousCardEl.classList.add("current--card");
-			nextCardEl.classList.add("previous--card");
-
-			currentBgImageEl.classList.add("next--image");
-			previousBgImageEl.classList.add("current--image");
-			nextBgImageEl.classList.add("previous--image");
-		}
-	}
+  btnSlider[manual].classList.add("active");
+  slider[manual].classList.add("active");
+  contents[manual].classList.add("active");
 }
 
-function updateCard(e) {
-	const card = e.currentTarget;
-	const box = card.getBoundingClientRect();
-	const centerPosition = {
-		x: box.left + box.width / 2,
-		y: box.top + box.height / 2,
-	};
-	let angle = Math.atan2(e.pageX - centerPosition.x, 0) * (35 / Math.PI);
-	gsap.set(card, {
-		"--current-card-rotation-offset": `${angle}deg`,
-	});
-}
+btnSlider.forEach((btns,i)=>{
+  btns.addEventListener("click", ()=>{
+    sliderNav(i);
+  });
+});
 
-function initCardEvents() {
-	const currentCardEl = cardsContainerEl.querySelector(".current--card");
-	currentCardEl.addEventListener("pointermove", updateCard);
-}
-
-initCardEvents();
-
-function removeCardEvents(card) {
-	card.removeEventListener("pointermove", updateCard);
-}
-
-function init() {
-	let tl = gsap.timeline();
-
-	tl.to(cardsContainerEl.children, {
-		delay: 0.5,
-		duration: 0.5,
-		stagger: {
-			ease: "power4.inOut",
-			from: "right",
-			amount: 0.1,
-		},
-		"--card-translateY-offset": "0%",
-	}).to(
-		[buttons.prev, buttons.next],
-		{
-			duration: 0.4,
-			opacity: 1,
-			pointerEvents: "all",
-		},
-		"-=0.4"
-	);
-}
-
-const waitForImages = () => {
-	const images = [...document.querySelectorAll("img")];
-	const totalImages = images.length;
-	let loadedImages = 0;
-
-	gsap.set(cardsContainerEl.children, {
-		"--card-translateY-offset": "100vh",
-	});
-	gsap.set([buttons.prev, buttons.next], {
-		pointerEvents: "none",
-		opacity: "0",
-	});
-
-	images.forEach((image) => {
-		imagesLoaded(image, (instance) => {
-			if (instance.isComplete) {
-				loadedImages++;
-				let loadProgress = loadedImages / totalImages;
-
-				if (totalImages == loadedImages) {
-					gsap.timeline().call(() => init());
-				}
-			}
-		});
-	});
-};
-
-waitForImages();
+//  main- img-termina

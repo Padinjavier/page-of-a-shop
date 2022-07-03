@@ -1,6 +1,6 @@
 <?php
 
-require '../database.php';
+require '../php/database.php';
 
 if(isset($_POST['GUARDAR'])){
     $nombre=$_POST['NOMBRE'];

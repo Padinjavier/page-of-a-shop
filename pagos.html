@@ -10,52 +10,73 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <h2>RESERVACIONES</h2>
-        <form action="" method="post">
-            <div class="part_uno">
-                <label for="">NOMBRES Y APELLIDOS
-                    <input type="text" name="nombre">
-                    <input type="text" name="apellido">
-                </label>
-                <label for="">Correo 
-                    <input type="email" name="" id="">
-                </label>
-                <label for="identidad">
-                    DOCUMENTO DE IDENTIDAD
-                    <select name="select" id="">
-                        <option value="1">DNI</option>
-                        <option value="2">CARNET DE EXTRANJERIA</option>
-                    </select>
-                    <input type="text">
-                </label>
-                <label for="">Número Telefónico
-                    <input type="tel" name="" id="">
-                </label>
-                <label>Fecha<input type="date" name="date" id="date"></label>
-                
-            </div>
-            <div class="part_dos">
-                <label for="deportes">
-                    PAQUETES
-                    <p><input type="checkbox" name="" id=""><span>Cuatrimoto</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>Motocros</span> <input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>bicicletas</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>Canotaje</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>Tirolesa</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>Rapel</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                    <p><input type="checkbox" name="" id=""><span>Campo de cuerdas</span><input type="number" name="" id="" min="1" placeholder="PERSONAS"> <input type="text" name="" id="" readonly></p>
-                </label>
-                <label for="">
-                    Total a Pagar
-                    <input type="text" name="totalpagar" id="">
-                </label>
-                <label for="">
-                    Se le registrará la información y solicitará el pago Transacción o Yape
-                    <input type="submit" value="Enviar">
-                </label>
-            </div>
-        </form>
+    </header>
+    <main>
+        <div class="formulario_img">
+            <form action="" method="post">
+                <fieldset class="part_uno">
+                    <legend>Datos personales</legend>
+                    <div class="contenedor">
+                        <label for="">Nombre</label>                        
+                            <input type="text" name="nombre">
+
+                        <label for="">Apellido</label>
+                            <input type="text" name="apellido">
+
+                        <label for="">Correo</label>
+                            <input type="email" name="" id="">
+
+                        <label for="identidad">Documento de Identidad</label>
+                            <select name="select" id="">
+                                <option value="1">DNI</option>
+                                <option value="2">CARNET DE EXTRANJERIA</option>
+                            </select>
+                            <input type="text">
+                        <label for="">Número Telefónico</label>
+                            <input type="tel" name="" id="">
+                    </div>
+                </fieldset>
+
+                <fieldset class="part_dos">
+                    <legend>Deportes a reservar</legend>                
+                    <div class="contenedor">
+                        
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Canotaje</span>
+                            <input type="number" name=""id="" min="1" placeholder="PERSONAS">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Cuatrimoto</span> 
+                            <input type="number" name="" id=""min="1" placeholder="PERSONAS">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Bicicletas</span>
+                            <input type="number" name=""id="" min="1" placeholder="PERSONAS">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Canotaje</span>
+                            <input type="number" name="" id=""min="1" placeholder="PERSONAS">
+                        </div>
+                        <label for="">
+                            Total a Pagar
+                            <input type="text" name="totalpagar" id="">
+                        </label>
+                        
+                        <label>Fecha<input type="date" name="date" id="date"></label>
+                        <label for="">
+                            Se le registrará la información y solicitará el pago Transacción o Yape
+                            <input type="submit" value="Enviar">
+                        </label>                        
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </main>
 </body>
 

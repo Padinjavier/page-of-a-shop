@@ -1,6 +1,6 @@
 <?php
 
-require '../database.php';
+require '../php/database.php';
 
 if(isset($_GET['ID'])) {
     $id = $_GET['ID'];

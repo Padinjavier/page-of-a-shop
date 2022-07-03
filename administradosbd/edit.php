@@ -1,5 +1,5 @@
 <?php
-require '../database.php';
+require '../php/database.php';
 // echo($_GET['ID']);
 $nombre = '';
 $descripcion= '';

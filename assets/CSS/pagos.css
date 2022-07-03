@@ -1,93 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-*{
+
+* {
+    font-family: 'Amaranth', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
 }
-:root{
-    --font-family: 'Quicksand', sans-serif; color:rgb(165, 204, 250); 
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* hack para Box Model*/
+    scroll-snap-type: y mandatory;
 }
-body{
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root {
+    /* --font-family: 'Quicksand', sans-serif; color:rgb(165, 204, 250);  */
+    --yellow: #FFD24C;
+    --blue: #2069A7;
+    --griss: #434040;
+    --white: #fff;
+    --light-color: #666;
+}
+
+body {
     width: 100%;
     height: 100vh;
-    font-family: sans-serif;
-    background-image: url(../IMAGES/lunahuana-image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-top: 20px;
+    font-size: 1.25rem;
 }
-main{
+
+header {
     width: 100%;
-    height: 100vh;
+    height: 10%;
+    padding: 1.5rem;
+    color: var(--white);
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    /* height: 90%; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--blue);
 }
-h2 {
-    color: rgb(73, 73, 238);
-}
-form{
-    width: 95%;
-    height: 95%;
+
+form {
+    width: 100%;
+    padding: 3rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-evenly; */
-    row-gap: 30px;
-    background: rgba(5, 7, 12, 0.75);
-    padding: 10px;
+    row-gap: 3.5rem;
 }
-.part_uno{
+
+/* parte de datos personales */
+.part_uno {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
+    row-gap: 2.5rem;
+    align-items: flex-start;
 }
+.part_uno .contenedor{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(51, 255, 0);
+}
+
+
+
+
+
+
+/* parte de datos de deportes */
 .part_dos {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
+    row-gap: 2.5rem;
+    align-items: flex-start;
 }
-label{
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    row-gap: 15px;
-}
-label[for='deportes'] input[type="text"],
-label[for='deportes'] input[type="number"]{
-    width: 90px;
-}
-label[for='deportes'] p{
-    width: 100%;
+.part_dos .contenedor{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-label[for='deportes'] span {
-    width: 30%;
+    flex-direction: column;
+    border: 1px solid red;
 }
 
 
 
+.formulario_img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
 
+figure {
+    display: none;
+    width: 50%;
+}
+
+img {
+    width: 100%;
+}
 
 @media (min-width: 680px) {
-    main{
+    main {
         height: 100%;
     }
-    form{
+
+    form {
         flex-direction: row;
     }
+    .part_dos label {
+        width: 85%;
+        /* text-align: center; */
+    }
+
+    figure {
+        display: flex;
+        float: left;
+    }
+
 }
 
 @media screen and (min-width: 768px) {
-
+    
 
 }

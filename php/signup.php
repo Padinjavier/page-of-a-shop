@@ -62,7 +62,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
             <figure class="desktop-img"></figure>
             <div class="mobill">
                 <figure class="mobile-img">
-                    <img src="./assets/images/5.jpg" alt="">
+                    <img src="../assets/img/agencia.jpg" alt="">
                 </figure>
                 <span>
                     <a href="./login.php"><i class="fa-solid fa-arrow-left" id="exitsignup"></i></a>

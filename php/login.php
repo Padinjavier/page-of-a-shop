@@ -17,7 +17,8 @@ if (!empty($_POST['nombre']) && !empty($_POST['contraseña'])) {
 
   if (count($results) > 0 && password_verify($_POST['contraseña'], $results['contraseña'])) {
     $_SESSION['user_id'] = $results['id'];
-    header("Location:index.php");
+    header("Location:../testimonios.php");
+    // require'../testimonios.php';
   } else {
     if (!password_verify($_POST['contraseña'], $results['contraseña'])) {
       $message = '<h3 id="lg-err"> contraseña incorrecta</h3>';
@@ -46,7 +47,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['contraseña'])) {
       </figure>
       <div class="mobill">
         <figure class="mobile-img">
-          <img src="../assets/images/5.webp" alt="">
+          <img src="../assets/img/agencia.jpg" alt="">
         </figure>
         <form action="login.php" method="post" class="formulario">
           <p class="imput">
@@ -61,7 +62,6 @@ if (!empty($_POST['nombre']) && !empty($_POST['contraseña'])) {
             <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
             <label for="">Contraseña</label>
           </p>
-          <p><input type="checkbox" name="" id="nrobot" required>No soy un robot</p>
           <a class="btmlogin">
             <span></span>
             <span></span>
