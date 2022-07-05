@@ -863,14 +863,32 @@ body.dark .sub div p:nth-child(3) {
     z-index: 1;
     width: 100%;
     text-align: center;
+    position: relative;
+}
+/* botones para slicer de testimonis solo (.arrow-slider) */
+.arrow-slider {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    top: 50%;
+    bottom: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blue);
+    font-size: 3rem;
 }
 .testimonials-carousel .swiper-slide{
-    padding: 2rem 0; 
+    padding: 2rem 0;
+    /* display: none; */
+}
+.testimonials-carousel .swiper-slide.active{
+    display: block;
 }
 .testi-item{
     transition: all .3s ease-in-out;
     transform: scale(.9);
-    opacity: .9;
+    /* opacity: .9; */
 }
 .testi-avatar{
     position: absolute;
@@ -896,12 +914,12 @@ body.dark .sub div p:nth-child(3) {
     transition: all 400ms linear;
 }
 .testimonials-text-before{
-    top: 2.5rem;
-    left: 3rem;
+    top: 0rem;
+    left: 2rem;
 }
 .testimonials-text-after{
-    bottom: 2.5rem;
-    right: 3rem;
+    bottom: 0rem;
+    right: 2rem;
 }
 .testimonials-text{
     padding: 7rem 2rem 5rem 2rem;
@@ -919,7 +937,7 @@ body.dark .testimonials-text {
     color: var(--blue);
 }
 .testimonials-text p{
-    color: #878c9f;
+    color: var(--blue);
     font-size: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
@@ -927,7 +945,7 @@ body.dark .testimonials-text {
     padding: 1rem 0;
 }
 .testimonials-avatar h3{
-    color: #7d93b2;
+    color: var(--blue);
     font-size: 1.8rem;
 }
 @media (min-width: 700px) {

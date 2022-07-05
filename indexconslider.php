@@ -1,3 +1,35 @@
+<?php
+session_start();
+require "./php/database.php";
+// para traer todos los testimonios
+$stmt = $conn->prepare('select * from testimonios');
+$stmt->execute();
+$lista_imagenes = $stmt->fetchAll();
+
+
+// para traer los datos del usuario que inicio seccion para que pueda dar su termimonio
+if (isset($_SESSION['user_id'])) {
+  $records = $conn->prepare('SELECT id, nombre, contraseña FROM usuarios WHERE id = :id');
+  $records->bindParam(':id', $_SESSION['user_id']);
+  $records->execute();
+  $results = $records->fetch(PDO::FETCH_ASSOC);
+  $user = null;
+  if (count($results) > 0) {
+    $user = $results;
+  }
+}
+
+if(!empty($_POST['testimonio'])){
+    $nombre = $user['nombre'];
+    $testi = $_POST['testimonio'];
+    $punto = $_POST['punto'];
+    $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion) VALUES ('$nombre','$testi','$punto')";
+    $stmt = $conn->prepare($envio);
+    if ($stmt->execute()) {
+        header("Location:testimonios.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +45,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    
+
+    
     <link rel="stylesheet" href="./assets/CSS/style.css" />
     <link rel="icon" href="./assets/img/logo.jpg" />
+
+
+
+
+    <!-- para slider de testimonios -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+
+
   </head>
   <body>
     <!-- header start -->
@@ -53,7 +100,7 @@
             </ul>
           </li>
           <li class="menu-item btn-position">
-            <a href="https://wa.me/910089718/?text=Estoy interesado en ti beibi." target="_blank">Contáctanos <i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/910089718/?text=Estoy%20interesado%20en%20ti%20beibi." target="_blank">Contáctanos <i class="fab fa-whatsapp"></i></a>
           </li>
         </ul>
       </nav>
@@ -143,7 +190,7 @@
           <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
         </div>
         <p>forget your password <a href="#">Click here</a></p>
-        <p>don't have an account <a href="#">Create now</a></p>
+        <p>don't have an account <a href="./php/signup.php" target="_blank">Create now</a></p>
         <input type="submit" value="login now" class="btn background" />
       </form>
     </header>
@@ -303,108 +350,105 @@
       <!-- section gallery termina -->
       <!-- section testimonios -->
       <section class="section-testimonio" >
+        <!-- <div class="arrow-slider">
+          <i class="fa-solid fa-angle-left testileft"></i>
+          <i class="fa-solid fa-angle-right testiright"></i>
+        </div> -->
+        <!-- estilo de las flechas -->
+        <style>
+          .slick-next:before, .slick-prev:before {
+                font-size: 3rem;
+                /* line-height: 1;
+                opacity: .75; */
+                color: #2196f3;
+            }
+            .slick-arrow{
+                  visibility: hidden;
+            }
+            .slick-prev {
+                left: -15px;
+                z-index: 2;
+            }
+            .slick-next {
+                right: -5px;
+                z-index: 2;
+            }
+            .swiper-slide{
+              height: 350px;
+            }
+            .testi-item{
+              height: 100%;
+              }
+            .testimonials-text{
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-around;
+              }
+              
+              @media (min-width: 800px) {
+                .slick-arrow{
+                  visibility:visible
+                }
+              }
+        </style>
         <div class="sub-title" data-aos="fade-down"><h2>Testimonios</h2></div>
         <div class="testimonials-carousel">
-          <div class="swiper-wrapper" data-aos="fade-right">
-            <!-- one -->
-            <div class="swiper-slide">
-              <div class="testi-item">
-                <div class="testi-avatar">
-                  <img src="./assets/img/testi1.png" alt="cliente" />
-                </div>
-                <div class="testimonials-text-before">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <div class="testimonials-text">
-                  <div class="listing-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+          <div class="swiper-wrapper slider-nav" data-aos="fade-right">
+            <!-- trae los datos primero imprime todos del id 1 luego el 2 ... -->
+          <?php
+            foreach ($lista_imagenes as $datos) {
+                $x="si";
+                if(($datos['aprobado']) == $x){
+                ?>
+                <div class="swiper-slide">
+                  <div class="testi-item">
+                    <div class="testi-avatar">
+                      <!-- <img src="./assets/img/testi1.png" alt="cliente" /> -->
+                      
+                      <img src="./assets/img/certificado.webp" alt="cliente" />
+                    </div>
+                    <div class="testimonials-text-before">
+                      <i class="fa fa-quote-left"></i>
+                    </div>
+                    <div class="testimonials-text">
+                      <div class="listing-rating" style="font-size: 17px;">
+                      <?php
+                      // se inicia i desde uno porque la puntuacion es de 1 a 5 imprime las estrellas doradas
+                      $i=1;
+                      while ($i <= $datos['puntuacion']){
+                          echo "<i class='fa fa-star' style='color: #ffa500;'></i>";
+                      $i++;
+                      }
+                      //de le suma uno a la puntuacion porque si son 3 estrellas la tercera ya es dorada falta 4 y 5
+                      //pero si no se suma va a imprimer en negras a 3 4 5 
+                      $datos['puntuacion']++;
+                      while ($datos['puntuacion'] <= 5){
+                          echo "<i class='fa fa-star'></i>";
+                          $datos['puntuacion']++;
+                      }                   
+                        ?>
+                      </div>
+                      <!-- trae los tertimonios  -->
+                      <p>
+                        <?=$datos['testimonio']; ?>
+                      </p>
+                      <!-- trae el nombre del que dejo su testimonio -->
+                      <div class="testimonials-avatar"><h3><?=$datos['nombre']; ?></h3></div>
+                    </div>
+                    <!-- .testimonials-text-->
+                    <div class="testimonials-text-after">
+                      <i class="fa fa-quote-right"></i>
+                    </div>
                   </div>
-                  <p>
-                    Gracias a las agencia MJ aventura y diversión extrema por su
-                    gran servicio, sobre todo la atención que me brindaron en el
-                    canotaje y canopy. Excelente! Los recomiendo muchísimo.
-                  </p>
-                  <div class="testimonials-avatar"><h3>Diana Carbonel</h3></div>
+                  <!-- .testi-item-->
                 </div>
-                <!-- .testimonials-text-->
-                <div class="testimonials-text-after">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-              </div>
-              <!-- .testi-item-->
-            </div>
-            <!-- .swiper-slide- one-->
-            <!-- two -->
-            <div class="swiper-slide">
-              <div class="testi-item">
-                <div class="testi-avatar">
-                  <img src="./assets/img/testi2.png" alt="cliente" />
-                </div>
-                <div class="testimonials-text-before">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <div class="testimonials-text">
-                  <div class="listing-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                  <p>
-                    Excelente servicio del canotaje. Los chicos de la cultura
-                    estamos muy contentos por la experiencia. Gracias por todo,
-                    realmente fue un gran servicio, están super
-                    recomendadísimos.
-                  </p>
-                  <div class="testimonials-avatar"><h3>John Doe</h3></div>
-                </div>
-                <!-- .testimonials-text-->
-                <div class="testimonials-text-after">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-              </div>
-              <!-- .testi-item-->
-            </div>
-            <!-- .swiper-slide- two-->
-            <!-- three -->
-            <div class="swiper-slide">
-              <div class="testi-item">
-                <div class="testi-avatar">
-                  <img src="./assets/img/testi3.png" alt="cliente" />
-                </div>
-                <div class="testimonials-text-before">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <div class="testimonials-text">
-                  <div class="listing-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                  <p>
-                    Disfrutamos de nuestra estadía este fin de semana en el
-                    hermoso Lunahuaná y sobretodo nos sentimos muy contentos por
-                    el gran servicio brindado en canotaje y paseo turístico.
-                    Gracias, los recomiendo!
-                  </p>
-                  <div class="testimonials-avatar">
-                    <h3>Fiorella Sánchez</h3>
-                  </div>
-                </div>
-                <!-- .testimonials-text-->
-                <div class="testimonials-text-after">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-              </div>
-              <!-- .testi-item-->
-            </div>
+
+                <?php
+                }
+            }
+            ?>
             <!-- .swiper-slide- three-->
           </div>
           <!-- .swiper-wrapper -->

@@ -10,7 +10,8 @@ btnSwitch.addEventListener("click", ()=>{
 let shoppingCart=document.querySelector(".shopping-cart");
 document.querySelector("#cart-btn").onclick =()=>{
 shoppingCart.classList.toggle("active");
-body.classList.toggle("active");
+// body.classList.toggle("active");  preguntar a netis
+
   // se desactiva
 
 loginForm.classList.remove("active");
@@ -20,7 +21,8 @@ navbar.classList.remove("active");
 let loginForm=document.querySelector(".login-form");
 document.querySelector("#login-btn").onclick =()=>{
 loginForm.classList.toggle("active");
-body.classList.toggle("active");
+// body.classList.toggle("active"); preguntar a netis
+
   // se desactiva
 
 shoppingCart.classList.remove("active");
@@ -44,7 +46,7 @@ let navbar = document.querySelector(".navbar");
 let btnMenu = document.querySelector(".toggle-button");
 //body statico al activar menu
 const body=document.querySelector("body");
-console.log(body);
+// console.log(body);
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
 }
@@ -90,7 +92,7 @@ for(let i= 0; i< subMenuBtn.length;i++){
 const btnSlider = document.querySelectorAll(".nav-btn");
 const slider = document.querySelectorAll(".img-slider");
 const contents = document.querySelectorAll(".contentSlider");
-console.log(contents)
+// console.log(contents)
 let sliderNav =function(manual){
   // uno por uno
   btnSlider.forEach((btn)=>{
@@ -114,4 +116,47 @@ btnSlider.forEach((btns,i)=>{
   });
 });
 
-//  main- img-termina
+
+if((screen.width)> 350 & (screen.width) < 600){
+  $('.slider-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    focusOnSelect: true
+  });
+}
+
+if((screen.width)> 600 & (screen.width)< 800){
+  $('.slider-nav').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: true,
+    focusOnSelect: true
+  });
+}
+
+if((screen.width) > 800){
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    focusOnSelect: true,
+  });
+}
+
+
+$('a[data-slide]').click(function(e) {
+  e.preventDefault();
+  var slideno = $(this).data('slide');
+  $('.slider-nav').slick('slickGoTo', slideno - 1);
+});
+
+
+console.log("La resolución de tu pantalla es: " + screen.availWidth + " x " + screen.height) 
+
+
+// var orientacion = matchMedia("(orientation: portrait)");
+// orientacion.addListener(function(mql){
+// document.getElementById('contador').className = mql.matches ? 'activo' : 'inactivo';
+// document.getElementById('contador').textContent++;
+// });
