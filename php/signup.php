@@ -108,6 +108,6 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
         <?php endif; ?>
     </main>
 </body>
-<script src="./assets/js/signup.js"></script>
+<script src="../assets/JS/signup.js"></script>
 
 </html>

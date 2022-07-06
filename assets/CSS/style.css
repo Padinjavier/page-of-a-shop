@@ -380,7 +380,7 @@ body.dark .login-form{
 /* mododark-login */
 .header .login-form.active{
     right: 2rem;
-    transition: .4s linear;
+    transition: .3s linear;
 }
 .header .login-form h3{
     font-size: 2.5rem;
@@ -782,6 +782,7 @@ body.dark .sub div {
 }
 .sub div figure img {
     height: 80%;
+    height: 12rem; /*preguntar a mariel */
 }
 .sub div p:nth-child(3) {
     width: 100%;
