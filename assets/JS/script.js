@@ -6,6 +6,7 @@ btnSwitch.addEventListener("click", ()=>{
     document.body.classList.toggle("dark");
     btnSwitch.classList.toggle("active");
 })
+
 // carta de precio
 let shoppingCart=document.querySelector(".shopping-cart");
 document.querySelector("#cart-btn").onclick =()=>{
@@ -61,7 +62,6 @@ btnMenu.addEventListener('click', () => {
 })
 // termina -menu
 window.onscroll = () =>{
-
   shoppingCart.classList.remove("active");
   loginForm.classList.remove("active");
   navbar.classList.remove("active");
@@ -194,23 +194,35 @@ function leerTexto(e) {
 
 
 
-const btnadmin = document.querySelector(".btn-admin")
-const opcomentarios = document.querySelector(".opcomentarios")
-const opdeportes = document.querySelector(".opdeportes")
-const opusuarios = document.querySelector(".opusuarios")
+// const btnadmin = document.querySelector(".btn-admin")
+// const opcomentarios = document.querySelector(".opcomentarios")
+// const opdeportes = document.querySelector(".opdeportes")
+// const opusuarios = document.querySelector(".opusuarios")
 
 
-console.log(opcomentarios)
-console.log(opdeportes)
-console.log(opusuarios)
+// console.log(opcomentarios)
+// console.log(opdeportes)
+// console.log(opusuarios)
 
 
 
-btnadmin.addEventListener("click", ()=>{
-  toggleElement(opcomentarios,'active');
-  toggleElement(opdeportes,'active');
-  toggleElement(opusuarios,'active');
-});
+// btnadmin.addEventListener("click", ()=>{
+//   toggleElement(opcomentarios,'active');
+//   toggleElement(opdeportes,'active');
+//   toggleElement(opusuarios,'active');
+// });
+// header
+const header = document.querySelector(".header")
+window.onscroll = function() {
+  console.log("Vertical: " + window.scrollY);
+  console.log("Horizontal: " + window.scrollX);
+if((window.scrollY)>534){
+  header.classList.add('active')
+}
+if((window.scrollY)<534){
+  header.classList.remove('active')
+}
+};
 
 
 

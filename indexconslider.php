@@ -103,10 +103,10 @@ if (isset($_POST['Enviartestimonio'])) {
             <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
           <ul class="sub-menu">
             <li class="menu-item item-sub">
-              <a href="#" class="menu__link menu__link--inside">Deportes de Aventura</a>
+              <a href="./deportes.html" class="menu__link menu__link--inside">Deportes de Aventura</a>
             </li>
             <li class="menu-item item-sub ps">
-              <a href="#" class="menu__link menu__link--inside">Paseos turísticos</a>
+              <a href="./paseo.html" class="menu__link menu__link--inside">Paseos turísticos</a>
             </li>
           </ul>
         </li>
@@ -241,10 +241,11 @@ if (isset($_POST['Enviartestimonio'])) {
   <!-- sliderportada-fin -->
   <div class="container-padding">
     <!-- section-sobre nosotros -->
-    <div>
+    <div class="welcome">
       <?php if (!empty($user)) :  ?>
-        <h1>Bienvenido <?= $user['nombre'] ?></h1>
-        <a href="logout.php">cerrar sesión</a>
+        <h1 >Bienvenido <?= $user['nombre'] ?></h1>
+        <!-- <a href="logout.php">cerrar sesión</a> -->
+        <p>¡Gracias por registrarte!</p>
       <?php endif; ?>
     </div>
     <section class="sobreNosotros" id="sobrenosotros">

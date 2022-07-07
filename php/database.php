@@ -4,7 +4,7 @@ session_start();
 
 $server = "localhost";
 $username = "root";
-$password = "javier20";
+$password = "0173621360";
 $dbname = "login";
 
 try {

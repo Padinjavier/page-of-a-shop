@@ -33,7 +33,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                 $results = $records->fetch(PDO::FETCH_ASSOC);
 
                 $_SESSION['user_id'] = $results['id'];
-                header("Location:index.php");
+                header("Location:../indexconslider.php");
             } else {
                 $message = 'Lo sentimos, estamos teniendo problemas el crear su cuenta';
             }
@@ -65,7 +65,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                     <img src="../assets/img/agencia.jpg" alt="">
                 </figure>
                 <span>
-                    <a href="./login.php"><i class="fa-solid fa-arrow-left" id="exitsignup"></i></a>
+                    <a href="../indexconslider.php"><i class="fa-solid fa-arrow-left" id="exitsignup"></i></a>
                     <h2 class="title">Registrarse</h2>
                 </span>
                 <form action="signup.php" method="post">
