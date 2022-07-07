@@ -100,7 +100,6 @@ p{
     width: 100%;
     font-size: 1.5em;
     position: relative;
-    border: 1px solid red;
     display: flex;
     align-items: center;
 }
@@ -108,16 +107,16 @@ p{
 
 label {
     position: absolute;
-    top: 0.438rem;
-    left: 2.625rem;
+    top: 0rem;
+    left: 2rem;
     font-size: 1rem;
     pointer-events: none;
     transition: 0.2s;
 }
 input:focus~label,
 input:valid~label {
-    top: -0.5rem;
-    left: 2.313rem;
+    top: -1rem;
+    left: 2rem;
     font-size: 0.813rem;
 }
 label.active {

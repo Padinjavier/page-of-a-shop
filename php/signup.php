@@ -84,6 +84,14 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                         <input type="email" placeholder="" name="email" id="email" required>
                         <label for="" id="emailOK" class="">Email</label>
                     </p>
+                    <!-- <p>
+                        Sexo
+                        <p>Mujer
+                        <input type="checkbox" name="mujer" id=""></p>
+                        <p>Hombre
+                        <input type="checkbox" name="hombre" id=""></p>
+
+                    </p> -->
                     <p>
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" placeholder="" name="contraseña" id="password" required>

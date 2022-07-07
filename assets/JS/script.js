@@ -144,7 +144,6 @@ if((screen.width) > 800){
   });
 }
 
-
 $('a[data-slide]').click(function(e) {
   e.preventDefault();
   var slideno = $(this).data('slide');
@@ -152,64 +151,66 @@ $('a[data-slide]').click(function(e) {
 });
 
 
-// console.log("La resolución de tu pantalla es: " + screen.availWidth + " x " + screen.height) 
 
 
-// var orientacion = matchMedia("(orientation: portrait)");
-// orientacion.addListener(function(mql){
-// document.getElementById('contador').className = mql.matches ? 'activo' : 'inactivo';
-// document.getElementById('contador').textContent++;
-// });
+/*para llevar la puntuacion a la base datos cada input radio tiene uhn valor ese valor
+ se guarda en otro input y al enviar se lleva el valor de ese input ver consola el if es 
+ para evitar el error cuando no exista un inicio de seccion (sin logear) y que el resto de
+ js funcione sin problemas*/
+const login_s0n = document.querySelector(".verificaloginono")
+console.log(login_s0n.innerHTML)
+if((login_s0n.innerHTML)!=""){
+// const estrelle = document.querySelectorAll('input[type="radio"]');
+// const estrella = document.querySelector('input[type="radio"]:checked');
 
-// parte para el formulario de los testimonios
-const estrelle = document.querySelectorAll('input[type="radio"]');
-
-const estrella = document.querySelector('input[type="radio"]:checked');
-
-// //evento de los imputs y textareas
 const datos = {
-  nombre: "",
-  testimonio: "",
   punto:"",
 };
-//-----------------------------------------------------------------------------------
-const nombre = document.querySelector("#nombre");
-const testimonio = document.querySelector("#testimonio");
-const punto = document.querySelectorAll('input[type="radio"]');
 
+const punto = document.querySelectorAll('input[type="radio"]');
 
 var Myelement = document.querySelector('input[name="punto"]');
 console.log(Myelement.value);
 
-
 punto.forEach(punto =>{
     punto.addEventListener("input", function (e) {
     punto.addEventListener("input", leerTexto);
-    // console.log(e.target.value);
     Myelement.value = (e.target.value);
-    // console.log(Myelement.value);
+    console.log(Myelement.value);
 });
 })
 
 function leerTexto(e) {
     datos[e.target.id] = e.target.value;
-    // console.log(datos)
+}
+//fin del input para la puntuacion-----------
 }
 
-nombre.addEventListener("input", function (e) {
-  console.log(e.target.value);
+
+
+
+
+
+
+
+
+const btnadmin = document.querySelector(".btn-admin")
+const opcomentarios = document.querySelector(".opcomentarios")
+const opdeportes = document.querySelector(".opdeportes")
+const opusuarios = document.querySelector(".opusuarios")
+
+
+console.log(opcomentarios)
+console.log(opdeportes)
+console.log(opusuarios)
+
+
+
+btnadmin.addEventListener("click", ()=>{
+  toggleElement(opcomentarios,'active');
+  toggleElement(opdeportes,'active');
+  toggleElement(opusuarios,'active');
 });
-nombre.addEventListener("input", leerTexto);
-
-
-testimonio.addEventListener("input", function (e) {
-  console.log(e.target.value);
-});
-testimonio.addEventListener("input", leerTexto);
-
-
-
-
 
 
 
