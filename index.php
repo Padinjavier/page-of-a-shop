@@ -19,7 +19,7 @@ if (isset($_POST['btnlogin'])) {
 
   if (count($results) > 0 && password_verify($_POST['password'], $results['contraseña'])) {
     $_SESSION['user_id'] = $results['id'];
-    header("Location:./indexconslider.php");
+    header("Location:./index.php");
   } else {
     if (!password_verify($_POST['password'], $results['contraseña'])) {
       $message = '<p id="lg-err"> contraseña incorrecta</p>';
@@ -52,7 +52,7 @@ if (isset($_POST['Enviartestimonio'])) {
   $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion) VALUES ('$nombre','$testi','$punto')";
   $stmt = $conn->prepare($envio);
   if ($stmt->execute()) {
-    header("Location:./indexconslider.php");
+    header("Location:./index.php");
   }
 }
 
@@ -78,7 +78,6 @@ if (isset($_POST['Enviartestimonio'])) {
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
-
 </head>
 
 <body>
@@ -202,41 +201,44 @@ if (isset($_POST['Enviartestimonio'])) {
       </div>
     </section>
     <!-- sliderportada-inicio -->
-    <section class="home">
-      <img class="img-slider active" src="./assets/img/slider/portada1.webp" alt="portada" />
-      <img class="img-slider" src="./assets/img/slider/portada2.webp" alt="portada2" />
-      <img class="img-slider" src="./assets/img/slider/portada3.webp" alt="portada3" />
 
-      <div class="contentSlider active">
-        <h1>Disfruta del<br /><span>Canotaje</span></h1>
-        <p>
-          El miedo es la más grande discapacidad de todas, por eso ATRÉVETE y
-          siente la seguridad con nosotros.
-        </p>
-        <!-- <a href="#">Leer más</a> -->
-      </div>
-      <div class="contentSlider">
-        <h1>Diviérte en<br /><span>Lunahuaná</span></h1>
-        <p>
-          Si relajarte es lo que necesitas, pues visítanos en nuestra hermosa
-          tierra de Lunahuaná y pasa un grandioso fin de semana.
-        </p>
-        <!-- <a href="#">Read More</a> -->
-      </div>
-      <div class="contentSlider">
-        <h1>Disfruta tu<br /><span>Aventura</span></h1>
-        <p>
-          Disfruta de la compañía del sol, de los maravillosos deportes y del
-          gran paisaje que encontrarás en el maravilloso pueblo de Lunahuaná.
-        </p>
-        <!-- <a href="#">Read More</a> -->
-      </div>
-      <div class="slider-navigation">
-        <div class="nav-btn active"></div>
-        <div class="nav-btn"></div>
-        <div class="nav-btn"></div>
-      </div>
-    </section>
+    <section class="home">
+			<div class="carousel-item active">
+				<img src="./assets/img/slider/portada1.webp" alt="Forest" />
+				<div class="description">
+					<h1>Disfruta del<br /><span>Canotaje</span></h1>
+					<p>
+					  El miedo es la más grande discapacidad de todas, por eso ATRÉVETE y
+					  siente la seguridad con nosotros.
+					</p>
+				  </div>
+			</div>
+			<div class="carousel-item">
+				<img src="./assets/img/slider/portada2.webp" alt="Mountains" />
+				<div class="description">
+					<h1>Diviérte en<br /><span>Lunahuaná</span></h1>
+					<p>
+					  Si relajarte es lo que necesitas, pues visítanos en nuestra hermosa
+					  tierra de Lunahuaná y pasa un grandioso fin de semana.
+					</p>
+				  </div>
+			</div>
+			<div class="carousel-item">
+				<img src="./assets/img/slider/portada3.webp" alt="Camera" />
+				<div class="description">
+					<h1>Disfruta tu<br /><span>Aventura</span></h1>
+					<p>
+					  Disfruta de la compañía del sol, de los maravillosos deportes y del
+					  gran paisaje que encontrarás en el maravilloso pueblo de Lunahuaná.
+					</p>
+				  </div>
+			</div>
+			<div class="slider-navigation">
+				<div class="nav-btn"><i class="fa-solid fa-angle-down"></i></div>
+			</div>
+		</section>
+
+    
   </main>
   <!-- sliderportada-fin -->
   <div class="container-padding">
@@ -431,7 +433,7 @@ if (isset($_POST['Enviartestimonio'])) {
   <?php if (!empty($user)) :  ?>
     <div class="mandar-testimonio">
       <h2>Dejanos tu Comentario</h2>
-      <form action="indexconslider.php" method="post">
+      <form action="index.php" method="post">
         <fieldset>
           <label for="">Nombre</label>
           <input type="text" name="nombre" id="nombre" placeholder="<?= $user['nombre'] ?>" onmousedown="return false">

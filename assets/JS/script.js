@@ -87,34 +87,32 @@ for(let i= 0; i< subMenuBtn.length;i++){
   });
 }
 //submenu termina
+// slider del main
+const $sliders = document.querySelectorAll('.carousel-item')
 
-// main- img slider
-const btnSlider = document.querySelectorAll(".nav-btn");
-const slider = document.querySelectorAll(".img-slider");
-const contents = document.querySelectorAll(".contentSlider");
-// console.log(contents)
-let sliderNav =function(manual){
-  // uno por uno
-  btnSlider.forEach((btn)=>{
-    btn.classList.remove("active");
-  });
-  slider.forEach((slide)=>{
-    slide.classList.remove("active");
-  });
-  contents.forEach((content)=>{
-    content.classList.remove("active");
-  });
+const nextSlider = (sliders) => {
+	const totalSliders = sliders.length - 1
+	let indice
 
-  btnSlider[manual].classList.add("active");
-  slider[manual].classList.add("active");
-  contents[manual].classList.add("active");
+	sliders.forEach((slider, i) => {
+		if (slider.classList.contains('active')) {
+			slider.classList.remove('active')
+			indice = i + 1
+			if (indice > totalSliders) indice = 0
+		}
+	})
+
+	sliders[indice].classList.add('active')
 }
 
-btnSlider.forEach((btns,i)=>{
-  btns.addEventListener("click", ()=>{
-    sliderNav(i);
-  });
-});
+
+let runSlider = setInterval(() => {
+	nextSlider($sliders)
+}, 5000)
+
+
+document.onload = runSlider 
+// fin slider main
 
 
 if((screen.width)> 350 & (screen.width) < 600){
@@ -189,28 +187,6 @@ function leerTexto(e) {
 
 
 
-
-
-
-
-
-// const btnadmin = document.querySelector(".btn-admin")
-// const opcomentarios = document.querySelector(".opcomentarios")
-// const opdeportes = document.querySelector(".opdeportes")
-// const opusuarios = document.querySelector(".opusuarios")
-
-
-// console.log(opcomentarios)
-// console.log(opdeportes)
-// console.log(opusuarios)
-
-
-
-// btnadmin.addEventListener("click", ()=>{
-//   toggleElement(opcomentarios,'active');
-//   toggleElement(opdeportes,'active');
-//   toggleElement(opusuarios,'active');
-// });
 // header
 const header = document.querySelector(".header")
 window.onscroll = function() {

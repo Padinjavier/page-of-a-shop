@@ -649,31 +649,69 @@ body.dark .header .login-form {
 }
 
 /* main-slider */
-
+/* ------------------------- */
 .home {
-    padding: 5rem;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #2069A7;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+    background: var(--blue);
 }
-
-.home .contentSlider {
-    z-index: 888;
+.carousel-item {
+	height: 100vh;
+	position: relative;
+	display: none;
+}
+.carousel-item.active {
+	display: flex;
+	animation: showSlider 0.7s ease-in;
+    
+}
+@keyframes showSlider {
+	from {
+		opacity: 0;
+		clip-path: circle(10% at 0% 0%);
+	}
+	80% {
+		opacity: 1;
+	}
+	to {
+		clip-path: circle(150% at 50% 50%);
+	}
+}
+.carousel-item img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	animation-name: zoom;
+	animation-duration: 6s;
+}
+@keyframes zoom {
+	0%{
+		
+		transform: scale(1.5);
+	}
+	100%{
+		
+		transform: scale(1);
+	}
+	
+}
+.carousel-item .description {
+	position: absolute;
+	padding: 2rem 4rem;
+	top: 12rem;
+	width: 100%;
+	text-align: start;
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 0.2rem;
     color: var(--white);
-    width: 80%;
-    margin-top: 5rem;
-    display: none;
 }
+/* -------------------------- */
 
-.contentSlider.active {
-    display: block;
-}
-
-.home .contentSlider h1 {
+.home .description h1 {
     font-family: var(--font-title);
     font-size: 2.5rem;
     font-weight: bold;
@@ -681,24 +719,17 @@ body.dark .header .login-form {
     margin-bottom: 4rem;
 }
 
-.home .contentSlider h1 span {
+.home .description h1 span {
     font-family: var(--font-title);
     font-size: 4rem;
     font-weight: 600;
 }
 
-.home .contentSlider p {
+.home .description p {
     margin-bottom: 6.5rem;
     line-height: 2rem;
     letter-spacing: .1rem;
-}
-
-.home .contentSlider a {
-    background-color: var(--white);
-    padding: 1.5rem 3.5rem;
-    color: var(--griss);
-    font-size: 1.2rem;
-    border-radius: .5rem;
+    /* max-width: 45rem; */
 }
 
 .home img {
@@ -762,16 +793,16 @@ body.dark .header .login-form {
         width: 100%;
     }
 
-    .home .contentSlider h1 {
+    .home .description h1 {
         font-size: 5rem;
         margin-bottom: 3rem;
     }
 
-    .home .contentSlider h1 span {
+    .home .description h1 span {
         font-size: 7rem;
     }
 
-    .home .contentSlider p {
+    .home .description p {
         padding-right: 20rem;
         font-size: 1.5rem;
         line-height: normal;

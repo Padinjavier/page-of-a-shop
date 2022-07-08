@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header('Location:../indexconslider.php');
+  header('Location:../index.php');
 ?>
