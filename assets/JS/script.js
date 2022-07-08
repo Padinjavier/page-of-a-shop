@@ -190,8 +190,8 @@ function leerTexto(e) {
 // header
 const header = document.querySelector(".header")
 window.onscroll = function() {
-  console.log("Vertical: " + window.scrollY);
-  console.log("Horizontal: " + window.scrollX);
+  // console.log("Vertical: " + window.scrollY);
+  // console.log("Horizontal: " + window.scrollX);
 if((window.scrollY)>534){
   header.classList.add('active')
 }
