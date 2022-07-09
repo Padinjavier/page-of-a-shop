@@ -704,7 +704,6 @@ body.dark .header .login-form {
 	width: 100%;
 	text-align: start;
 	font-size: 2rem;
-	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.2rem;
     color: var(--white);
@@ -744,33 +743,17 @@ body.dark .header .login-form {
 
 .slider-navigation {
     z-index: 888;
-    position: relative;
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    transform: translateY(8rem);
-    margin-bottom: 1.2rem;
 }
-
-.slider-navigation .nav-btn {
-    width: 1.2rem;
-    height: 1.2rem;
-    background-color: var(--white);
-    border: var(--yellow);
-    border-radius: 50%;
-    box-shadow: 0 0 .2rem rgba(255, 255, 255, .5);
-    transition: .3s ease;
-    cursor: pointer;
+.slider-navigation i{
+    font-size: 4rem;
+    color: var(--white);
 }
-.slider-navigation .nav-btn:not(:last-child) {
-    margin-right: 2rem;
-}
-
-.slider-navigation .nav-btn.active {
-    background: var(--yellow);
-    transform: scale(1.2);
-}
-
 .img-slider {
     position: absolute;
     width: 100%;
@@ -803,7 +786,8 @@ body.dark .header .login-form {
     }
 
     .home .description p {
-        padding-right: 20rem;
+        /* padding-right: 20rem; */
+        max-width: 500px;
         font-size: 1.5rem;
         line-height: normal;
         letter-spacing: normal;

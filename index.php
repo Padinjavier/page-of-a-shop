@@ -234,18 +234,16 @@ if (isset($_POST['Enviartestimonio'])) {
 				  </div>
 			</div>
 			<div class="slider-navigation">
-				<div class="nav-btn"><i class="fa-solid fa-angle-down"></i></div>
+        <a href="#cc"><i class="fa-solid fa-angle-down" id="cc"></i></a>
 			</div>
 		</section>
-
-    
   </main>
   <!-- sliderportada-fin -->
   <div class="container-padding">
     <!-- section-sobre nosotros -->
-    <div class="welcome">
+    <div class="welcome" >
       <?php if (!empty($user)) :  ?>
-        <h1 >Bienvenido <?= $user['nombre'] ?></h1>
+        <h1>Bienvenido <?= $user['nombre'] ?></h1>
         <!-- <a href="logout.php">cerrar sesión</a> -->
         <p>¡Gracias por registrarte!</p>
       <?php endif; ?>
