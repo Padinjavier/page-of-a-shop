@@ -65,12 +65,12 @@ if (isset($_POST['Enviartestimonio'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MenuProyecto</title>
+  <title>MJ Lunahuaná</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./assets/CSS/style.css" />
-  <link rel="icon" href="./assets/img/logo.jpg" />
+  <link rel="icon" href="./assets/img/foter&logo/logotrans1.png" />
 
   <!-- para slider de testimonios -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
@@ -169,8 +169,8 @@ if (isset($_POST['Enviartestimonio'])) {
 
     <form action="" class="login-form" method="post">
       <?php if (!empty($user)) :  ?>
-        <h1>Bienvenido <?= $user['nombre'] ?></h1>
-        <a href="./php/logout.php">cerrar sesión</a>
+        <h1 class="heading">Bienvenido <span><?= $user['nombre'] ?></span></h1>
+        <a  href="./php/logout.php">cerrar sesión</a>
       <?php else : ?>
 
         <h3>User</h3>
@@ -192,13 +192,11 @@ if (isset($_POST['Enviartestimonio'])) {
   </header>
   <!-- header fin -->
   <main>
-    <section class="redes">
-      <div class="media-icons">
-        <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="fb" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="in"><i class="fab fa-instagram"></i></a>
-        <a href="https://web.facebook.com/messages/t/105332245187940" class="msg" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
-        <a href="#" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
+  <section class="redes">
+        <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="icon icon-fb" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-messenger" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </section>
     <!-- sliderportada-inicio -->
 
@@ -240,10 +238,11 @@ if (isset($_POST['Enviartestimonio'])) {
   </main>
   <!-- sliderportada-fin -->
   <div class="container-padding">
+
     <!-- section-sobre nosotros -->
     <div class="welcome" >
       <?php if (!empty($user)) :  ?>
-        <h1>Bienvenido <?= $user['nombre'] ?></h1>
+        <h1 class="heading">Bienvenido <span><?= $user['nombre'] ?></span></h1>
         <!-- <a href="logout.php">cerrar sesión</a> -->
         <p>¡Gracias por registrarte!</p>
       <?php endif; ?>
@@ -420,17 +419,17 @@ if (isset($_POST['Enviartestimonio'])) {
   <!-- section ubicacion -->
   <div class="ubicacion">
     <div class="titulo">
-      <p>Ubicanos en Lunahuaná</p>
+      <p>Ubícanos en Lunahuaná</p>
       <i class="fa-solid fa-location-dot"></i>
     </div>
     <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d243.00955300439674!2d-76.14160648364557!3d-12.962069519885972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1655104444634!5m2!1ses-419!2spe" width="400" height="300" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497663.5124391337!2d-76.14358010000002!3d-12.972095199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fe9c19ac92e71%3A0xfd4b1004743ddee3!2sMJ%20Lunahuan%C3%A1!5e0!3m2!1ses!2spe!4v1657477533072!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   <!-- seccion de lformulario para los comentarios -->
   <?php if (!empty($user)) :  ?>
     <div class="mandar-testimonio">
-      <h2>Dejanos tu Comentario</h2>
+      <h2>Déjanos tu Comentario</h2>
       <form action="index.php" method="post">
         <fieldset>
           <label for="">Nombre</label>
@@ -438,7 +437,7 @@ if (isset($_POST['Enviartestimonio'])) {
           <!-- <input type="text" name="nombre" id=""> -->
           <label for="">Testimonio</label>
           <input type="text" name="testimonio" id="testimonio">
-          <label for="">Puntuacion</label>
+          <label for="">Puntuación</label>
           <p class="clasificacion">
             <input id="radio1" type="radio" name="estrellas" value="5">
             <label for="radio1">★</label>
@@ -477,16 +476,18 @@ if (isset($_POST['Enviartestimonio'])) {
         <h3>Código QR yape</h3>
         <img class="codigoqr" src="./assets/img/foter&logo/qr.png" alt="qr" />
         <h3>Medios de Pago</h3>
-        <figure class="pagos">
-          <img src="./assets/img/foter&logo/visa.png" alt="visa" />
+        <div class="pagos">
+          <i class="fa-brands fa-cc-visa"></i>
           <img src="./assets/img/foter&logo/yape.png" alt="yape" />
-        </figure>
+        </div>
       </div>
     </div>
     <div class="grupo-2">
       <small>&copy; 2022 <b>MJ</b> - Todos los derechos reservados</small>
     </div>
   </footer>
+
+  
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="./assets/JS/script.js"></script>
 </body>

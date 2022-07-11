@@ -6,15 +6,10 @@ btnSwitch.addEventListener("click", ()=>{
     document.body.classList.toggle("dark");
     btnSwitch.classList.toggle("active");
 })
-
 // carta de precio
 let shoppingCart=document.querySelector(".shopping-cart");
 document.querySelector("#cart-btn").onclick =()=>{
 shoppingCart.classList.toggle("active");
-// body.classList.toggle("active");  preguntar a netis
-
-  // se desactiva
-
 loginForm.classList.remove("active");
 navbar.classList.remove("active");
 }
@@ -22,10 +17,6 @@ navbar.classList.remove("active");
 let loginForm=document.querySelector(".login-form");
 document.querySelector("#login-btn").onclick =()=>{
 loginForm.classList.toggle("active");
-// body.classList.toggle("active"); preguntar a netis
-
-  // se desactiva
-
 shoppingCart.classList.remove("active");
 navbar.classList.remove("active");
 }
@@ -47,7 +38,6 @@ let navbar = document.querySelector(".navbar");
 let btnMenu = document.querySelector(".toggle-button");
 //body statico al activar menu
 const body=document.querySelector("body");
-// console.log(body);
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
 }
@@ -55,8 +45,6 @@ btnMenu.addEventListener('click', () => {
   toggleElement(navbar, 'active')
   toggleElement(btnMenu, 'active')
   toggleElement(body, "active");
-  // se desactiva
-  
   shoppingCart.classList.remove("active");
   loginForm.classList.remove("active");
 })
@@ -78,7 +66,6 @@ for(let i= 0; i< subMenuBtn.length;i++){
       if(subMenu.classList.contains("desplegar")){
         subMenu.classList.remove("desplegar");
         subMenu.removeAttribute("style");
-
       }else{
         subMenu.classList.add("desplegar");
         subMenu.style.height =height + "px";
@@ -86,14 +73,11 @@ for(let i= 0; i< subMenuBtn.length;i++){
     }
   });
 }
-//submenu termina
 // slider del main
 const $sliders = document.querySelectorAll('.carousel-item')
-
 const nextSlider = (sliders) => {
 	const totalSliders = sliders.length - 1
 	let indice
-
 	sliders.forEach((slider, i) => {
 		if (slider.classList.contains('active')) {
 			slider.classList.remove('active')
@@ -101,20 +85,13 @@ const nextSlider = (sliders) => {
 			if (indice > totalSliders) indice = 0
 		}
 	})
-
 	sliders[indice].classList.add('active')
 }
-
-
 let runSlider = setInterval(() => {
 	nextSlider($sliders)
 }, 5000)
-
-
 document.onload = runSlider 
-// fin slider main
-
-
+// testimonios mediasquery
 if((screen.width)> 350 & (screen.width) < 600){
   $('.slider-nav').slick({
     slidesToShow: 1,
@@ -123,7 +100,6 @@ if((screen.width)> 350 & (screen.width) < 600){
     focusOnSelect: true
   });
 }
-
 if((screen.width)> 600 & (screen.width)< 800){
   $('.slider-nav').slick({
     slidesToShow: 2,
@@ -132,7 +108,6 @@ if((screen.width)> 600 & (screen.width)< 800){
     focusOnSelect: true
   });
 }
-
 if((screen.width) > 800){
   $('.slider-nav').slick({
     slidesToShow: 3,
@@ -141,15 +116,11 @@ if((screen.width) > 800){
     focusOnSelect: true,
   });
 }
-
 $('a[data-slide]').click(function(e) {
   e.preventDefault();
   var slideno = $(this).data('slide');
   $('.slider-nav').slick('slickGoTo', slideno - 1);
 });
-
-
-
 
 /*para llevar la puntuacion a la base datos cada input radio tiene uhn valor ese valor
  se guarda en otro input y al enviar se lleva el valor de ese input ver consola el if es 
@@ -160,11 +131,9 @@ console.log(login_s0n.innerHTML)
 if((login_s0n.innerHTML)!=""){
 // const estrelle = document.querySelectorAll('input[type="radio"]');
 // const estrella = document.querySelector('input[type="radio"]:checked');
-
 const datos = {
   punto:"",
 };
-
 const punto = document.querySelectorAll('input[type="radio"]');
 
 var Myelement = document.querySelector('input[name="punto"]');
@@ -183,10 +152,6 @@ function leerTexto(e) {
 }
 //fin del input para la puntuacion-----------
 }
-
-
-
-
 // header
 const header = document.querySelector(".header")
 window.onscroll = function() {
