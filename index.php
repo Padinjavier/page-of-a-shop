@@ -72,6 +72,8 @@ if (isset($_POST['Enviartestimonio'])) {
   <link rel="stylesheet" href="./assets/CSS/style.css" />
   <link rel="icon" href="./assets/img/foter&logo/logotrans1.png" />
 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <!-- para slider de testimonios -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
@@ -428,7 +430,7 @@ if (isset($_POST['Enviartestimonio'])) {
   </div>
   <!-- seccion de lformulario para los comentarios -->
   <?php if (!empty($user)) :  ?>
-    <div class="mandar-testimonio">
+    <div class="mandar-testimonio" data-aos="fade-right">
       <h2>Déjanos tu Comentario</h2>
       <form action="index.php" method="post">
         <fieldset>

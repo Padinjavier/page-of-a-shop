@@ -65,46 +65,49 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                 <figure class="mobile-img">
                     <img src="../assets/img/agencia.jpg" alt="">
                 </figure>
-                <span class="retroceder">
+                <span>
                     <a href="../index.php"><i class="fa-solid fa-arrow-left" id="exitsignup"></i></a>
                     <h2 class="title">Registrarse</h2>
                 </span>
                 <form action="signup.php" method="post">
                     <p>
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Nombres" name="nombre"  required>
+                        <input type="text" placeholder="" name="nombre" required>
+                        <label for="">Nombres</label>
                     </p>
                     <p>
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Apellidos" name="apellido" required>
+                        <input type="text" placeholder="" name="apellido" required>
+                        <label for="">Apellidos</label>
                     </p>
                     <p>
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" id="email" required>
+                        <input type="email" placeholder="" name="email" id="email" required>
+                        <label for="" id="emailOK" class="">Email</label>
                     </p>
-                    <div class="genero">
-                        <span>Sexo</span>
-                        <div class="opciones">
-                            <p>Mujer<input type="checkbox" name="mujer" id="mujer"></p>
-                            <p>Hombre<input type="checkbox" name="hombre" id="hombre"></p>
-                            <p>Otro<input type="checkbox" name="" id=""></p>
-                            <!-- <p>turyp<input type="checkbox" name="mujer" id="mujer"></p>
-                            <p>ip<input type="checkbox" name="hombre" id="hombre"></p>
-                            <p>ip<input type="checkbox" name="" id=""></p> -->
-                        </div>
-                    </div>
+                    <!-- <p>
+                        Sexo
+                        <p>Mujer
+                        <input type="checkbox" name="mujer" id=""></p>
+                        <p>Hombre
+                        <input type="checkbox" name="hombre" id=""></p>
+
+                    </p> -->
                     <p>
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" name="contraseña" id="password" required>
+                        <input type="password" placeholder="" name="contraseña" id="password" required>
                         <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
                         <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
+                        <label for="">contraseña</label>
                     </p>
                     <p>
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Confirmar Contraseña" name="Confirmacontraseña" id="confipassword" required>
+                        <input type="password" placeholder="" name="Confirmacontraseña" id="confipassword" required>
                         <i class="fa-solid fa-eye eye2 active" onclick="mostrarContrasenaa()"></i>
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
+                        <label for="">Confirma contraseña</label>
                     </p>
+
                     <input type="submit" value="Registrar">
                 </form>
             </div>

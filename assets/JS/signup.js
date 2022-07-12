@@ -29,11 +29,4 @@ function mostrarContrasenaa() {
   }
 }
 
-document.getElementById("email").addEventListener("input", function () {
-  valido = document.getElementById("emailOK");
-  email = document.getElementById("email");
-  if ((email.innerHTML = "")) {
-  } else {
-    toggleElement(valido, "active");
-  }
-});
+
