@@ -10,7 +10,6 @@ $lista_imagenes = $stmt->fetchAll();
 
 // para login mientras no dea click al boton btnlogin no se ejecuta
 if (isset($_POST['btnlogin'])) {
-
   $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
   $records->bindParam(':email', $_POST['email']);
   $records->execute();
@@ -18,8 +17,13 @@ if (isset($_POST['btnlogin'])) {
   $message = '';
 
   if (count($results) > 0 && password_verify($_POST['password'], $results['contraseña'])) {
-    $_SESSION['user_id'] = $results['id'];
-    header("Location:./index.php");
+    if(($results['bloqueado'])=="no"){
+      $_SESSION['user_id'] = $results['id'];
+      header("Location:./index.php");
+    }else{
+      $message = '<p id="ccc">Has sido baneado</p>';
+      // header("Location:./php/logout.php");
+    }
   } else {
     if (!password_verify($_POST['password'], $results['contraseña'])) {
       $message = '<p id="lg-err"> contraseña incorrecta</p>';
@@ -29,7 +33,6 @@ if (isset($_POST['btnlogin'])) {
     }
   }
 }
-
 
 // para traer los datos del usuario que inicio seccion para que pueda dar su termimonio
 if (isset($_SESSION['user_id'])) {
@@ -49,13 +52,14 @@ if (isset($_POST['Enviartestimonio'])) {
   $nombre = $user['nombre'];
   $testi = $_POST['testimonio'];
   $punto = $_POST['punto'];
-  $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion) VALUES ('$nombre','$testi','$punto')";
+  $fecha = date("Y-m-d");
+  
+  $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion, fecha) VALUES ('$nombre','$testi','$punto','$fecha')";
   $stmt = $conn->prepare($envio);
   if ($stmt->execute()) {
     header("Location:./index.php");
   }
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -363,13 +367,16 @@ if (isset($_POST['Enviartestimonio'])) {
           <!-- trae los datos primero imprime todos del id 1 luego el 2 ... -->
           <?php
           foreach ($lista_imagenes as $datos) {
-            $x = "si";
-            if (($datos['aprobado']) == $x) {
+            if (($datos['aprobado']) == "si") {
           ?>
               <div class="swiper-slide">
                 <div class="testi-item">
                   <div class="testi-avatar">
-                    <img src="./assets/img/mujer.png" alt="cliente" />
+                    <?php if(($datos['sexo'])=="m"):?>
+                        <img src="./assets/img/testihombre.png" alt="cliente" />
+                    <?php else: ?>
+                        <img src="./assets/img/testimujer.png" alt="cliente" />
+                    <?php endif; ?>
                   </div>
                   <div class="testimonials-text-before">
                     <i class="fa fa-quote-left"></i>
@@ -395,6 +402,7 @@ if (isset($_POST['Enviartestimonio'])) {
                     <!-- trae los tertimonios  -->
                     <p>
                       <?= $datos['testimonio']; ?>
+                      <br><?= $datos['fecha']; ?>
                     </p>
                     <!-- trae el nombre del que dejo su testimonio -->
                     <div class="testimonials-avatar">
@@ -428,34 +436,65 @@ if (isset($_POST['Enviartestimonio'])) {
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497663.5124391337!2d-76.14358010000002!3d-12.972095199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fe9c19ac92e71%3A0xfd4b1004743ddee3!2sMJ%20Lunahuan%C3%A1!5e0!3m2!1ses!2spe!4v1657477533072!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
+  <style>
+    .mandar-testimonio{
+      width: 100%;
+    }
+    .contenedor{
+      width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    }
+    .form-img{
+      width: 50%;
+      display: none;
+    }
+    .form-img img{
+      width: 100%;
+      vertical-align: top;
+    }
+    .contenedor form{
+      width: 50%;
+    }
+    @media (min-width: 700px) {
+    .form-img {
+        display: flex;
+    }
+  }
+  </style>
   <!-- seccion de lformulario para los comentarios -->
   <?php if (!empty($user)) :  ?>
     <div class="mandar-testimonio" data-aos="fade-right">
       <h2>Déjanos tu Comentario</h2>
-      <form action="index.php" method="post">
-        <fieldset>
-          <label for="">Nombre</label>
-          <input type="text" name="nombre" id="nombre" placeholder="<?= $user['nombre'] ?>" onmousedown="return false">
-          <!-- <input type="text" name="nombre" id=""> -->
-          <label for="">Testimonio</label>
-          <input type="text" name="testimonio" id="testimonio">
-          <label for="">Puntuación</label>
-          <p class="clasificacion">
-            <input id="radio1" type="radio" name="estrellas" value="5">
-            <label for="radio1">★</label>
-            <input id="radio2" type="radio" name="estrellas" value="4">
-            <label for="radio2">★</label>
-            <input id="radio3" type="radio" name="estrellas" value="3">
-            <label for="radio3">★</label>
-            <input id="radio4" type="radio" name="estrellas" value="2">
-            <label for="radio4">★</label>
-            <input id="radio5" type="radio" name="estrellas" value="1">
-            <label for="radio5">★</label>
-          </p>
-          <input type="text" name="punto" id="punto" placeholder="3" style="display:none;">
-          <input type="submit" value="Enviar" name="Enviartestimonio">
-        </fieldset>
-      </form>
+      <div class="contenedor">
+        <figure class="form-img"><img src="./assets/img/slider/portada1.webp" alt="" srcset=""></figure>
+        <form action="index.php" method="post">
+          <fieldset>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="<?= $user['nombre'] ?>" onmousedown="return false">
+            <!-- <input type="text" name="nombre" id=""> -->
+            <label for="">Testimonio</label>
+            <input type="text" name="testimonio" id="testimonio">
+            <label for="">Puntuación</label>
+            <p class="clasificacion">
+              <input id="radio1" type="radio" name="estrellas" value="5">
+              <label for="radio1">★</label>
+              <input id="radio2" type="radio" name="estrellas" value="4">
+              <label for="radio2">★</label>
+              <input id="radio3" type="radio" name="estrellas" value="3">
+              <label for="radio3">★</label>
+              <input id="radio4" type="radio" name="estrellas" value="2">
+              <label for="radio4">★</label>
+              <input id="radio5" type="radio" name="estrellas" value="1">
+              <label for="radio5">★</label>
+            </p>
+            <input type="text" name="punto" id="punto" placeholder="3" style="display:none;">
+            <input type="submit" value="Enviar" name="Enviartestimonio">
+          </fieldset>
+        </form>
+      </div>
     </div>
   <?php endif; ?>
   <!-- section ubicación-termina -->
