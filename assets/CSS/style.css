@@ -78,8 +78,6 @@ body.dark p {
 .header.active{
     background: var(--white);
 }
-
-
 body.dark .header {
     background: var(--grisOscuro);
     box-shadow: var(--sombraLight);
@@ -141,12 +139,15 @@ body.dark .header .navbar a {
 /* submenu-icono rotate */
 .menu-item-has-children {
     --transform: rotate(0deg);
+    cursor: pointer;
 }
 .menu-item-has-children.active {
     --transform: rotate(180deg);
     padding: 0 2.5rem;
     transition: all .4s;
+    cursor: pointer;
 }
+
 .plus {
     transform: var(--transform);
     transition: all .3s;
@@ -227,6 +228,7 @@ body.dark .header .icons div {
     background-color: var(--white);
     bottom: calc(100% / 4);
 }
+
 input#abrir-cerrar:checked+.toggle-button.active:before,
 input#abrir-cerrar:checked+.toggle-button.active:after {
     top: calc(100% / 2);
@@ -243,9 +245,14 @@ input#abrir-cerrar:checked+.toggle-button.active:after {
 .header .icons .boton-menu {
     background-color: transparent;
 }
+.header.active .icons .boton-menu:hover,
+.header.active .icons .boton-menu{
+    background-color:var(--blue) ;
+}
 .header .icons .boton-menu:hover {
     background-color: transparent;
 }
+
 body.dark .header .icons .boton-menu {
     background-color: transparent;
 }
