@@ -2,7 +2,7 @@
 session_start();
 require "./php/database.php";
 // para traer todos los testimonios
-$stmt = $conn->prepare('select * from testimonios');
+$stmt = $conn->prepare('select * from testimonio');
 $stmt->execute();
 $lista_imagenes = $stmt->fetchAll();
 
@@ -104,7 +104,7 @@ if (isset($_POST['Enviartestimonio'])) {
           <a href="#">Testimonios</a>
         </li>
         <li class="menu-item menu-item-has-children">
-          <a href="#" class="menu__link submenu-btn" data-toggle="sub-menu">Nuestros servicios
+          <a class="menu__link submenu-btn" data-toggle="sub-menu">Nuestros servicios
             <i class="fa fa-angle-down plus" aria-hidden="true"></i></a>
           <ul class="sub-menu">
             <li class="menu-item item-sub">

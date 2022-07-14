@@ -44,16 +44,16 @@ const toggleElement = (element, nameClass) => {
 btnMenu.addEventListener('click', () => {
   toggleElement(navbar, 'active')
   toggleElement(btnMenu, 'active')
-  toggleElement(body, "active");
+  // toggleElement(body, "active");
   shoppingCart.classList.remove("active");
   loginForm.classList.remove("active");
 })
 // termina -menu
-window.onscroll = () =>{
-  shoppingCart.classList.remove("active");
-  loginForm.classList.remove("active");
-  navbar.classList.remove("active");
-}
+// window.onscroll = () =>{
+//   shoppingCart.classList.remove("active");
+//   loginForm.classList.remove("active");
+//   navbar.classList.remove("active");
+// }
 //submenu
 const subMenuBtn = document.querySelectorAll(".submenu-btn");
 let children=document.querySelector(".menu-item-has-children");
@@ -154,9 +154,11 @@ function leerTexto(e) {
 }
 // header
 const header = document.querySelector(".header")
-window.onscroll = function() {
-  // console.log("Vertical: " + window.scrollY);
-  // console.log("Horizontal: " + window.scrollX);
+window.onscroll = () => {
+  shoppingCart.classList.remove("active");
+  loginForm.classList.remove("active");
+  // navbar.classList.remove("active");
+  console.log("hola")
 if((window.scrollY)>534){
   header.classList.add('active')
 }
