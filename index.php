@@ -36,7 +36,7 @@ if (isset($_POST['btnlogin'])) {
 
 // para traer los datos del usuario que inicio seccion para que pueda dar su termimonio
 if (isset($_SESSION['user_id'])) {
-  $records = $conn->prepare('SELECT id, nombre, contraseña FROM usuarios WHERE id = :id');
+  $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
   $records->bindParam(':id', $_SESSION['user_id']);
   $records->execute();
   $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -53,8 +53,9 @@ if (isset($_POST['Enviartestimonio'])) {
   $testi = $_POST['testimonio'];
   $punto = $_POST['punto'];
   $fecha = date("Y-m-d");
+  $sexo = $user['sexo'];
   
-  $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion, fecha) VALUES ('$nombre','$testi','$punto','$fecha')";
+  $envio = "INSERT INTO testimonio (nombre, testimonio, puntuacion, fecha, sexo) VALUES ('$nombre','$testi','$punto','$fecha','$sexo')";
   $stmt = $conn->prepare($envio);
   if ($stmt->execute()) {
     header("Location:./index.php");
@@ -87,7 +88,7 @@ if (isset($_POST['Enviartestimonio'])) {
 </head>
 
 <body>
-  <p style="display:none;" class="verificaloginono"><?= $user['nombre'] ?></p>
+  <p style="display:none;" class="verificaloginono"><?= $user['sexo']?></p>
   <!-- header start -->
   <header class="header">
     <figure class="logo"><img src="./assets/img/foter&logo/logotrans1.png" width="110rem" height="50rem" alt="" /></figure>
@@ -265,7 +266,7 @@ if (isset($_POST['Enviartestimonio'])) {
         Nuestro propósito principal es brindarle una gran aventura y sobretodo
         seguridad para que pueda guardarlo en sus mejores recuerdos. <br />
         <span>¡ Siéntase seguro con nosotros y visítenos !</span>
-        <img data-aos="zoom-in" src="./assets/img/agencia.jpg" alt="img_agencia" />
+        <img data-aos="zoom-in" src="./assets/img/seguridad/agencia.jpg" alt="img_agencia" />
       </p>
     </section>
     <!-- section-sobre nosotros -->

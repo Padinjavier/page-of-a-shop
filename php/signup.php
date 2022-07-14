@@ -62,7 +62,7 @@ if (isset($_POST['registrar'])){
             <figure class="desktop-img"></figure>
             <div class="mobill">
                 <figure class="mobile-img">
-                    <img src="../assets/img/agencia.jpg" alt="">
+                    <img src="../assets/img/seguridad/agencia.jpg" alt="">
                 </figure>
                 <span class="retroceder">
                     <a href="../index.php"><i class="fa-solid fa-arrow-left" id="exitsignup"></i></a>

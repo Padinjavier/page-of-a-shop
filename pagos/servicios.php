@@ -32,7 +32,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Canotaje</h3>
                     <span>s/35.00</span>
                 </div>
-                <img src="./imgdeporte/canotaje.jpg" alt="canotaje">
+                <img src="../assets/img/imgpagos/canotaje.webp" alt="canotaje">
 
                 <div class="container">
                     <label>Cantidad: </label>
@@ -45,7 +45,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Rappel</h3>
                     <span>s/40.00</span>
                 </div>
-                <img src="./imgdeporte/rappel.JPG" alt="rappel">
+                <img src="../assets/img/imgpagos/rappel.webp" alt="rappel">
 
                 <div class="container">
                     <label>Cantidad: </label>
@@ -58,7 +58,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Cuatrimoto Simple</h3>
                     <span>s/35.00</span>
                 </div>
-                <img src="./imgdeporte/cuatrimotosimple.JPG" alt="cuatrimotosimple">
+                <img src="../assets/img/imgpagos/cuatrimotosimple.webp" alt="cuatrimotosimple">
 
                 <div class="container">
                     <label>Cantidad: </label>
@@ -71,7 +71,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Cuatrimoto Doble</h3>
                     <span>s/40.00</span>
                 </div>
-                <img src="./imgdeporte/cuatrimotodoble.JPG" alt="cuatrimotodoble">
+                <img src="../assets/img/imgpagos/cuatrimotodoble.webp" alt="cuatrimotodoble">
 
                 <div class="container">
                     <label>Cantidad: </label>
@@ -84,7 +84,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Canopy una línea</h3>
                     <span>s/40.00</span>
                 </div>
-                <img src="./imgdeporte/canopyuno.JPG" alt="canopyuno">
+                <img src="../assets/img/imgpagos/canopyuno.webp" alt="canopyuno">
 
                 <div class="container">
                     <label>Cantidad: </label>
@@ -97,7 +97,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Canopy dos líneas</h3>
                     <span>s/50.00</span>
                 </div>
-                <img src="./imgdeporte/canopydos.JPG" alt="canopydos">
+                <img src="../assets/img/imgpagos/canopydos.webp" alt="canopydos">
                 <div class="container">
                     <label>Cantidad: </label>
                     <input type="number" name="cantCanopyDos" id="" min="0" placeholder="0">
@@ -109,7 +109,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Paseo Turístico / Día</h3>
                     <span>s/20.00</span>
                 </div>
-                <img src="./imgdeporte/diapaseo.jpg" alt="diapaseo">
+                <img src="../assets/img/imgpagos/diapaseo.webp" alt="diapaseo">
                 <div class="container">
                     <label>Cantidad: </label>
                     <input type="number" name="cantPaseoD" id="" min="0" placeholder="0">
@@ -121,7 +121,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Paseo Turístico / Noche</h3>
                     <span>s/35.00</span>
                 </div>
-                <img src="./imgdeporte/noche.jpg" alt="noche">
+                <img src="../assets/img/imgpagos/noche.webp" alt="noche">
                 <div class="container">
                     <label>Cantidad: </label>
                     <input type="number" name="cantPaseoN" id="" min="0" placeholder="0">
@@ -133,7 +133,7 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
                     <h3>Paseo a Caballo</h3>
                     <span>s/35.00</span>
                 </div>
-                <img src="./imgdeporte/caballos.jpg" alt="caballos">
+                <img src="../assets/img/imgpagos/caballos.webp" alt="caballos">
                 <div class="container">
                     <label>Cantidad: </label>
                     <input type="number" name="cantCaballo" id="" min="0" placeholder="0">
