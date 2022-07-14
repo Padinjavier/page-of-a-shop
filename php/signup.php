@@ -6,11 +6,10 @@ $message = '';
 
 session_start();
 
-if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['email']) && !empty($_POST['contraseña']) && !empty($_POST['Confirmacontraseña'])) {
-
+if (isset($_POST['registrar'])){
     if (($_POST['contraseña'] == $_POST['Confirmacontraseña'])) {
-
-        $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
+        // $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
+        $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
         $records->bindParam(':email', $_POST['email']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -22,16 +21,16 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
             $apellido = $_POST['apellido'];
             $email = $_POST['email'];
             $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
+            $sexo=$_POST['sexo'];
             // $contraseña = ($_POST['contraseña']);
-            $sql = "INSERT INTO usuarios (nombre, apellido, email , contraseña) VALUES ('$nombre','$apellido','$email','$contraseña')";
+            $sql = "INSERT INTO usuarios (nombre, apellido, email , contraseña, sexo) VALUES ('$nombre','$apellido','$email','$contraseña','$sexo')";
             $stmt = $conn->prepare($sql);
             if ($stmt->execute()) {
-
-                $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
+                // $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
+                $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
                 $results = $records->fetch(PDO::FETCH_ASSOC);
-
                 $_SESSION['user_id'] = $results['id'];
                 header("Location:../index.php");
             } else {
@@ -80,17 +79,13 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                     </p>
                     <p>
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" id="email" required>
+                        <input type="email" placeholder="Email" name="email" required>
                     </p>
                     <div class="genero">
                         <span>Sexo</span>
                         <div class="opciones">
-                            <p>Mujer<input type="checkbox" name="mujer" id="mujer"></p>
-                            <p>Hombre<input type="checkbox" name="hombre" id="hombre"></p>
-                            <p>Otro<input type="checkbox" name="" id=""></p>
-                            <!-- <p>turyp<input type="checkbox" name="mujer" id="mujer"></p>
-                            <p>ip<input type="checkbox" name="hombre" id="hombre"></p>
-                            <p>ip<input type="checkbox" name="" id=""></p> -->
+                            <p>Mujer<input type="radio" name="sexo" value="f"></p>
+                            <p>Hombre<input type="radio" name="sexo" value="m"></p>
                         </div>
                     </div>
                     <p>
@@ -105,7 +100,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
                         <i class="fa-solid fa-eye eye2 active" onclick="mostrarContrasenaa()"></i>
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
                     </p>
-                    <input type="submit" value="Registrar">
+                    <input type="submit" value="Registrar" name="registrar">
                 </form>
             </div>
         </div>
@@ -115,5 +110,4 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ema
     </main>
 </body>
 <script src="../assets/JS/signup.js"></script>
-
 </html>
