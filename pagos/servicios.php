@@ -1,7 +1,6 @@
 <?php include("./cabecera.php"); 
-$x="servicios.php";
 // guardar valores seleccionados
-if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos'])) || (isset($_POST['resumen']))){
+if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
     session_start();
     $canotaje=  ($_POST['cantCanotaje'])*(35);
     $rappel=  ($_POST['cantRappel'])*(40);
@@ -25,10 +24,8 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos'])) || (isset($_POS
 ?>
 
 <section class="servicios">
-<?php include("./botones.php");?>
     <h2>Nuestros Servicios</h2>
-   
-    <!-- <form action="servicios.php" method="POST" class="formulario"> -->
+    <form action="servicios.php" method="POST" class="formulario">
         <div class="servicio-grid">
             <div class="deporte">
                 <div class="deporte-texto">
