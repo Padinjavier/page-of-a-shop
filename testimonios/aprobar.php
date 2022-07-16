@@ -8,7 +8,7 @@ if(isset($_GET['ID'])) {
     $apro = $_GET['apro'];
 
     if($apro=="si"){
-        $sql = "UPDATE testimonios SET aprobado = 'no' WHERE idtesti=$id";
+        $sql = "UPDATE testimonio SET aprobado = 'no' WHERE idtesti=$id";
         $stmt = $conn->prepare($sql);
         if ($stmt->execute()) {
             header("Location:listatestimonios.php");
@@ -16,7 +16,7 @@ if(isset($_GET['ID'])) {
             die("peticion fallida");
         }
     }else{
-        $sql = "UPDATE testimonios SET aprobado = 'si' WHERE idtesti=$id";
+        $sql = "UPDATE testimonio SET aprobado = 'si' WHERE idtesti=$id";
         $stmt = $conn->prepare($sql);
         if ($stmt->execute()) {
             header("Location:listatestimonios.php");

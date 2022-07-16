@@ -2,14 +2,14 @@
 session_start();
 require "../php/database.php";
 // para traer todos los testimonios
-$stmt = $conn->prepare('select * from testimonios');
+$stmt = $conn->prepare('select * from testimonio');
 $stmt->execute();
 $lista_imagenes = $stmt->fetchAll();
 
 
 // para traer los datoa del usuario que inicio seccion para que pueda dar su termimonio
 if (isset($_SESSION['user_id'])) {
-  $records = $conn->prepare('SELECT id, nombre, contraseña FROM usuarios WHERE id = :id');
+  $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
   $records->bindParam(':id', $_SESSION['user_id']);
   $records->execute();
   $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -23,7 +23,7 @@ if(!empty($_POST['testimonio'])){
     $nombre = $user['nombre'];
     $testi = $_POST['testimonio'];
     $punto = $_POST['punto'];
-    $envio = "INSERT INTO testimonios (nombre, testimonio, puntuacion) VALUES ('$nombre','$testi','$punto')";
+    $envio = "INSERT INTO testimonio (nombre, testimonio, puntuacion) VALUES ('$nombre','$testi','$punto')";
     $stmt = $conn->prepare($envio);
     if ($stmt->execute()) {
         header("Location:testimonios.php");

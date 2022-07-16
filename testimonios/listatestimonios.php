@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../php/database.php";
-$records = $conn->prepare('SELECT * FROM testimonios');
+$records = $conn->prepare('SELECT * FROM testimonio');
 $records->execute();
 ?>
 <html>
@@ -17,7 +17,6 @@ $records->execute();
 
 <body>
     <h1>Aprobaciones</h1>
-<form action="" method="post">
         <table>
             <thead>
                 <tr>
@@ -51,7 +50,6 @@ $records->execute();
                 <?php } ?>
             </tbody>
         </table>
-    </form>
 </body>
 
 </html>
