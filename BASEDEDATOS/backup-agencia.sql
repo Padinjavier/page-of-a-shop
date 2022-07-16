@@ -22,14 +22,14 @@ USE `agencia`;
 -- Volcando estructura para tabla agencia.administradores
 CREATE TABLE IF NOT EXISTS `administradores` (
   `idAdministradores` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `testimonio_idtesti` int(10) unsigned NOT NULL,
-  `usuarios_id` int(10) unsigned NOT NULL,
-  `pagos_idpagos` int(10) unsigned NOT NULL,
-  `deportes_iddeportes` int(10) unsigned NOT NULL,
+  `testimonio_idtesti` int(10) unsigned DEFAULT NULL,
+  `usuarios_id` int(10) unsigned DEFAULT NULL,
+  `pagos_idpagos` int(10) unsigned DEFAULT NULL,
+  `deportes_iddeportes` int(10) unsigned DEFAULT NULL,
   `Nombre` varchar(50) DEFAULT NULL,
   `Apellido` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `Numero` varchar(9) DEFAULT NULL,
-  `Correo` varchar(50) DEFAULT NULL,
   `Contraseña` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`idAdministradores`),
   KEY `Administradores_FKIndex1` (`usuarios_id`),
@@ -40,9 +40,11 @@ CREATE TABLE IF NOT EXISTS `administradores` (
   CONSTRAINT `administradores_ibfk_2` FOREIGN KEY (`testimonio_idtesti`) REFERENCES `testimonio` (`idtesti`),
   CONSTRAINT `administradores_ibfk_3` FOREIGN KEY (`deportes_iddeportes`) REFERENCES `deportes` (`iddeportes`),
   CONSTRAINT `administradores_ibfk_4` FOREIGN KEY (`pagos_idpagos`) REFERENCES `pagos` (`idpagos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Volcando datos para la tabla agencia.administradores: ~0 rows (aproximadamente)
+INSERT INTO `administradores` (`idAdministradores`, `testimonio_idtesti`, `usuarios_id`, `pagos_idpagos`, `deportes_iddeportes`, `Nombre`, `Apellido`, `Email`, `Numero`, `Contraseña`) VALUES
+	(1, NULL, NULL, NULL, NULL, 'javier', 'Padin Flores', 'javier@gmail.com', '917189300', '$2y$10$THBKlWb/CWFUe4Cm06tSVu/1tO0qO2wj4coUU1pd1Q42P9XBzctoK');
 
 -- Volcando estructura para tabla agencia.deportes
 CREATE TABLE IF NOT EXISTS `deportes` (
@@ -80,13 +82,14 @@ CREATE TABLE IF NOT EXISTS `testimonio` (
   `sexo` enum('m','f') DEFAULT NULL,
   `aprobado` enum('si','no') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'no',
   PRIMARY KEY (`idtesti`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla agencia.testimonio: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla agencia.testimonio: ~4 rows (aproximadamente)
 INSERT INTO `testimonio` (`idtesti`, `nombre`, `testimonio`, `puntuacion`, `fecha`, `sexo`, `aprobado`) VALUES
 	(1, 'Jhon Doe', 'Excelente servicio del canotaje. Los chicos de la cultura estamos muy contentos por la experiencia. Gracias por todo, realmente fue un gran servicio, están super recomendadísimos.', '5', '2022-06-15', 'm', 'si'),
 	(2, 'Diana Carbonel', 'Gracias a las agencia MJ aventura y diversión extrema por su gran servicio, sobre todo la atención que me brindaron en el canotaje y canopy. Excelente! Los recomiendo muchísimo.', '4', '2022-07-03', 'f', 'si'),
-	(3, 'Fiorella Sánchez', 'Disfrutamos de nuestra estadía este fin de semana en el hermoso Lunahuaná y sobretodo nos sentimos muy contentos por el gran servicio brindado en canotaje y paseo turístico. Gracias, los recomiendo!', '4', '2022-07-12', 'f', 'si');
+	(3, 'Fiorella Sánchez', 'Disfrutamos de nuestra estadía este fin de semana en el hermoso Lunahuaná y sobretodo nos sentimos muy contentos por el gran servicio brindado en canotaje y paseo turístico. Gracias, los recomiendo!', '4', '2022-07-12', 'f', 'si'),
+	(9, 'javier', 'asdfg888', '5', '2022-07-15', 'm', 'si');
 
 -- Volcando estructura para tabla agencia.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -100,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla agencia.usuarios: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla agencia.usuarios: ~1 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `contraseña`, `sexo`, `bloqueado`) VALUES
 	(2, 'javier', 'Padin Flores', 'javier@gmail.com', '$2y$10$jVnFJwwK92.3ZUysFtASW.KnjRZzY44lPMw3iejFkgfIlDIr4oNMO', 'm', 'no');
 
