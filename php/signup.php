@@ -26,7 +26,6 @@ if (isset($_POST['registrar'])){
             $sql = "INSERT INTO usuarios (nombre, apellido, email , contraseña, sexo) VALUES ('$nombre','$apellido','$email','$contraseña','$sexo')";
             $stmt = $conn->prepare($sql);
             if ($stmt->execute()) {
-                // $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
                 $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
@@ -84,8 +83,8 @@ if (isset($_POST['registrar'])){
                     <div class="genero">
                         <span>Sexo</span>
                         <div class="opciones">
-                            <p>Mujer<input type="radio" name="sexo" value="f"></p>
-                            <p>Hombre<input type="radio" name="sexo" value="m"></p>
+                            <p>Mujer<input type="radio" name="sexo" value="f" required></p>
+                            <p>Hombre<input type="radio" name="sexo" value="m" required></p>
                         </div>
                     </div>
                     <p>

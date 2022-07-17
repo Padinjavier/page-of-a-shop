@@ -36,7 +36,7 @@ function mostrarContrasena(){
 //menu
 let navbar = document.querySelector(".navbar");
 let btnMenu = document.querySelector(".toggle-button");
-//body statico al activar menu
+//body estático al activar menu
 const body=document.querySelector("body");
 const toggleElement = (element, nameClass) => {
 	element.classList.toggle(nameClass)
@@ -48,13 +48,7 @@ btnMenu.addEventListener('click', () => {
   shoppingCart.classList.remove("active");
   loginForm.classList.remove("active");
 })
-// termina -menu
-// window.onscroll = () =>{
-//   shoppingCart.classList.remove("active");
-//   loginForm.classList.remove("active");
-//   navbar.classList.remove("active");
-// }
-//submenu
+
 const subMenuBtn = document.querySelectorAll(".submenu-btn");
 let children=document.querySelector(".menu-item-has-children");
 for(let i= 0; i< subMenuBtn.length;i++){
@@ -91,7 +85,8 @@ let runSlider = setInterval(() => {
 	nextSlider($sliders)
 }, 5000)
 document.onload = runSlider 
-// testimonios mediasquery
+
+// testimonios mediaquery
 if((screen.width)> 350 & (screen.width) < 600){
   $('.slider-nav').slick({
     slidesToShow: 1,
@@ -122,9 +117,9 @@ $('a[data-slide]').click(function(e) {
   $('.slider-nav').slick('slickGoTo', slideno - 1);
 });
 
-/*para llevar la puntuacion a la base datos cada input radio tiene uhn valor ese valor
+/*para llevar la puntuación a la base datos cada input radio tiene uhn valor ese valor
  se guarda en otro input y al enviar se lleva el valor de ese input ver consola el if es 
- para evitar el error cuando no exista un inicio de seccion (sin logear) y que el resto de
+ para evitar el error cuando no exista un inicio de sesión (sin logear) y que el resto de
  js funcione sin problemas*/
 const login_s0n = document.querySelector(".verificaloginono")
 console.log(login_s0n.innerHTML)
@@ -150,7 +145,7 @@ punto.forEach(punto =>{
 function leerTexto(e) {
     datos[e.target.id] = e.target.value;
 }
-//fin del input para la puntuacion-----------
+//fin del input para la puntuación-----------
 }
 // header
 const header = document.querySelector(".header")

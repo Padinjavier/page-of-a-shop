@@ -8,7 +8,7 @@ $lista_imagenes = $stmt->fetchAll();
 
 
 
-// para login mientras no dea click al boton btnlogin no se ejecuta
+// para login mientras no dea click al botón btnlogin no se ejecuta
 if (isset($_POST['btnlogin'])) {
   $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
   $records->bindParam(':email', $_POST['email']);
@@ -34,7 +34,7 @@ if (isset($_POST['btnlogin'])) {
   }
 }
 
-// para traer los datos del usuario que inicio seccion para que pueda dar su termimonio
+// para traer los datos del usuario que inicio sesión para que pueda dar su testimonio
 if (isset($_SESSION['user_id'])) {
   $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
   $records->bindParam(':id', $_SESSION['user_id']);
@@ -47,7 +47,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 
-//para testimonio mientras no dea click al boton Enviartestimonio no se ejecuta
+//para testimonio mientras no dea click al botón Enviar testimonio no se ejecuta
 if (isset($_POST['Enviartestimonio'])) {
   $nombre = $user['nombre'];
   $testi = $_POST['testimonio'];
@@ -88,7 +88,7 @@ if (isset($_POST['Enviartestimonio'])) {
 </head>
 
 <body>
-  <p style="display:none;" class="verificaloginono"><?= $user['sexo']?></p>
+  <p style="display:none;" class="verificaloginono"><?= $user['nombre']?></p>
   <!-- header start -->
   <header class="header">
     <figure class="logo"><img src="./assets/img/foter&logo/logotrans1.png" width="110rem" height="50rem" alt="" /></figure>
@@ -170,7 +170,7 @@ if (isset($_POST['Enviartestimonio'])) {
       <?php if (!empty($user)) :  ?>
         <a href="#" class="btn">Ver más</a>
       <?php else : ?>
-        <p class="pedirlogin">Inicia sesion para ver más</p>
+        <p class="pedirlogin">Inicia sesión para ver más</p>
       <?php endif ?>
     </div>
 
@@ -221,7 +221,7 @@ if (isset($_POST['Enviartestimonio'])) {
 			<div class="carousel-item">
 				<img src="./assets/img/slider/portada2.webp" alt="Mountains" />
 				<div class="description">
-					<h1>Diviérte en<br /><span>Lunahuaná</span></h1>
+					<h1>Diviértete en<br /><span>Lunahuaná</span></h1>
 					<p>
 					  Si relajarte es lo que necesitas, pues visítanos en nuestra hermosa
 					  tierra de Lunahuaná y pasa un grandioso fin de semana.
@@ -243,7 +243,7 @@ if (isset($_POST['Enviartestimonio'])) {
 			</div>
 		</section>
   </main>
-  <!-- sliderportada-fin -->
+  <!-- slider portada-fin -->
   <div class="container-padding">
 
     <!-- section-sobre nosotros -->
@@ -427,7 +427,7 @@ if (isset($_POST['Enviartestimonio'])) {
     </section>
   </div>
   <!--.container-padding-->
-  <!-- section ubicacion -->
+  <!-- section ubicación -->
   <div class="ubicacion">
     <div class="titulo">
       <p>Ubícanos en Lunahuaná</p>
@@ -437,35 +437,7 @@ if (isset($_POST['Enviartestimonio'])) {
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497663.5124391337!2d-76.14358010000002!3d-12.972095199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fe9c19ac92e71%3A0xfd4b1004743ddee3!2sMJ%20Lunahuan%C3%A1!5e0!3m2!1ses!2spe!4v1657477533072!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-  <style>
-    .mandar-testimonio{
-      width: 100%;
-    }
-    .contenedor{
-      width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    }
-    .form-img{
-      width: 50%;
-      display: none;
-    }
-    .form-img img{
-      width: 100%;
-      vertical-align: top;
-    }
-    .contenedor form{
-      width: 50%;
-    }
-    @media (min-width: 700px) {
-    .form-img {
-        display: flex;
-    }
-  }
-  </style>
-  <!-- seccion de lformulario para los comentarios -->
+  <!-- sección de el formulario para los comentarios -->
   <?php if (!empty($user)) :  ?>
     <div class="mandar-testimonio" data-aos="fade-right">
       <h2>Déjanos tu Comentario</h2>

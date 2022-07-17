@@ -1118,6 +1118,33 @@ p.clasificacion label:hover~label,
 p.clasificacion input:checked~label {
     color: #ffa500;
 }
+/* enviar testimonio */
+.mandar-testimonio{
+    width: 100%;
+  }
+  .contenedor{
+    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  }
+  .form-img{
+    width: 50%;
+    display: none;
+  }
+  .form-img img{
+    width: 100%;
+    vertical-align: top;
+  }
+  .contenedor form{
+    width: 50%;
+  }
+  @media (min-width: 700px) {
+  .form-img {
+      display: flex;
+  }
+}
 /* footer */
 .pie-pagina {
     width: 101%;
