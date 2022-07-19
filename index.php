@@ -52,6 +52,7 @@ if (isset($_POST['Enviartestimonio'])) {
   $nombre = $user['nombre'];
   $testi = $_POST['testimonio'];
   $punto = $_POST['punto'];
+  date_default_timezone_set('America/Lima');
   $fecha = date("Y-m-d");
   $sexo = $user['sexo'];
   

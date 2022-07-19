@@ -89,13 +89,13 @@ if (isset($_POST['registrar'])){
                     </div>
                     <p>
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" name="contraseña" id="password" required>
+                        <input type="password" placeholder="Contraseña" name="contraseña" id="password" minlength="6" required>
                         <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
                         <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
                     </p>
                     <p>
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Confirmar Contraseña" name="Confirmacontraseña" id="confipassword" required>
+                        <input type="password" placeholder="Confirmar Contraseña" name="Confirmacontraseña" id="confipassword" minlength="6" required>
                         <i class="fa-solid fa-eye eye2 active" onclick="mostrarContrasenaa()"></i>
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
                     </p>

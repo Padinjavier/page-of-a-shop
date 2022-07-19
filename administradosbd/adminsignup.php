@@ -3,6 +3,9 @@ require "../php/database.php";
 
 session_start();
 $messaje = "";
+if (isset($_SESSION['user_id'])) {
+    header("Location:./oo.php");
+}
 if (isset($_POST['login'])) {
     $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
     $records->bindParam(':email', $_POST['email']);
@@ -80,7 +83,7 @@ if (isset($_POST['signup'])) {
                 <img src="../assets/img/gallery/galeria1.webp" alt="">
             </figure>
             <form action="adminsignup.php" method="post" class="login">
-                <h2>Inicia seccion</h2>
+                <h2>Inicia sesion</h2>
                 <p>
                     <i class="fa-solid fa-envelope"></i>
                     <input type="email" placeholder="Email" name="email" required="">
@@ -125,13 +128,13 @@ if (isset($_POST['signup'])) {
                 </p>
                 <p>
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Contraseña" name="contraseña" id="passwordsignup" required="">
+                    <input type="password" placeholder="Contraseña" name="contraseña" id="passwordsignup" minlength="6" required>
                     <i class="fa-solid fa-eye active ojosignup" onclick="mostrarContrasenasignup()"></i>
                     <i class="fa-solid fa-eye-slash ojosignupx" onclick="mostrarContrasenasignup()"></i>
                 </p>
                 <p>
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Confirmar Contraseña" name="Confirmacontraseña" id="confipasswordsignup" required="">
+                    <input type="password" placeholder="Confirmar Contraseña" name="Confirmacontraseña" id="confipasswordsignup" minlength="6" required>
                     <i class="fa-solid fa-eye active ojosignup2" onclick="mostrarContrasenasignupconfi()"></i>
                     <i class="fa-solid fa-eye-slash ojosignupx2" onclick="mostrarContrasenasignupconfi()"></i>
                 </p>
