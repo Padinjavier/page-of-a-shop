@@ -1,19 +1,16 @@
 # proyecto-final
-proyecto final UNDC
-
-
 
 INTEGRANTES
 
-Cateriano Guillen Geraldine Guisela
+Cateriano Guillen Geraldine Guisela  👾
 
-Champe Palimino Ana Gabriela
+Champe Palimino Ana Gabriela 👾
 
-Durand Gonzales Wilber David
+Durand Gonzales Wilber David 👾
 
-Luyo Correa Jeanettis Mariel
+Luyo Correa Jeanettis Mariel 👾
 
-Padin Flores Javier Antonio
+Padin Flores Javier Antonio 👾
 
 
 ![Deportes de aventura](./assets/img/catalogo/canopyboy.webp)
