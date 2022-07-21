@@ -4,7 +4,20 @@ $usuario= $_SESSION['usuarioDato'];
 $fecha=$_SESSION['fechaDato'];
 $hora=$_SESSION['horaDato'];
 
-$suma=$_SESSION['suma'];
+$_SESSION['cantCanotaje'];
+$_SESSION['cantRappel'];
+$_SESSION['cantCSimple'];
+$_SESSION['cantCDoble'];
+$_SESSION['cantCanopyUno']; 
+$_SESSION['cantCanopyDos']; 
+$_SESSION['cantPaseoD'];
+$_SESSION['cantPaseoN'];
+$_SESSION['cantCaballo'];
+
+
+echo($_SESSION["1"]);
+echo("hola");
+
 ?>
 
 <section class="resumen">
