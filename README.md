@@ -11,7 +11,7 @@ Durand Gonzales Wilber David
 Luyo Correa Jeanettis Mariel
 Padin Flores Javier Antonio
 
-(./assets/img/catalogo/canopyboy.webp)
+![Deportes de aventura](./assets/img/catalogo/canopyboy.webp)
 
 
 
