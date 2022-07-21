@@ -1,8 +1,20 @@
 <?php 
 include("./cabecera.php"); 
 // guardar valores seleccionados
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+
+    header("Location:../index.php");
+
+}
+
+
+
+
 if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
-    session_start();
+    
     $_SESSION['cantCanotaje']= $_POST['cantCanotaje'];
     $_SESSION['cantRappel']= $_POST['cantRappel'];
     $_SESSION['cantCSimple']= $_POST['cantCSimple'];

@@ -67,7 +67,7 @@ include("./botones.php");
             </tr>
             <tr>
                 <td>Rappel</td>
-                <td><?= $_SESSION['cantRappel']; ?></td>
+                <td><?= $_SESSION['cantRappel']*1; ?></td>
                 <td><?= $_SESSION['cantRappel']*40; ?></td>
 
             </tr>
