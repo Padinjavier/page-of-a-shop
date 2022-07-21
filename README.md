@@ -2,7 +2,17 @@
 proyecto final UNDC
 
 
-minlength="6"
-pattern=".{6,}"
-  date_default_timezone_set('America/Lima');
-$hora=date("H:i:s a");
+
+INTEGRANTES
+
+Cateriano Guillen Geraldine Guisela
+Champe Palimino Ana Gabriela
+Durand Gonzales Wilber David
+Luyo Correa Jeanettis Mariel
+Padin Flores Javier Antonio
+
+(./assets/img/catalogo/canopyboy.webp)
+
+
+
+
