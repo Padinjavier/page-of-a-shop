@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `administradores` (
   CONSTRAINT `administradores_ibfk_2` FOREIGN KEY (`testimonio_idtesti`) REFERENCES `testimonio` (`idtesti`),
   CONSTRAINT `administradores_ibfk_3` FOREIGN KEY (`deportes_iddeportes`) REFERENCES `deportes` (`iddeportes`),
   CONSTRAINT `administradores_ibfk_4` FOREIGN KEY (`pagos_idpagos`) REFERENCES `pagos` (`idpagos`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Volcando datos para la tabla agencia.administradores: ~0 rows (aproximadamente)
 INSERT INTO `administradores` (`idAdministradores`, `testimonio_idtesti`, `usuarios_id`, `pagos_idpagos`, `deportes_iddeportes`, `Nombre`, `Apellido`, `Email`, `Numero`, `Contraseña`) VALUES
@@ -82,14 +82,13 @@ CREATE TABLE IF NOT EXISTS `testimonio` (
   `sexo` enum('m','f') DEFAULT NULL,
   `aprobado` enum('si','no') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'no',
   PRIMARY KEY (`idtesti`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla agencia.testimonio: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla agencia.testimonio: ~3 rows (aproximadamente)
 INSERT INTO `testimonio` (`idtesti`, `nombre`, `testimonio`, `puntuacion`, `fecha`, `sexo`, `aprobado`) VALUES
 	(1, 'Jhon Doe', 'Excelente servicio del canotaje. Los chicos de la cultura estamos muy contentos por la experiencia. Gracias por todo, realmente fue un gran servicio, están super recomendadísimos.', '5', '2022-06-15', 'm', 'si'),
 	(2, 'Diana Carbonel', 'Gracias a las agencia MJ aventura y diversión extrema por su gran servicio, sobre todo la atención que me brindaron en el canotaje y canopy. Excelente! Los recomiendo muchísimo.', '4', '2022-07-03', 'f', 'si'),
-	(3, 'Fiorella Sánchez', 'Disfrutamos de nuestra estadía este fin de semana en el hermoso Lunahuaná y sobretodo nos sentimos muy contentos por el gran servicio brindado en canotaje y paseo turístico. Gracias, los recomiendo!', '4', '2022-07-12', 'f', 'si'),
-	(9, 'javier', 'asdfg888', '5', '2022-07-15', 'm', 'si');
+	(3, 'Fiorella Sánchez', 'Disfrutamos de nuestra estadía este fin de semana en el hermoso Lunahuaná y sobretodo nos sentimos muy contentos por el gran servicio brindado en canotaje y paseo turístico. Gracias, los recomiendo!', '4', '2022-07-12', 'f', 'si');
 
 -- Volcando estructura para tabla agencia.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -101,11 +100,11 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `sexo` enum('m','f') NOT NULL,
   `bloqueado` enum('si','no') DEFAULT 'no',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Volcando datos para la tabla agencia.usuarios: ~1 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `contraseña`, `sexo`, `bloqueado`) VALUES
-	(2, 'javier', 'Padin Flores', 'javier@gmail.com', '$2y$10$jVnFJwwK92.3ZUysFtASW.KnjRZzY44lPMw3iejFkgfIlDIr4oNMO', 'm', 'no');
+	(1, 'javier', 'Padin Flores', 'javier@gmail.com', '$2y$10$jVnFJwwK92.3ZUysFtASW.KnjRZzY44lPMw3iejFkgfIlDIr4oNMO', 'm', 'si');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
