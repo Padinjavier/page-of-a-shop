@@ -28,6 +28,8 @@ const tablausuarios = document.querySelector(".usuarios");
 const testimonio = document.querySelector(".testimonio");
 const tablatestimonios = document.querySelector(".testimonios");
 
+const reservacion = document.querySelector(".reservacion")
+const tablereservaciones = document.querySelector(".reservaciones")
 
 usuario.addEventListener("click", () => {
   usuario.classList.add("active");
@@ -35,6 +37,9 @@ usuario.addEventListener("click", () => {
 
   testimonio.classList.remove("active");
   tablatestimonios.classList.remove("active");
+
+  reservacion.classList.remove("active");
+  tablereservaciones.classList.remove("active");
 });
 
 testimonio.addEventListener("click", () => {
@@ -43,7 +48,20 @@ testimonio.addEventListener("click", () => {
 
   usuario.classList.remove("active");
   tablausuarios.classList.remove("active");
+
+  reservacion.classList.remove("active");
+  tablereservaciones.classList.remove("active");
 });
 
+reservacion.addEventListener("click", () => {
+  reservacion.classList.add("active");
+  tablereservaciones.classList.add("active");
+
+  testimonio.classList.remove("active");
+  tablatestimonios.classList.remove("active");
+
+  usuario.classList.remove("active");
+  tablausuarios.classList.remove("active");
+});
 
 

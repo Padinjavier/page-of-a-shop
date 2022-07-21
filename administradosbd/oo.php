@@ -16,6 +16,10 @@ if (isset($_SESSION['user_id'])) {
     // tabla de los testimonios
     $testimonio = $conn->prepare('SELECT * FROM testimonio');
     $testimonio->execute();
+
+    // tabla de los reservaciones
+    $reservacion = $conn->prepare('SELECT * FROM reservaciones');
+    $reservacion ->execute();
 } else {
     header('Location:./adminsignup.php');
 }
@@ -52,7 +56,7 @@ if (isset($_SESSION['user_id'])) {
                 <ul>
                     <li class="usuario active">Usuarios</li>
                     <li class="testimonio">Testimonios</li>
-                    <li class="deporte">Deportes</li>
+                    <li class="reservacion">reservaciones</li>
                     <li class="pago">Pagos</li>
                     <li><a href="./cerraradmin.php">cerrar sesión</a></li>
                 </ul>
@@ -136,6 +140,52 @@ if (isset($_SESSION['user_id'])) {
                                     <td>
                                         <a href='edittestimonios.php?ID=<?= $testimonios['idtesti'] ?>'>Eliminar</a>
                                     </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="reservaciones">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Cantidad Canotaje</th>
+                                <th>Cantidad Rappel</th>
+                                <th>Cantidad Cuatrimoto Simple</th>
+                                <th>Cantidad Cuatrimoto Doble</th>
+                                <th>Cantidad Canopy Uno</th>
+                                <th>Cantidad Canopy Dos</th>
+                                <th>Cantidad Paseo Dia</th>
+                                <th>Cantidad Paseo Dia</th>
+                                <th>Cantidad Paseo Dia</th>
+                                <th>Pago total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // ejecutamos la petición a la tabla de testimonios
+                            while (($reservaciones = $reservacion->fetch(PDO::FETCH_ASSOC))) { ?>
+                                <tr>
+                                    <td class="id"><?= $reservaciones['idpagos']; ?></td>
+                                    <td><?= $reservaciones['nombres']; ?></td>
+                                    <td><?= $reservaciones['apellidos']; ?></td>
+                                    <td><?= $reservaciones['fecha']; ?></td>
+                                    <td class="fecha"><?= $reservaciones['hora']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantCanotaje']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantRappel']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantCuatrimotoSimple']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantCuatrimotoDoble']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantCanopyUno']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantCanopyDos']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantPaseoTurisDia']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantPaseoTurisNoche']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['cantPaseoCaballo']; ?></td>
+                                    <td class="aprobado"><?= $reservaciones['precioTotal']; ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
