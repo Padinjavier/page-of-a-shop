@@ -16,11 +16,9 @@
     --color-white:#FFFFFF;
     --color--orange-pink:#ffd3b4;
     --color--pink-ligth: #FFB4D8;
-
-
-
 }
 *{
+    font-family: var(--font-description);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -503,4 +501,12 @@
         grid-column: 1/3;
         grid-row: 5/6;
     }
+}
+p, 
+.suggestions li,
+.requisito li{
+    color: var(--color-white);
+}
+.price p{
+    color: var(--color-black);
 }

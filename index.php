@@ -96,13 +96,13 @@ if (isset($_POST['Enviartestimonio'])) {
     <nav class="navbar">
       <ul class="menu">
         <li class="menu-item">
-          <a href="#"> Inicio</a>
+          <a href="#home"> Inicio</a>
         </li>
         <li class="menu-item">
-          <a href="#">Sobre Nosotros</a>
+          <a href="#sobrenosotros">Sobre Nosotros</a>
         </li>
         <li class="menu-item">
-          <a href="#">Testimonios</a>
+          <a href="#testimonios">Testimonios</a>
         </li>
         <li class="menu-item menu-item-has-children">
           <a class="menu__link submenu-btn" data-toggle="sub-menu">Nuestros servicios
@@ -117,7 +117,7 @@ if (isset($_POST['Enviartestimonio'])) {
           </ul>
         </li>
         <li class="menu-item btn-position">
-          <a href="https://wa.me/910089718/?text=Estoy%20interesado%20en%20ti%20beibi." target="_blank">Contáctanos <i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/910089718/?text=Estoy%20interesado%20en%20los%20servicios%20. Requiero%20más%20información." target="_blank">Contáctanos <i class="fab fa-whatsapp"></i></a>
         </li>
       </ul>
     </nav>
@@ -202,11 +202,11 @@ if (isset($_POST['Enviartestimonio'])) {
         <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="icon icon-fb" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-messenger" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
         <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://vm.tiktok.com/ZMNx6HhDv/" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </section>
     <!-- sliderportada-inicio -->
 
-    <section class="home">
+    <section class="home" id="home">
 			<div class="carousel-item active">
 				<img src="./assets/img/slider/portada1.webp" alt="Forest" />
 				<div class="description">
@@ -357,7 +357,7 @@ if (isset($_POST['Enviartestimonio'])) {
     </section>
     <!-- section gallery termina -->
     <!-- section testimonios -->
-    <section class="section-testimonio">
+    <section class="section-testimonio" id="testimonios">
       <!-- estilo de las flechas -->
       <div class="sub-title" data-aos="fade-down">
         <h2>Testimonios</h2>
@@ -427,7 +427,7 @@ if (isset($_POST['Enviartestimonio'])) {
   </div>
   <!--.container-padding-->
   <!-- section ubicación -->
-  <div class="ubicacion">
+  <div class="ubicacion" id="ubicacion">
     <div class="titulo">
       <p>Ubícanos en Lunahuaná</p>
       <i class="fa-solid fa-location-dot"></i>
