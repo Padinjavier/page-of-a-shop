@@ -22,7 +22,6 @@ if (isset($_POST['btnlogin'])) {
       header("Location:./index.php");
     }else{
       $message = '<p id="ccc">Has sido baneado</p>';
-      // header("Location:./php/logout.php");
     }
   } else {
     if (!password_verify($_POST['password'], $results['contraseña'])) {

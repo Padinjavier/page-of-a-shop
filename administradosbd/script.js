@@ -9,8 +9,6 @@ const toggleElement = (element, nameClass) => {
   element.classList.toggle(nameClass);
 };
 
-
-
 btnmenu.addEventListener("click", () => {
   toggleElement(menuabrir, "active");
   toggleElement(menucerrar, "active");

@@ -28,7 +28,6 @@ if (isset($_POST['login'])) {
 
 if (isset($_POST['signup'])) {
     if (($_POST['contraseña'] == $_POST['Confirmacontraseña'])) {
-        // $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
         $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
         $records->bindParam(':email', $_POST['email']);
         $records->execute();
@@ -45,7 +44,7 @@ if (isset($_POST['signup'])) {
             $sql = "INSERT INTO administradores (Nombre, Apellido, Email , Numero, Contraseña) VALUES ('$nombre','$apellido','$email','$numero','$contraseña')";
             $stmt = $conn->prepare($sql);
             if ($stmt->execute()) {
-                $records = $conn->prepare('SELECT * FROM usuarios WHERE Email = :email');
+                $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
                 $results = $records->fetch(PDO::FETCH_ASSOC);
