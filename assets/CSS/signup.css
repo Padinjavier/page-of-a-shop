@@ -185,7 +185,8 @@ input[type="submit"]{
 }
 
 #lg-err {
-    position: absolute;
+    text-align: center;
+    /* position: absolute;
     width: 12.5rem;
     height: 3.75rem;
     background: red;
@@ -194,7 +195,7 @@ input[type="submit"]{
     border: 0.06rem solid white;
     display: flex;    
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 @media screen and (min-width: 600px) {

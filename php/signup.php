@@ -100,12 +100,14 @@ if (isset($_POST['registrar'])){
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
                     </p>
                     <input type="submit" value="Registrar" name="registrar">
+                    
                 </form>
+                <?php if (!empty($message)) : ?>
+            <?= $message ?>
+        <?php endif; ?>
             </div>
         </div>
-        <?php if (!empty($message)) : ?>
-            <p> <?= $message ?></p>
-        <?php endif; ?>
+        
     </main>
 </body>
 <script src="../assets/JS/signup.js"></script>
