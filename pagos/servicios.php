@@ -2,19 +2,29 @@
 // guardar valores seleccionados
 if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
     session_start();
-    $canotaje=  ($_POST['cantCanotaje'])*(35);
-    $rappel=  ($_POST['cantRappel'])*(40);
-    $cuatrimotoSimple=  ($_POST['cantCSimple'])*(35);
-    $cuatrimotoDoble=  ($_POST['cantCDoble'])*(40);
-    $canopyUno=  ($_POST['cantCanopyUno'])*(40);
-    $canopyDos=  ($_POST['cantCanopyDos'])*(50);
+    $_SESSION['cantCanotaje']= $_POST['cantCanotaje'];
+    $_SESSION['cantRappel']= $_POST['cantRappel'];
+    $_SESSION['cantCSimple']= $_POST['cantCSimple'];
+    $_SESSION['cantCDoble']= $_POST['cantCDoble'];
+    $_SESSION['cantCanopyUno']= $_POST['cantCanopyUno'];
+    $_SESSION['cantCanopyDos']= $_POST['cantCanopyDos'];
+    $_SESSION['cantPaseoD']= $_POST['cantPaseoD'];
+    $_SESSION['cantPaseoN']= $_POST['cantPaseoN'];
+    $_SESSION['cantCaballo']= $_POST['cantCaballo'];
 
-    $paseoDia=  ($_POST['cantPaseoD'])*(20);
-    $paseoNoche=  ($_POST['cantPaseoN'])*(35);
-    $caballo=  ($_POST['cantCaballo'])*(35);
+    // $canotaje=  ($_POST['cantCanotaje'])*(35);
+    // $rappel=  ($_POST['cantRappel'])*(40);
+    // $cuatrimotoSimple=  ($_POST['cantCSimple'])*(35);
+    // $cuatrimotoDoble=  ($_POST['cantCDoble'])*(40);
+    // $canopyUno=  ($_POST['cantCanopyUno'])*(40);
+    // $canopyDos=  ($_POST['cantCanopyDos'])*(50);
 
-    $suma=  $canotaje + $rappel +  $cuatrimotoSimple + $cuatrimotoDoble+ $canopyUno + $canopyDos +  $paseoDia + $paseoNoche+$caballo;
-    $_SESSION["suma"]=$suma;
+    // $paseoDia=  ($_POST['cantPaseoD'])*(20);
+    // $paseoNoche=  ($_POST['cantPaseoN'])*(35);
+    // $caballo=  ($_POST['cantCaballo'])*(35);
+
+    // $suma=  $canotaje + $rappel +  $cuatrimotoSimple + $cuatrimotoDoble+ $canopyUno + $canopyDos +  $paseoDia + $paseoNoche+$caballo;
+    // $_SESSION["suma"]=$suma;
 
     header("Location:./datos.php");
 }
