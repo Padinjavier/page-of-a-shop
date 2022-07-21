@@ -10,20 +10,6 @@ $usuario = $_SESSION['usuarioDato'];
 $fecha = $_SESSION['fechaDato'];
 $hora = $_SESSION['horaDato'];
 
-// $_SESSION['cantCanotaje'];
-// $_SESSION['cantRappel'];
-// $_SESSION['cantCSimple'];
-// $_SESSION['cantCDoble'];
-// $_SESSION['cantCanopyUno'];
-// $_SESSION['cantCanopyDos'];
-// $_SESSION['cantPaseoD'];
-// $_SESSION['cantPaseoN'];
-// $_SESSION['cantCaballo'];
-
-
-
-
-
 $preciototal= (($_SESSION['cantCanotaje']*35)+($_SESSION['cantRappel']*40)+($_SESSION['cantCSimple']*35)+
         ($_SESSION['cantCDoble']*40)+($_SESSION['cantCanopyUno']*40)+($_SESSION['cantCanopyDos']*50)+
         ($_SESSION['cantPaseoD']*20)+($_SESSION['cantPaseoN']*35)+($_SESSION['cantCaballo']*35));
@@ -53,14 +39,7 @@ if(isset($_POST['enviar'])){
     if ($stmt->execute()) {
         header("Location:../index.php");
     }
-
-
-
 }
-
-
-
-
 $x=('resumen.php');
 
 
@@ -69,12 +48,14 @@ include("./botones.php");
 
 <section class="resumen">
     <h2>Resumen de reservación</h2>
-    <p><?= $usuario?> vas a reservar los siguientes deportes para las siguiente fecha <?= $fecha;?> <?= $hora;?></p>
-    <table style="color: white; background: blue; text-align: center;">
+    <h3><?= $usuario?></h3>
+    <p> Fecha : <?= $fecha;?></p>
+    <P> Hora : <?= $hora;?></P> <br>
+    <table class="table">
         <thead>
             <tr>
-                <th>NOMBRE DE LOS DEPORTE</th>
-                <th>Numero DE PERSONAS</th>
+                <th>Deportes</th>
+                <th># Personas</th>
                 <th>Total por Deporte</th>
             </tr>
         </thead>
@@ -126,10 +107,10 @@ include("./botones.php");
                 <td><?= $_SESSION['cantCaballo']*1; ?></td>
                 <td><?= $_SESSION['cantCaballo']*35; ?></td>
             </tr>
-            <tr>
+            <tr class="total">
                 <td>Total a Pagar</td>
-                <td>-------></td>
-                <td><?= $preciototal; ?></td>
+                <td>-</td>
+                <td> s/. <?= $preciototal; ?></td>
             </tr>
         </tbody>
     </table>
