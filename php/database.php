@@ -3,8 +3,8 @@
 session_start();
 
 $server = "localhost";
-$username = "root";
-$password = "0173621360"; /*coloca tu credencial*/
+$username = "admi123";
+$password = "gaby2909"; /*coloca tu credencial*/
 $dbname = "agencia";
 
 try {
