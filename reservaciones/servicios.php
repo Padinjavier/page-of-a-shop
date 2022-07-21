@@ -1,4 +1,5 @@
-<?php include("./cabecera.php"); 
+<?php 
+include("./cabecera.php"); 
 // guardar valores seleccionados
 if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
     session_start();
@@ -12,30 +13,18 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
     $_SESSION['cantPaseoN']= $_POST['cantPaseoN'];
     $_SESSION['cantCaballo']= $_POST['cantCaballo'];
 
-    // $canotaje=  ($_POST['cantCanotaje'])*(35);
-    // $rappel=  ($_POST['cantRappel'])*(40);
-    // $cuatrimotoSimple=  ($_POST['cantCSimple'])*(35);
-    // $cuatrimotoDoble=  ($_POST['cantCDoble'])*(40);
-    // $canopyUno=  ($_POST['cantCanopyUno'])*(40);
-    // $canopyDos=  ($_POST['cantCanopyDos'])*(50);
-
-    // $paseoDia=  ($_POST['cantPaseoD'])*(20);
-    // $paseoNoche=  ($_POST['cantPaseoN'])*(35);
-    // $caballo=  ($_POST['cantCaballo'])*(35);
-
-    // $suma=  $canotaje + $rappel +  $cuatrimotoSimple + $cuatrimotoDoble+ $canopyUno + $canopyDos +  $paseoDia + $paseoNoche+$caballo;
-    // $_SESSION["suma"]=$suma;
 
     header("Location:./datos.php");
 }
 
+$x=('servicios.php');
 
 
+include("./botones.php"); 
 ?>
-
 <section class="servicios">
     <h2>Nuestros Servicios</h2>
-    <form action="servicios.php" method="POST" class="formulario">
+    <!-- <form action="servicios.php" method="POST" class="formulario"> -->
         <div class="servicio-grid">
             <div class="deporte">
                 <div class="deporte-texto">
@@ -154,8 +143,9 @@ if((isset($_POST['buttonCantNext'])) || (isset($_POST['datos']))){
         <div class="cambio">
             <input type="submit" class="button" name="buttonCantNext" value="Siguiente >>">
         </div>
-    </form>
+    
 
 
 </section>
+</form>
 <?php include("./pie.php"); ?>

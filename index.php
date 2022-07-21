@@ -43,6 +43,8 @@ if (isset($_SESSION['user_id'])) {
   if (count($results) > 0) {
     $user = $results;
   }
+  $_SESSION['nombre']=$user['nombre'];
+  $_SESSION['apellido']=$user['apellido'];
 }
 
 
@@ -168,7 +170,7 @@ if (isset($_POST['Enviartestimonio'])) {
       </div>
       <!--.box-->
       <?php if (!empty($user)) :  ?>
-        <a href="#" class="btn">Ver más</a>
+        <a href="./reservaciones/servicios.php" target="_blank" class="btn">Ver más</a>
       <?php else : ?>
         <p class="pedirlogin">Inicia sesión para ver más</p>
       <?php endif ?>
