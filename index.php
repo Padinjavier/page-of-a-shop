@@ -201,7 +201,7 @@ if (isset($_POST['Enviartestimonio'])) {
   <section class="redes">
         <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="icon icon-fb" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-messenger" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
-        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/mj_lunahuana/?utm_source=qr" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://vm.tiktok.com/ZMNx6HhDv/" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </section>
     <!-- sliderportada-inicio -->
