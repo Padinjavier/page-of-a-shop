@@ -29,34 +29,42 @@
 }
 
 .adventure-title{
+    color: #FFFFFF;
     padding: 20px;
     font-family: var(--font-title);
     text-align: center;
-    background-color: var(--color-gray);
+    background-color: var(--color-blue);
+    line-height: 2.2;
+    font-size: 2rem;
 }
 
 .sub-title{
-    background-color: var(--color-gray-dark);
-    color: var(--color-white);
+    /* background-color: var(--color-gray-dark); */
+    color: var(--color-blue);
     width: 180px;
     font-family: var(--font-subtitle);
+    font-size: 2rem;
     padding: 20px;
     margin: 0 auto 30px;
     text-align: center;
+    border-bottom: 0.1rem solid var(--color-blue);
+    border-top: 0.1rem solid var(--color-blue);
 }
 
 .container{
     text-align: center;
-    background-color: var(--color-blue);
+    background-color: var(--color-white);
     padding: 15px;
 }
 
 .description{
     margin: 0 auto;
-    max-width: 350px;
+    max-width: 450px;
     padding-bottom: 30px;
     font-family: var(--font-description);
     font-weight: 400;
+    color: var(--color-black);
+    line-height: 2.2;
 }
 
 .options{
@@ -79,15 +87,17 @@
 
 .price{
     text-align: center;
-    max-width: 220px;
+    max-width: 320px;
     padding: 15px 20px ;
     margin: 20px auto;
     border-radius: 10px ;
-    background-color: var(--color-greem);
+    background-color: var(--color-blue);
 }
 .price p{
     font-family: var(--font-description);
     font-weight: 400;
+    line-height: 2.2;
+    align-items: 2rem;
 }
 
 .marco{
@@ -95,7 +105,7 @@
     max-height: 240px;
     max-width: 350px;
     padding: 20px;
-    background-color: var(--color-white);
+    background-color: var(--color-blue);
     border-radius: 15px;
 }
 
@@ -151,9 +161,11 @@
 }
 
 .features{
+    border-bottom: 0.8rem solid var(--color-blue);
+    border-top: 0.8rem solid var(--color-blue);
     list-style: none;
     padding: 20px 0;
-    background-color: var(--color--orange-pink);
+    background-color: var(--color-yellow);
     /* z-index: 1000; */
 }
 .features li{
@@ -169,27 +181,32 @@
 .measures-rappel{
     margin: 0 auto;
     max-width: 550px ;
-    background-color: var(--color--pink-ligth);
+    background-color: var(--color-yellow);
 }
 .options-rappel{
-    background-color: var(--color--pink-ligth);
+    background-color: var(--color-yellow);
 }
 .requisito-rappel{
     padding: 25px;
 }
 /* ============ articulo precausiones==================== */
 .sub-title-suggestions{
-    max-width: 300px;
+    max-width: 450px;
     margin: 0 auto 20px;
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: var(--color-blue);
+    text-transform: uppercase;
     padding: 20px 0;
+    line-height: 2.2;
+    font-size: 1.8rem;
+    border-bottom: 0.1rem solid var(--color-blue);
+    border-top: 0.1rem solid var(--color-blue);
+
 }
 .marco-suggestions{
     max-width: 350px;
     text-align: center;    
     padding:20px;
-    background-color: var(--color-white);   
+    background-color: var(--color-blue);   
     border-radius: 15px; 
     margin: 0 auto;
 
@@ -210,6 +227,7 @@
 
 .suggestions li{
     padding: 10px 0;
+    line-height: 2.2;
 
 }
 
@@ -257,7 +275,7 @@
         margin: 0;
     }
     .sub-title{
-        margin: 0 auto 20px ;
+        margin: 0 0 ;        
     }
     .description{
         padding: 0;
@@ -276,7 +294,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(45, 134, 211);
         grid-column:1/5 ;
         grid-row: 3/4;
     }
@@ -294,11 +312,17 @@
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, auto);
+    text-align: center;
+    background-color: var(--color-white);
+    padding: 15px;
+    align-content: center;
+    justify-items: center;
 }
 
 .sub-title{
-    grid-column: 2/4;
+    grid-column: 1/5;
     grid-row: 1/2;
+
 }
 .description{
     padding: 10px 0 10px;
@@ -314,7 +338,7 @@
     grid-row: 3/4;
 }
 .price{
-    grid-column: 2/4;
+    grid-column: 1/5;
     grid-row: 4/5;
 }
 
@@ -323,7 +347,8 @@
 .options-canopy{
     padding: 0 10px;
     z-index: 600;
-    background-color: var(--color-white);
+    background-color: var(--color-blue);
+    color: #FFFFFF;
 }
 
 
@@ -349,7 +374,10 @@
 }
 .options-rappel{
     z-index: 600;
+    background-color: var(--color-blue);
+    color: #FFFFFF;
 }
+
 /* ============ preacausiones===================== */
 .container-suggestions{
     display: grid;
@@ -374,6 +402,10 @@
     grid-row: 2/3;
 }
 
+.suggestions{
+    max-width: 660px;
+}
+
 }
 
 
@@ -381,23 +413,26 @@
 
 .tourist-walk-title{
     width: 100%;
-    height: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-gray);
+    background-color: var(--color-blue);
     font-family: var(--font-title);
+    font-size: 2rem;
+    color: #FFFFFF;
 }
 
 .city-tours{
     padding: 15px;
-    background-color: var(--color-blue);
+    background-color: var(--color-white);
 
 }
 
 .tours-title{
     padding: 20px 0;
     text-align: center;
+    font-size: 2rem;
 }
 
 .tours-title span{
@@ -426,11 +461,12 @@
 }
 
 .tours-accessibility{
-    max-width: 350px;
+    max-width: 370px;
     margin: 20px auto;
     text-align: center;
-    background-color: var(--color--orange-pink);
+    background-color: var(--color-blue);
     border: 2px solid var(--color-black);
+    color: #FFFFFF;
 
 }
 
@@ -447,12 +483,15 @@
 }
 
 .price-tours{
-    max-width: 120px;
-    padding: 10px;
+    max-width: 220px;
+    padding: 30px 40px;
     margin: 20px auto 0;
     border-radius: 15px;
     text-align: center;
-    background-color: var(--color-greem);
+    background-color: var(--color-blue);
+}
+.price-tours p{
+    color: var(--color-white);
 }
 
 @media screen and (min-width:1024px){
@@ -500,13 +539,36 @@
     .price-tours{
         grid-column: 1/3;
         grid-row: 5/6;
+        background-color: var(--color-blue);
     }
+   
 }
 p, 
 .suggestions li,
 .requisito li{
-    color: var(--color-white);
+   color: var(--color-black);
+
 }
 .price p{
-    color: var(--color-black);
+    color: var(--color-white);
 }
+
+/* ********************** stilos paseo **********************/
+
+.city-tours{
+    font-size: 1.2rem;
+}
+.tours-description{
+    line-height: 1.8rem;
+}
+@media screen and (min-width:1024px) {
+    .tours{
+        max-width: 450px;
+    }
+    .tours img{
+        max-width: 400px;
+    }
+}
+
+
+
