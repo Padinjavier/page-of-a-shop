@@ -5,15 +5,17 @@ session_start();
 $server = "localhost";
 $username = "root";
 // $password = "0173621360"; /*coloca tu credencial*/
-$password = "javier20"; /*coloca tu credencial*/
+$password = "javier20"; /*coloca tu credenciales*/
 $dbname = "agencia";
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=$dbname","$username","$password");
 
+    // son excepciones   reporte de errores, lanza excepciones
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die('No se puede conectar a MySQL');
+    // imprime por si se genera algun error
+    echo('No se puede conectar a MySQL');
 }
 
 ?>

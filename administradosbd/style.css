@@ -180,7 +180,8 @@ td{
 td.id{
     width: 5rem;
 }
-td.fecha{
+td.fecha,
+td.aprobado{
     width: 7.5rem;
 }
 

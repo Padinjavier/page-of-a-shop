@@ -15,7 +15,7 @@ if((isset($_GET['ID'])) & (isset($_GET['bloqueo']))) {
         if ($stmt->execute()) {
             header("Location:adminsignup.php");
         }else{
-            die("petición fallida");
+            echo("petición fallida");
         }
     }else{
         $sql = "UPDATE usuarios SET bloqueado = 'si' WHERE id=$id";
@@ -23,7 +23,7 @@ if((isset($_GET['ID'])) & (isset($_GET['bloqueo']))) {
         if ($stmt->execute()) {
             header("Location:adminsignup.php");
         }else{
-            die("petición fallida");
+            echo("petición fallida");
         }
     }
 }
@@ -37,6 +37,6 @@ if((isset($_GET['ID'])) & (!isset($_GET['bloqueo']))) {
     if ($stmt->execute()) {
         header("Location:adminsignup.php");
     }else{
-        die("petición fallida");
+        echo("petición fallida");
     }
 }

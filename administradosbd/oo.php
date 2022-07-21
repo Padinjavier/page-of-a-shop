@@ -69,7 +69,8 @@ if (isset($_SESSION['user_id'])) {
                                 <th>Email</th>
                                 <th>Sexo</th>
                                 <th>Bloqueado</th>
-                                <th>Preguntar a netis</th>
+                                <th>Acción</th>
+                                <th>Eliminacion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,8 +83,10 @@ if (isset($_SESSION['user_id'])) {
                                     <td><?= $usuarios['apellido']; ?></td>
                                     <td><?= $usuarios['email']; ?></td>
                                     <td><?= $usuarios['sexo']; ?></td>
+                                    <td><?= $usuarios['bloqueado']; ?></td>
                                     <td>
                                         <?php if (($usuarios['bloqueado']) == "no") { ?>
+                                            <!-- metodo get usado por URL href -> id -> bloqueado -->
                                             <a href='editusuarios.php?ID=<?= $usuarios['id'] ?>&bloqueo=<?= $usuarios['bloqueado'] ?>'>Bloquear</a>
                                         <?php } else { ?>
                                             <a href='editusuarios.php?ID=<?= $usuarios['id'] ?>&bloqueo=<?= $usuarios['bloqueado'] ?>'>Desbloquear</a>
@@ -107,7 +110,8 @@ if (isset($_SESSION['user_id'])) {
                                 <th>Puntuación</th>
                                 <th>Fecha</th>
                                 <th>Aprobado</th>
-                                <th>Preguntar a netis</th>
+                                <th>Acción</th>
+                                <th>Eliminacion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -120,8 +124,10 @@ if (isset($_SESSION['user_id'])) {
                                     <td><?= $testimonios['testimonio']; ?></td>
                                     <td><?= $testimonios['puntuacion']; ?></td>
                                     <td class="fecha"><?= $testimonios['fecha']; ?></td>
+                                    <td class="aprobado"><?= $testimonios['aprobado']; ?></td>
                                     <td>
                                         <?php if (($testimonios['aprobado']) == "no") { ?>
+                                            <!-- metodo get usado por URL href -> id -> aprobado -->
                                             <a href='edittestimonios.php?ID=<?= $testimonios['idtesti'] ?>&aprobado=<?= $testimonios['aprobado'] ?>'>Aprobar</a>
                                         <?php } else { ?>
                                             <a href='edittestimonios.php?ID=<?= $testimonios['idtesti'] ?>&aprobado=<?= $testimonios['aprobado'] ?>'>Desaprobar</a>

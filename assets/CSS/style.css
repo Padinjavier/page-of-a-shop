@@ -363,7 +363,7 @@ body.dark .header .shopping-cart .btn {
     border: .2rem solid var(--griss);
     color: var(--griss);
     cursor: pointer;
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
 .btn:hover {
     background-color: var(--blue);

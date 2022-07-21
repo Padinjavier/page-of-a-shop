@@ -188,7 +188,6 @@ if (isset($_POST['Enviartestimonio'])) {
           <i class="fa-solid fa-eye active" onclick="mostrarContrasena()"></i>
           <i class="fa-solid fa-eye-slash" onclick="mostrarContrasena()"></i>
         </div>
-        <p>forget your password <a href="#">Click here</a></p>
         <p>don't have an account <a href="./php/signup.php" target="_blank">Create now</a></p>
         <input type="submit" name="btnlogin" value="login now" class="btn background" />
         <?php if (!empty($message)) : ?>

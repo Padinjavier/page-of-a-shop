@@ -15,7 +15,7 @@ if((isset($_GET['ID'])) & (isset($_GET['aprobado']))) {
         if ($stmt->execute()) {
             header("Location:adminsignup.php");
         }else{
-            die("petición fallida");
+            echo("petición fallida");
         }
     }else{
         $sql = "UPDATE testimonio SET aprobado = 'si' WHERE idtesti=$id";
@@ -23,7 +23,7 @@ if((isset($_GET['ID'])) & (isset($_GET['aprobado']))) {
         if ($stmt->execute()) {
             header("Location:adminsignup.php");
         }else{
-            die("petición fallida");
+            echo("petición fallida");
         }
     }
 }
@@ -36,6 +36,6 @@ if((isset($_GET['ID'])) & (!isset($_GET['aprobado']))) {
     if ($stmt->execute()) {
         header("Location:adminsignup.php");
     }else{
-        die("petición fallida");
+        echo("petición fallida");
     }
 }
