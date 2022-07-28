@@ -6,12 +6,13 @@ $message = '';
 
 session_start();
 
-if (isset($_POST['registrar'])){
+if (isset($_POST['registrar'])) {
     if (($_POST['contraseña'] == $_POST['Confirmacontraseña'])) {
-        // $records = $conn->prepare('SELECT id, nombre, apellido, email, contraseña FROM usuarios WHERE email = :email');
         $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
         $records->bindParam(':email', $_POST['email']);
         $records->execute();
+        // tiempo de espera en segundos
+        sleep(1);
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         if (($_POST['email'] == $results['email'])) {
@@ -21,14 +22,18 @@ if (isset($_POST['registrar'])){
             $apellido = $_POST['apellido'];
             $email = $_POST['email'];
             $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-            $sexo=$_POST['sexo'];
+            $sexo = $_POST['sexo'];
             // $contraseña = ($_POST['contraseña']);
             $sql = "INSERT INTO usuarios (nombre, apellido, email , contraseña, sexo) VALUES ('$nombre','$apellido','$email','$contraseña','$sexo')";
             $stmt = $conn->prepare($sql);
             if ($stmt->execute()) {
+                // tiempo de espera en segundos
+                sleep(1);
                 $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
+                // tiempo de espera en segundos
+                sleep(1);
                 $results = $records->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['user_id'] = $results['id'];
                 header("Location:../index.php");
@@ -70,7 +75,7 @@ if (isset($_POST['registrar'])){
                 <form action="signup.php" method="post">
                     <p>
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Nombres" name="nombre"  required>
+                        <input type="text" placeholder="Nombres" name="nombre" required>
                     </p>
                     <p>
                         <i class="fa-solid fa-user"></i>
@@ -100,15 +105,16 @@ if (isset($_POST['registrar'])){
                         <i class="fa-solid fa-eye-slash eye22" onclick="mostrarContrasenaa()"></i>
                     </p>
                     <input type="submit" value="Registrar" name="registrar">
-                    
+
                 </form>
                 <?php if (!empty($message)) : ?>
-            <?= $message ?>
-        <?php endif; ?>
+                    <?= $message ?>
+                <?php endif; ?>
             </div>
         </div>
-        
+
     </main>
 </body>
 <script src="../assets/JS/signup.js"></script>
+
 </html>

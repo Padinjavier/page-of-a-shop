@@ -37,6 +37,8 @@ if(isset($_POST['enviar'])){
                 '$cantCanopyDos','$cantPaseoD','$cantPaseoN','$cantCaballo','$preciototal')";
     $stmt = $conn->prepare($envio);
     if ($stmt->execute()) {
+        // tiempo de espera en segundos
+    sleep(2);
         header("Location:../index.php");
     }
 }

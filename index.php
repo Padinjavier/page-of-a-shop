@@ -4,6 +4,8 @@ require "./php/database.php";
 // para traer todos los testimonios
 $stmt = $conn->prepare('select * from testimonio');
 $stmt->execute();
+// tiempo de espera en segundos
+sleep(1);
 $lista_imagenes = $stmt->fetchAll();
 
 
@@ -13,14 +15,15 @@ if (isset($_POST['btnlogin'])) {
   $records = $conn->prepare('SELECT * FROM usuarios WHERE email = :email');
   $records->bindParam(':email', $_POST['email']);
   $records->execute();
+  // tiempo de espera en segundos
+  sleep(1);
   $results = $records->fetch(PDO::FETCH_ASSOC);
   $message = '';
-
   if (count($results) > 0 && password_verify($_POST['password'], $results['contraseña'])) {
-    if(($results['bloqueado'])=="no"){
+    if (($results['bloqueado']) == "no") {
       $_SESSION['user_id'] = $results['id'];
       header("Location:./index.php");
-    }else{
+    } else {
       $message = '<p id="ccc">Has sido baneado</p>';
     }
   } else {
@@ -38,13 +41,15 @@ if (isset($_SESSION['user_id'])) {
   $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
   $records->bindParam(':id', $_SESSION['user_id']);
   $records->execute();
+  // tiempo de espera en segundos
+  sleep(1);
   $results = $records->fetch(PDO::FETCH_ASSOC);
   $user = null;
   if (count($results) > 0) {
     $user = $results;
   }
-  $_SESSION['nombre']=$user['nombre'];
-  $_SESSION['apellido']=$user['apellido'];
+  $_SESSION['nombre'] = $user['nombre'];
+  $_SESSION['apellido'] = $user['apellido'];
 }
 
 
@@ -56,14 +61,15 @@ if (isset($_POST['Enviartestimonio'])) {
   date_default_timezone_set('America/Lima');
   $fecha = date("Y-m-d");
   $sexo = $user['sexo'];
-  
+
   $envio = "INSERT INTO testimonio (nombre, testimonio, puntuacion, fecha, sexo) VALUES ('$nombre','$testi','$punto','$fecha','$sexo')";
   $stmt = $conn->prepare($envio);
   if ($stmt->execute()) {
+    // tiempo de espera en segundos
+    sleep(1);
     header("Location:./index.php");
   }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +96,7 @@ if (isset($_POST['Enviartestimonio'])) {
 </head>
 
 <body>
-  <p style="display:none;" class="verificaloginono"><?= $user['nombre']?></p>
+  <p style="display:none;" class="verificaloginono"><?= $user['nombre'] ?></p>
   <!-- header start -->
   <header class="header">
     <figure class="logo"><img src="./assets/img/foter&logo/logotrans1.png" width="110rem" height="50rem" alt="" /></figure>
@@ -179,7 +185,7 @@ if (isset($_POST['Enviartestimonio'])) {
     <form action="" class="login-form" method="post">
       <?php if (!empty($user)) :  ?>
         <h1 class="heading">Bienvenido <span><?= $user['nombre'] ?></span></h1>
-        <a  href="./php/logout.php">cerrar sesión</a>
+        <a href="./php/logout.php">cerrar sesión</a>
       <?php else : ?>
 
         <h3>User</h3>
@@ -200,55 +206,55 @@ if (isset($_POST['Enviartestimonio'])) {
   </header>
   <!-- header fin -->
   <main>
-  <section class="redes">
-        <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="icon icon-fb" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-messenger" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
-        <a href="https://www.instagram.com/mj_lunahuana/?utm_source=qr" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://vm.tiktok.com/ZMNx6HhDv/" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <section class="redes">
+      <a href="https://web.facebook.com/MJ-Adventure-Lunahuan%C3%A1-105332245187940" class="icon icon-fb" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://web.facebook.com/messages/t/105332245187940" class=" icon icon-messenger" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a href="https://www.instagram.com/mj_lunahuana/?utm_source=qr" class=" icon icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://vm.tiktok.com/ZMNx6HhDv/" class=" icon icon-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </section>
     <!-- sliderportada-inicio -->
 
     <section class="home" id="home">
-			<div class="carousel-item active">
-				<img src="./assets/img/slider/portada1.webp" alt="Forest" />
-				<div class="description">
-					<h1>Disfruta del<br /><span>Canotaje</span></h1>
-					<p>
-					  El miedo es la más grande discapacidad de todas, por eso ATRÉVETE y
-					  siente la seguridad con nosotros.
-					</p>
-				  </div>
-			</div>
-			<div class="carousel-item">
-				<img src="./assets/img/slider/portada2.webp" alt="Mountains" />
-				<div class="description">
-					<h1>Diviértete en<br /><span>Lunahuaná</span></h1>
-					<p>
-					  Si relajarte es lo que necesitas, pues visítanos en nuestra hermosa
-					  tierra de Lunahuaná y pasa un grandioso fin de semana.
-					</p>
-				  </div>
-			</div>
-			<div class="carousel-item">
-				<img src="./assets/img/slider/portada3.webp" alt="Camera" />
-				<div class="description">
-					<h1>Disfruta tu<br /><span>Aventura</span></h1>
-					<p>
-					  Disfruta de la compañía del sol, de los maravillosos deportes y del
-					  gran paisaje que encontrarás en el maravilloso pueblo de Lunahuaná.
-					</p>
-				  </div>
-			</div>
-			<div class="slider-navigation">
+      <div class="carousel-item active">
+        <img src="./assets/img/slider/portada1.webp" alt="Forest" />
+        <div class="description">
+          <h1>Disfruta del<br /><span>Canotaje</span></h1>
+          <p>
+            El miedo es la más grande discapacidad de todas, por eso ATRÉVETE y
+            siente la seguridad con nosotros.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/slider/portada2.webp" alt="Mountains" />
+        <div class="description">
+          <h1>Diviértete en<br /><span>Lunahuaná</span></h1>
+          <p>
+            Si relajarte es lo que necesitas, pues visítanos en nuestra hermosa
+            tierra de Lunahuaná y pasa un grandioso fin de semana.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/slider/portada3.webp" alt="Camera" />
+        <div class="description">
+          <h1>Disfruta tu<br /><span>Aventura</span></h1>
+          <p>
+            Disfruta de la compañía del sol, de los maravillosos deportes y del
+            gran paisaje que encontrarás en el maravilloso pueblo de Lunahuaná.
+          </p>
+        </div>
+      </div>
+      <div class="slider-navigation">
         <a href="#cc"><i class="fa-solid fa-angle-down" id="cc"></i></a>
-			</div>
-		</section>
+      </div>
+    </section>
   </main>
   <!-- slider portada-fin -->
   <div class="container-padding">
 
     <!-- section-sobre nosotros -->
-    <div class="welcome" >
+    <div class="welcome">
       <?php if (!empty($user)) :  ?>
         <h1 class="heading">Bienvenido <span><?= $user['nombre'] ?></span></h1>
         <!-- <a href="logout.php">cerrar sesión</a> -->
@@ -374,10 +380,10 @@ if (isset($_POST['Enviartestimonio'])) {
               <div class="swiper-slide">
                 <div class="testi-item">
                   <div class="testi-avatar">
-                    <?php if(($datos['sexo'])=="m"):?>
-                        <img src="./assets/img/testihombre.png" alt="cliente" />
-                    <?php else: ?>
-                        <img src="./assets/img/testimujer.png" alt="cliente" />
+                    <?php if (($datos['sexo']) == "m") : ?>
+                      <img src="./assets/img/testihombre.png" alt="cliente" />
+                    <?php else : ?>
+                      <img src="./assets/img/testimujer.png" alt="cliente" />
                     <?php endif; ?>
                   </div>
                   <div class="testimonials-text-before">
@@ -435,7 +441,7 @@ if (isset($_POST['Enviartestimonio'])) {
       <i class="fa-solid fa-location-dot"></i>
     </div>
     <div class="mapa">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497663.5124391337!2d-76.14358010000002!3d-12.972095199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fe9c19ac92e71%3A0xfd4b1004743ddee3!2sMJ%20Lunahuan%C3%A1!5e0!3m2!1ses!2spe!4v1657477533072!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497663.5124391337!2d-76.14358010000002!3d-12.972095199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fe9c19ac92e71%3A0xfd4b1004743ddee3!2sMJ%20Lunahuan%C3%A1!5e0!3m2!1ses!2spe!4v1657477533072!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   <!-- sección de el formulario para los comentarios -->
@@ -502,8 +508,9 @@ if (isset($_POST['Enviartestimonio'])) {
     </div>
   </footer>
 
-  
+
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="./assets/JS/script.js"></script>
 </body>
+
 </html>

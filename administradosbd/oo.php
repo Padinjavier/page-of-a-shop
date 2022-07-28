@@ -4,22 +4,34 @@ require "../php/database.php";
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT * FROM administradores WHERE idAdministradores =:id ');
+    $records = $conn->prepare('SELECT * FROM zadministradores WHERE idAdministradores =:id ');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
+    // tiempo de espera en segundos
+    sleep(1);
     $results = $records->fetch(PDO::FETCH_ASSOC);
+
 
     // tabla de los usuarios
     $usuario = $conn->prepare('SELECT * FROM usuarios');
     $usuario->execute();
+    // tiempo de espera en segundos
+    sleep(1);
+
 
     // tabla de los testimonios
     $testimonio = $conn->prepare('SELECT * FROM testimonio');
     $testimonio->execute();
+    // tiempo de espera en segundos
+    sleep(1);
+
 
     // tabla de los reservaciones
     $reservacion = $conn->prepare('SELECT * FROM reservaciones');
-    $reservacion ->execute();
+    $reservacion->execute();
+    // tiempo de espera en segundos
+    sleep(1);
+
 } else {
     header('Location:./adminsignup.php');
 }

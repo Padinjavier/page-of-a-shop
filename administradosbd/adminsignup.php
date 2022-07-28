@@ -3,13 +3,13 @@ require "../php/database.php";
 
 session_start();
 $messaje = "";
-if (isset($_SESSION['user_id'])) {
-    header("Location:./oo.php");
-}
+
 if (isset($_POST['login'])) {
-    $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
+    $records = $conn->prepare('SELECT * FROM zadministradores WHERE Email = :email');
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
+    // tiempo de espera en segundos
+    sleep(2);
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['Contraseña'])) {
@@ -28,9 +28,11 @@ if (isset($_POST['login'])) {
 
 if (isset($_POST['signup'])) {
     if (($_POST['contraseña'] == $_POST['Confirmacontraseña'])) {
-        $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
+        $records = $conn->prepare('SELECT * FROM zadministradores WHERE Email = :email');
         $records->bindParam(':email', $_POST['email']);
         $records->execute();
+        // tiempo de espera en segundos
+        sleep(2);
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         if (($_POST['email'] == $results['email'])) {
@@ -41,12 +43,16 @@ if (isset($_POST['signup'])) {
             $email = $_POST['email'];
             $numero = $_POST['numero'];
             $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-            $sql = "INSERT INTO administradores (Nombre, Apellido, Email , Numero, Contraseña) VALUES ('$nombre','$apellido','$email','$numero','$contraseña')";
+            $sql = "INSERT INTO zadministradores (Nombre, Apellido, Email , Numero, Contraseña) VALUES ('$nombre','$apellido','$email','$numero','$contraseña')";
             $stmt = $conn->prepare($sql);
             if ($stmt->execute()) {
-                $records = $conn->prepare('SELECT * FROM administradores WHERE Email = :email');
+                // tiempo de espera en segundos
+                sleep(2);
+                $records = $conn->prepare('SELECT * FROM zadministradores WHERE Email = :email');
                 $records->bindParam(':email', $_POST['email']);
                 $records->execute();
+                // tiempo de espera en segundos
+                sleep(2);
                 $results = $records->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['user_id'] = $results['idAdministradores'];
                 header("Location:./oo.php");
